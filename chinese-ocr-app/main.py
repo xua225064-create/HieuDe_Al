@@ -272,7 +272,12 @@ def find_best_matches(ocr_text: str, database: List[Dict[str, Any]], top_n: int 
         {"弘", "宏", "泓"},
         {"正", "政", "証", "征"},
         {"統", "緒", "絲"},
-        {"内", "內"},  # simplified/traditional — OCR thường ra 内, database dùng 內
+        {"内", "內"},  # simplified/traditional
+        {"贵", "貴"},
+        {"长", "長"},
+        {"宝", "寶"},
+        {"龙", "龍"},
+        {"万", "萬"},
     ]
 
     def similarity(ch1: str, ch2: str) -> float:
@@ -563,20 +568,6 @@ def _expand_ocr_candidates(primary: str, candidates: List[str], blur_score: Opti
             if c not in seen:
                 expanded.append(c)
                 seen.add(c)
-
-        # If blur is heavy and candidate is short, try adding dynasty/suffix
-        if blur_score is not None and blur_score < 120.0:
-            short = _normalize_cjk(item or "")
-            if 0 < len(short) < 4:
-                for prefix in ("大清", "大明", "大南"):
-                    guess = prefix + short
-                    if "年" not in guess:
-                        guess = guess + "年製"
-                    elif not any(x in guess for x in ("製", "造", "玩")):
-                        guess = guess + "製"
-                    if guess not in seen:
-                        expanded.append(guess)
-                        seen.add(guess)
 
     # Append injected candidates at the END (not front) so they don't
     # override actual OCR evidence.

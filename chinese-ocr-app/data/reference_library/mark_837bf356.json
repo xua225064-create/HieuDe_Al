@@ -1,0 +1,60 @@
+{
+  "success": true,
+  "chu_han": "富貴長春",
+  "confidence": 0.99,
+  "top5": [
+    {
+      "chu_han": "富貴長春",
+      "ten_viet": "Phú Quý Trường Xuân",
+      "trieu_dai": "Đặc biệt - Chúc tụng",
+      "nien_dai": "Chua xac dinh",
+      "score": 100,
+      "match_score": 100
+    },
+    {
+      "chu_han": "永慶長春",
+      "ten_viet": "Vĩnh Khánh Trường Xuân",
+      "trieu_dai": "Đặc biệt - Chúc tụng",
+      "nien_dai": "Chua xac dinh",
+      "score": 63.7,
+      "match_score": 63.7
+    },
+    {
+      "chu_han": "長春宮製",
+      "ten_viet": "Trường Xuân Cung Chế",
+      "trieu_dai": "Đặc biệt - Hall mark",
+      "nien_dai": "1644 - 1912",
+      "score": 63.7,
+      "match_score": 63.7
+    },
+    {
+      "chu_han": "永樂長春",
+      "ten_viet": "Vĩnh Lạc Trường Xuân",
+      "trieu_dai": "Đặc biệt - Chúc tụng",
+      "nien_dai": "Chua xac dinh",
+      "score": 63.7,
+      "match_score": 63.7
+    }
+  ],
+  "report": {
+    "id": 169,
+    "chu_han": "富貴長春",
+    "chu_han_4": "富貴長春",
+    "bien_the": [],
+    "phien_am": "Fù Guì Cháng Chūn",
+    "ten_viet": "Phú Quý Trường Xuân",
+    "hoang_de": null,
+    "trieu_dai": "Đặc biệt - Chúc tụng",
+    "nam_bat_dau": null,
+    "nam_ket_thuc": null,
+    "ghi_chu": "Chúc giàu sang phú quý mãi trường tồn",
+    "hien_thi_chinh": "Phú Quý Trường Xuân",
+    "nien_hieu": "Phú Quý Trường Xuân",
+    "nien_dai": "Chua xac dinh",
+    "hieu_de_en": "Phú Quý Trường Xuân Mark",
+    "mo_ta": "Chúc giàu sang phú quý mãi trường tồn.",
+    "hieu_de_vi": "Phú Quý Trường Xuân",
+    "score": 100,
+    "match_score": 100
+  }
+}
