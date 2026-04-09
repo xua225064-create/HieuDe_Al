@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "chu_han": "永樂年製",
+  "confidence": 0.99,
+  "top5": [
+    {
+      "chu_han": "大明永樂年製",
+      "ten_viet": "Vĩnh Lạc niên chế",
+      "trieu_dai": "Minh Triều",
+      "nien_dai": "1403 - 1424",
+      "score": 100,
+      "match_score": 100
+    },
+    {
+      "chu_han": "大明洪武年製",
+      "ten_viet": "Hồng Vũ niên chế",
+      "trieu_dai": "Minh Triều",
+      "nien_dai": "1368 - 1398",
+      "score": 46.5,
+      "match_score": 46.5
+    },
+    {
+      "chu_han": "大明建文年製",
+      "ten_viet": "Kiến Văn niên chế",
+      "trieu_dai": "Minh Triều",
+      "nien_dai": "1399 - 1402",
+      "score": 46.5,
+      "match_score": 46.5
+    },
+    {
+      "chu_han": "大明洪熙年製",
+      "ten_viet": "Hồng Hy niên chế",
+      "trieu_dai": "Minh Triều",
+      "nien_dai": "1424 - 1425",
+      "score": 46.5,
+      "match_score": 46.5
+    },
+    {
+      "chu_han": "大明宣德年製",
+      "ten_viet": "Tuyên Đức niên chế",
+      "trieu_dai": "Minh Triều",
+      "nien_dai": "1426 - 1435",
+      "score": 46.5,
+      "match_score": 46.5
+    }
+  ],
+  "report": {
+    "id": 3,
+    "chu_han": "大明永樂年製",
+    "chu_han_4": "永樂年製",
+    "bien_the": [
+      "永樂年造"
+    ],
+    "phien_am": "Dà Míng Yǒng Lè Nián Zhì",
+    "ten_viet": "Vĩnh Lạc niên chế",
+    "hoang_de": "Vĩnh Lạc (Zhu Di)",
+    "trieu_dai": "Minh Triều",
+    "nam_bat_dau": 1403,
+    "nam_ket_thuc": 1424,
+    "ghi_chu": "Gốm sứ nổi tiếng, xuất khẩu nhiều",
+    "hien_thi_chinh": "Đại Minh Vĩnh Lạc Niên Chế",
+    "nien_hieu": "Vĩnh Lạc",
+    "nien_dai": "1403 - 1424",
+    "hieu_de_en": "Vĩnh Lạc Period",
+    "mo_ta": "Gốm sứ nổi tiếng, xuất khẩu nhiều. Niên đại 1403 - 1424.",
+    "hieu_de_vi": "Đại Minh Vĩnh Lạc Niên Chế",
+    "score": 100,
+    "match_score": 100
+  }
+}

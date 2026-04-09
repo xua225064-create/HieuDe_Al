@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "chu_han": "大清康熙年製",
+  "confidence": 0.99,
+  "top5": [
+    {
+      "chu_han": "大清康熙年製",
+      "ten_viet": "Khang Hy niên chế",
+      "trieu_dai": "Thanh Triều",
+      "nien_dai": "1662 - 1722",
+      "score": 100,
+      "match_score": 100
+    },
+    {
+      "chu_han": "大清順治年製",
+      "ten_viet": "Thuận Trị niên chế",
+      "trieu_dai": "Thanh Triều",
+      "nien_dai": "1644 - 1661",
+      "score": 81.1,
+      "match_score": 81.1
+    },
+    {
+      "chu_han": "大清雍正年製",
+      "ten_viet": "Ung Chính niên chế",
+      "trieu_dai": "Thanh Triều",
+      "nien_dai": "1723 - 1735",
+      "score": 81.1,
+      "match_score": 81.1
+    },
+    {
+      "chu_han": "大清乾隆年製",
+      "ten_viet": "Càn Long niên chế",
+      "trieu_dai": "Thanh Triều",
+      "nien_dai": "1736 - 1795",
+      "score": 81.1,
+      "match_score": 81.1
+    },
+    {
+      "chu_han": "大清嘉慶年製",
+      "ten_viet": "Gia Khánh niên chế",
+      "trieu_dai": "Thanh Triều",
+      "nien_dai": "1796 - 1820",
+      "score": 81.1,
+      "match_score": 81.1
+    }
+  ],
+  "report": {
+    "id": 19,
+    "chu_han": "大清康熙年製",
+    "chu_han_4": "康熙年製",
+    "bien_the": [
+      "康熙年造",
+      "康熙御製"
+    ],
+    "phien_am": "Dà Qīng Kāng Xī Nián Zhì",
+    "ten_viet": "Khang Hy niên chế",
+    "hoang_de": "Khang Hy (Xuanye)",
+    "trieu_dai": "Thanh Triều",
+    "nam_bat_dau": 1662,
+    "nam_ket_thuc": 1722,
+    "ghi_chu": "Trị vì lâu nhất lịch sử TQ; hiệu đề bị giả nhiều",
+    "hien_thi_chinh": "Đại Thanh Khang Hy Niên Chế",
+    "nien_hieu": "Khang Hy",
+    "nien_dai": "1662 - 1722",
+    "hieu_de_en": "Khang Hy Period",
+    "mo_ta": "Trị vì lâu nhất lịch sử TQ; hiệu đề bị giả nhiều. Niên đại 1662 - 1722.",
+    "hieu_de_vi": "Đại Thanh Khang Hy Niên Chế",
+    "score": 100,
+    "match_score": 100
+  }
+}

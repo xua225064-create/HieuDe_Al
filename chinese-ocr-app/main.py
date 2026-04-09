@@ -415,8 +415,9 @@ def _normalize_mark_candidate(raw: str) -> str:
             s = s + "製"
 
     # Heuristic cho mẫu "內府侍X" khi OCR nhiễu chữ gần nét.
-    # QUAN TRỌNG: Có nhiều biến thể (侍右, 侍旨, 侍南, 侍左, 侍中) — KHÔNG được ép cố định!
-    # Chỉ sửa ký tự 1-3 khi bị OCR đọc sai (特→侍, 社→侍), GIỮ NGUYÊN ký tự thứ 4.
+    # QUAN TRỌNG: Có nhiều biến thể (侍右, 侍旨, 侍南, 侍左, 侍中, 侍從) — KHÔNG được ép cố định!
+    # Chỉ sửa ký tự thứ 3 khi bị OCR đọc sai (特→侍, 社→侍), GIỮ NGUYÊN ký tự thứ 4.
+    # Ký tự thứ 4 sẽ được xử lý bởi _boost_neifu_match_score() thay vì normalize cứng.
     has_nei = any(ch in s for ch in ("內", "内"))
     has_fu = "府" in s
     if has_nei and has_fu:
@@ -424,18 +425,9 @@ def _normalize_mark_candidate(raw: str) -> str:
         for wrong_shi in ("特", "社", "待"):
             if wrong_shi in s:
                 s = s.replace(wrong_shi, "侍", 1)
-        # Sửa ký tự thứ 4 bị OCR đọc nhầm — chỉ fix noise rõ ràng
-        # 有/石 → 右; 血/盒/皿 → 旨 (nhưng KHÔNG đụng vào 南/左/中/右/旨)
-        if "有" in s and "右" not in s:
-            s = s.replace("有", "右", 1)
-        elif "石" in s and "右" not in s:
-            s = s.replace("石", "右", 1)
-        elif "血" in s and "旨" not in s:
-            s = s.replace("血", "旨", 1)
-        elif "盒" in s and "旨" not in s:
-            s = s.replace("盒", "旨", 1)
-        elif "皿" in s and "旨" not in s:
-            s = s.replace("皿", "旨", 1)
+        # ĐÃ XÓA: Không normalize cứng ký tự thứ 4 nữa.
+        # Lý do: các biến thể 侍左/侍右/侍旨/侍南/侍中 dễ bị nhầm lẫn khi dùng if-elif chain.
+        # Thay bằng: _boost_neifu_match_score() sẽ điều chỉnh score dựa trên char thứ 4 OCR đọc được.
 
     qing_reigns = {"康熙", "雍正", "乾隆", "嘉慶", "道光", "咸豐", "同治", "光緒", "宣統"}
     nguyen_reigns = {"嘉隆", "明命", "紹治", "嗣德", "建福", "咸宜", "同慶", "成泰", "維新", "啟定", "保大"}
@@ -652,6 +644,129 @@ def _char_overlap_ratio(a: str, b: str) -> float:
     if union == 0:
         return 0.0
     return inter / union
+
+
+NEIFU_4TH_CHAR_MAP = {
+    # Các lỗi OCR phổ biến cho ký tự thứ 4 trong chuỗi "內府侍X"
+    # Map: (ký tự OCR sai) -> (ký tự đúng)
+    # --- 侍左 (Thị Tả) ---
+    "生": "左", "在": "左", "左": "左", "址": "左", "注": "左", "庄": "左", "杜": "左",
+    # --- 侍右 (Thị Hữu) ---
+    "有": "右", "石": "右", "右": "右", "名": "右",
+    # --- 侍旨 (Thị Chỉ) ---
+    "血": "旨", "盒": "旨", "皿": "旨", "旨": "旨", "日": "旨", "曰": "旨",
+    # --- 侍南 (Thị Nam) ---
+    "南": "南", "雨": "南", "两": "南", "甬": "南",
+    # --- 侍中 (Thị Trung) ---
+    "中": "中", "申": "中", "巾": "中",
+    # --- 侍從 (Thị Tòng) ---
+    "從": "從", "从": "從",
+}
+
+NEIFU_VARIANTS_4TH = {
+    "左": "內府侍左",
+    "右": "內府侍右",
+    "旨": "內府侍旨",
+    "南": "內府侍南",
+    "中": "內府侍中",
+    "從": "內府侍從",
+}
+
+
+def _extract_neifu_4th_char(ocr_text: str) -> str:
+    """
+    Từ chuỗi OCR có chứa 內府侍, cố gắng xác định ký tự thứ 4.
+    Không phụ thuộc vào thứ tự chuỗi do PaddleOCR thường sắp xếp lộn xộn các ký tự 
+    của hiệu đề viết dọc / viết vuông 4 chữ.
+    """
+    s = "".join(ch for ch in (ocr_text or "") if "\u4e00" <= ch <= "\u9fff")
+    
+    # Kiểm tra xem có đủ các kí tự cấu thành "Nội Phủ Thị" không (bất kể thứ tự)
+    has_nei = "内" in s or "內" in s
+    has_fu = "府" in s
+    # 侍 hay bị nhầm thành các chữ này
+    has_shi = any(ch in s for ch in ("侍", "待", "特", "社", "挂", "诗"))
+    
+    if has_nei and has_fu:
+        # Nếu có Nội và Phủ, ta quét tìm xem trong chuỗi có chữ nào 
+        # map được với ký tự thứ 4 không.
+        for ch in s:
+            canonical = NEIFU_4TH_CHAR_MAP.get(ch, "")
+            if canonical:
+                return NEIFU_VARIANTS_4TH.get(canonical, "")
+        
+        # Nếu không có chữ nào khớp trong map, ta đành chịu
+        return ""
+    
+    return ""
+
+
+def _boost_neifu_match_score(
+    candidates, scored_items, normalize_cjk_fn, sequence_matcher_fn
+):
+    """
+    Tăng score cho entry Nội Phủ có chữ thứ 4 khớp với OCR,
+    đồng thời phạt các entry Nội Phủ có chữ thứ 4 KHÔNG khớp.
+    
+    Args:
+        candidates: list[str] — các chuỗi OCR đã normalize
+        scored_items: list[dict] — kết quả từ rank_by_multi_candidates / find_best_matches
+        normalize_cjk_fn: hàm _normalize_cjk
+        sequence_matcher_fn: difflib.SequenceMatcher
+    
+    Returns:
+        list[dict] đã được re-sort theo score mới
+    """
+    # Tìm chữ thứ 4 từ các candidates
+    best_4th = ""
+    best_neifu_candidate = ""
+    for c in candidates:
+        result = _extract_neifu_4th_char(c)
+        if result:
+            best_neifu_candidate = result
+            # Lấy chữ thứ 4
+            nc = normalize_cjk_fn(result)
+            if len(nc) >= 4:
+                best_4th = nc[3]
+            break
+    
+    if not best_4th:
+        return scored_items  # Không có tín hiệu Nội Phủ rõ ràng → giữ nguyên
+    
+    print(f"  [neifu_boost] detected 4th char='{best_4th}', expected='{best_neifu_candidate}'")
+    
+    adjusted = []
+    for item in scored_items:
+        chu_han = normalize_cjk_fn(item.get("chu_han", "") or "")
+        is_neifu = ("內府" in chu_han) or ("内府" in chu_han)
+        
+        if not is_neifu:
+            adjusted.append(item)
+            continue
+        
+        # Lấy chữ thứ 4 của entry này
+        entry_4th = chu_han[3] if len(chu_han) >= 4 else ""
+        current_score = float(item.get("match_score", item.get("score", 50)) or 50)
+        raw_score = float(item.get("raw_score", item.get("agg_score", 0)) or 0)
+        
+        if entry_4th == best_4th:
+            # Khớp chữ thứ 4: boost mạnh
+            boost = 25.0
+            print(f"  [neifu_boost] BOOST +{boost} for {chu_han}")
+        else:
+            # Sai chữ thứ 4: phạt
+            boost = -20.0
+            print(f"  [neifu_boost] PENALIZE {boost} for {chu_han}")
+        
+        adjusted.append({
+            **item,
+            "match_score": min(100.0, max(0.0, current_score + boost)),
+            "raw_score": raw_score,
+            "_neifu_adjusted": True,
+        })
+    
+    adjusted.sort(key=lambda x: float(x.get("match_score", x.get("score", 0)) or 0), reverse=True)
+    return adjusted
 
 
 def _choose_display_mark(
@@ -963,16 +1078,36 @@ async def ocr_endpoint(
         for m in matches[:3]:
             print(f"  Match: {m.get('chu_han', '')} score={m.get('raw_score', 0):.4f}")
 
-        top5 = _get_top_matches_from_candidates(merged_candidates, REIGN_DATABASE, limit=5)
-        if not top5:
-            top5 = matches
-        elif dynasty_prefixes:
-            filtered_top5 = [
-                m for m in top5
-                if any(_normalize_cjk(m.get("chu_han", "")).startswith(prefix) for prefix in dynasty_prefixes)
-            ]
-            if filtered_top5:
-                top5 = filtered_top5
+        # FIX Nội Phủ: Điều chỉnh score dựa trên chữ thứ 4 OCR đọc được
+        # QUAN TRỌNG: Phải boost trên danh sách đầy đủ `matches` trước,
+        # bởi vì nếu biến thể đúng bị văng khỏi top 5 từ sớm (do nhiễu OCR),
+        # nó sẽ không bao giờ được phục hồi.
+        import difflib as _difflib
+        neifu_in_matches = any(
+            ("內府" in _normalize_cjk(m.get("chu_han", "") or ""))
+            or ("内府" in _normalize_cjk(m.get("chu_han", "") or ""))
+            for m in (matches or [])
+        )
+        if neifu_in_matches:
+            matches = _boost_neifu_match_score(
+                merged_candidates, matches,
+                _normalize_cjk,
+                _difflib.SequenceMatcher,
+            )
+            # Re-slice top 5 sau khi đã boost lại điểm
+            top5 = matches[:5]
+        else:
+            top5 = _get_top_matches_from_candidates(merged_candidates, REIGN_DATABASE, limit=5)
+            if not top5:
+                top5 = matches
+            
+            if dynasty_prefixes:
+                filtered_top5 = [
+                    m for m in top5
+                    if any(_normalize_cjk(m.get("chu_han", "")).startswith(prefix) for prefix in dynasty_prefixes)
+                ]
+                if filtered_top5:
+                    top5 = filtered_top5
         if has_year_signal:
             reign_top5 = [m for m in top5 if _is_year_mark_text(m.get("chu_han", ""))]
             if reign_top5:
@@ -1123,3 +1258,5 @@ async def memorize_endpoint(
             return JSONResponse(status_code=500, content={"success": False, "message": "Không thể lưu ảnh mẫu."})
     except Exception as e:
         return JSONResponse(status_code=500, content={"success": False, "message": str(e)})
+
+# Trigger reload

@@ -1724,7 +1724,9 @@
     "id": 86,
     "chu_han": "內府侍中",
     "chu_han_4": "內府侍中",
-    "bien_the": ["内府侍中"],
+    "bien_the": [
+      "内府侍中"
+    ],
     "phien_am": "Nèi Fǔ Shì Zhōng",
     "ten_viet": "Nội Phủ Thị Trung",
     "hoang_de": null,
@@ -1743,7 +1745,9 @@
     "id": 87,
     "chu_han": "內府侍右",
     "chu_han_4": "內府侍右",
-    "bien_the": ["内府侍右"],
+    "bien_the": [
+      "内府侍右"
+    ],
     "phien_am": "Nèi Fǔ Shì Yòu",
     "ten_viet": "Nội Phủ Thị Hữu",
     "hoang_de": null,
@@ -1762,7 +1766,9 @@
     "id": 88,
     "chu_han": "內府侍東",
     "chu_han_4": "內府侍東",
-    "bien_the": ["内府侍东"],
+    "bien_the": [
+      "内府侍东"
+    ],
     "phien_am": "Nèi Fǔ Shì Dōng",
     "ten_viet": "Nội Phủ Thị Đông",
     "hoang_de": null,
@@ -1781,7 +1787,9 @@
     "id": 89,
     "chu_han": "內府侍南",
     "chu_han_4": "內府侍南",
-    "bien_the": ["内府侍南"],
+    "bien_the": [
+      "内府侍南"
+    ],
     "phien_am": "Nèi Fǔ Shì Nán",
     "ten_viet": "Nội Phủ Thị Nam",
     "hoang_de": null,
@@ -1800,7 +1808,9 @@
     "id": 90,
     "chu_han": "內府侍北",
     "chu_han_4": "內府侍北",
-    "bien_the": ["内府侍北"],
+    "bien_the": [
+      "内府侍北"
+    ],
     "phien_am": "Nèi Fǔ Shì Běi",
     "ten_viet": "Nội Phủ Thị Bắc",
     "hoang_de": null,
@@ -1819,7 +1829,9 @@
     "id": 91,
     "chu_han": "內府侍兌",
     "chu_han_4": "內府侍兌",
-    "bien_the": ["内府侍兑"],
+    "bien_the": [
+      "内府侍兑"
+    ],
     "phien_am": "Nèi Fǔ Shì Duì",
     "ten_viet": "Nội Phủ Thị Đoài",
     "hoang_de": null,
@@ -3782,5 +3794,26 @@
     "hieu_de_en": "Nội Phủ Thị Chỉ Mark",
     "mo_ta": "Hiệu đề đặc trưng của Việt Nam thời chúa Nguyễn, đồ sứ ký kiểu đặt tại Cảnh Đức Trấn. Niên đại 1600 - 1802.",
     "hieu_de_vi": "Nội Phủ Thị Chỉ"
+  },
+  {
+    "id": 185,
+    "chu_han": "內府侍左",
+    "chu_han_4": "內府侍左",
+    "bien_the": [
+      "内府侍左"
+    ],
+    "phien_am": "Nèi Fǔ Shì Zuǒ",
+    "ten_viet": "Nội Phủ Thị Tả",
+    "hoang_de": null,
+    "trieu_dai": "Nhà Nguyễn (Việt Nam) - Thời Chúa Nguyễn",
+    "nam_bat_dau": 1600,
+    "nam_ket_thuc": 1802,
+    "ghi_chu": "Hiệu đề đồ sứ ký kiểu thời chúa Trịnh - phủ cung (Tả)",
+    "hien_thi_chinh": "Nội Phủ Thị Tả",
+    "nien_hieu": "Nội Phủ Thị Tả",
+    "nien_dai": "TK17 - 1802",
+    "hieu_de_en": "Nội Phủ Thị Tả Mark",
+    "mo_ta": "Hiệu đề đồ sứ ký kiểu thời chúa Trịnh - dành cho cung điện (Tả). Niên đại TK17 - 1802.",
+    "hieu_de_vi": "Nội Phủ Thị Tả"
   }
 ]

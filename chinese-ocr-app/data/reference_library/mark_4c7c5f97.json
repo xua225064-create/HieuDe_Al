@@ -1,0 +1,47 @@
+{
+  "success": true,
+  "chu_han": "大清雍正年製",
+  "confidence": 0.99,
+  "top5": [
+    {
+      "chu_han": "大清雍正年製",
+      "ten_viet": "Ung Chính niên chế",
+      "trieu_dai": "Thanh Triều",
+      "nien_dai": "1723 - 1735",
+      "score": 100,
+      "match_score": 100
+    },
+    {
+      "chu_han": "大清順治年製",
+      "ten_viet": "Thuận Trị niên chế",
+      "trieu_dai": "Thanh Triều",
+      "nien_dai": "1644 - 1661",
+      "score": 72.7,
+      "match_score": 72.7
+    }
+  ],
+  "report": {
+    "id": 20,
+    "chu_han": "大清雍正年製",
+    "chu_han_4": "雍正年製",
+    "bien_the": [
+      "雍正年造",
+      "雍正御製"
+    ],
+    "phien_am": "Dà Qīng Yōng Zhèng Nián Zhì",
+    "ten_viet": "Ung Chính niên chế",
+    "hoang_de": "Ung Chính (Yinzhen)",
+    "trieu_dai": "Thanh Triều",
+    "nam_bat_dau": 1723,
+    "nam_ket_thuc": 1735,
+    "ghi_chu": "Gốm tinh xảo nhất nhà Thanh, hay dùng triện thư",
+    "hien_thi_chinh": "Đại Thanh Ung Chính Niên Chế",
+    "nien_hieu": "Ung Chính",
+    "nien_dai": "1723 - 1735",
+    "hieu_de_en": "Ung Chính Period",
+    "mo_ta": "Gốm tinh xảo nhất nhà Thanh, hay dùng triện thư. Niên đại 1723 - 1735.",
+    "hieu_de_vi": "Đại Thanh Ung Chính Niên Chế",
+    "score": 100,
+    "match_score": 100
+  }
+}
