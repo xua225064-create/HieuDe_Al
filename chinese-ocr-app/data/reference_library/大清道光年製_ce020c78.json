@@ -1,0 +1,54 @@
+{
+  "success": true,
+  "chu_han": "大清道光年製",
+  "confidence": 0.99,
+  "top5": [
+    {
+      "chu_han": "大清道光年製",
+      "ten_viet": "Đạo Quang niên chế",
+      "trieu_dai": "Thanh Triều",
+      "nien_dai": "1821 - 1850",
+      "score": 100,
+      "match_score": 100
+    },
+    {
+      "chu_han": "大清光緒年製",
+      "ten_viet": "Quang Tự niên chế",
+      "trieu_dai": "Thanh Triều",
+      "nien_dai": "1875 - 1908",
+      "score": 94.8,
+      "match_score": 94.8
+    },
+    {
+      "chu_han": "大清年製",
+      "ten_viet": "Đại Thanh niên chế",
+      "trieu_dai": "Thanh Triều",
+      "nien_dai": "1644 - 1912",
+      "score": 85.7,
+      "match_score": 85.7
+    }
+  ],
+  "report": {
+    "id": 23,
+    "chu_han": "大清道光年製",
+    "chu_han_4": "道光年製",
+    "bien_the": [
+      "道光年造"
+    ],
+    "phien_am": "Dà Qīng Dào Guāng Nián Zhì",
+    "ten_viet": "Đạo Quang niên chế",
+    "hoang_de": "Đạo Quang (Minning)",
+    "trieu_dai": "Thanh Triều",
+    "nam_bat_dau": 1821,
+    "nam_ket_thuc": 1850,
+    "ghi_chu": "Nhiều đồ sứ ký kiểu cho VN thời Nguyễn",
+    "hien_thi_chinh": "Đại Thanh Đạo Quang Niên Chế",
+    "nien_hieu": "Đạo Quang",
+    "nien_dai": "1821 - 1850",
+    "hieu_de_en": "Đạo Quang Period",
+    "mo_ta": "Nhiều đồ sứ ký kiểu cho VN thời Nguyễn. Niên đại 1821 - 1850.",
+    "hieu_de_vi": "Đại Thanh Đạo Quang Niên Chế",
+    "score": 100,
+    "match_score": 100
+  }
+}

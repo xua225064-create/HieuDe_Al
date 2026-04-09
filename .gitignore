@@ -1,0 +1,25 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Thư viện nặng
+*.pyd
+*.dll
+*.exe
+
+# File lớn / không cần thiết
+*.zip
+*.tar
+*.rar
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

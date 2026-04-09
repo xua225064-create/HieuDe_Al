@@ -1,0 +1,68 @@
+{
+  "success": true,
+  "chu_han": "內府侍右",
+  "confidence": 0.99,
+  "top5": [
+    {
+      "chu_han": "內府侍右",
+      "ten_viet": "Nội Phủ Thị Hữu",
+      "trieu_dai": "Nhà Nguyễn (Việt Nam) - Thời Chúa Nguyễn",
+      "nien_dai": "1600 - 1802",
+      "score": 100,
+      "match_score": 100
+    },
+    {
+      "chu_han": "內府侍右",
+      "ten_viet": "Nội Phủ Thị Hữu",
+      "trieu_dai": "Nhà Nguyễn (Việt Nam) - Thời Chúa Nguyễn",
+      "nien_dai": "1600 - 1802",
+      "score": 100,
+      "match_score": 100
+    },
+    {
+      "chu_han": "內府侍從",
+      "ten_viet": "Nội Phủ Thị Tòng",
+      "trieu_dai": "Đặc biệt - Cung đình",
+      "nien_dai": "Chua xac dinh",
+      "score": 71.1,
+      "match_score": 71.1
+    },
+    {
+      "chu_han": "內府侍旨",
+      "ten_viet": "Nội Phủ Thị Chỉ",
+      "trieu_dai": "Nhà Nguyễn (Việt Nam) - Thời Chúa Nguyễn",
+      "nien_dai": "1600 - 1802",
+      "score": 71.1,
+      "match_score": 71.1
+    },
+    {
+      "chu_han": "內府侍中",
+      "ten_viet": "Nội Phủ Thị Trung",
+      "trieu_dai": "Nhà Nguyễn (Việt Nam) - Thời Chúa Nguyễn",
+      "nien_dai": "1600 - 1802",
+      "score": 71.1,
+      "match_score": 71.1
+    }
+  ],
+  "report": {
+    "id": 87,
+    "chu_han": "內府侍右",
+    "chu_han_4": "內府侍右",
+    "bien_the": [],
+    "phien_am": "Nèi Fǔ Shì Yòu",
+    "ten_viet": "Nội Phủ Thị Hữu",
+    "hoang_de": null,
+    "trieu_dai": "Nhà Nguyễn (Việt Nam) - Thời Chúa Nguyễn",
+    "nam_bat_dau": 1600,
+    "nam_ket_thuc": 1802,
+    "ghi_chu": "Hiệu đề đồ sứ ký kiểu thời chúa Nguyễn - phương Hữu (Tây)",
+    "hien_thi_chinh": "Nội Phủ Thị Hữu",
+    "nien_hieu": "Nội Phủ Thị Hữu",
+    "nien_dai": "1600 - 1802",
+    "hieu_de_en": "Nội Phủ Thị Hữu Mark",
+    "mo_ta": "Hiệu đề đồ sứ ký kiểu thời chúa Nguyễn - phương Hữu (Tây). Niên đại TK17 - 1802.",
+    "hieu_de_vi": "Nội Phủ Thị Hữu",
+    "score": 100,
+    "match_score": 100
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "success": true,
+  "chu_han": "大明成化年製",
+  "confidence": 0.99,
+  "top5": [
+    {
+      "chu_han": "大明成化年製",
+      "ten_viet": "Thành Hóa niên chế",
+      "trieu_dai": "Minh Triều",
+      "nien_dai": "1465 - 1487",
+      "score": 100,
+      "match_score": 100
+    },
+    {
+      "chu_han": "大明年製",
+      "ten_viet": "Đại Minh niên chế",
+      "trieu_dai": "Minh Triều",
+      "nien_dai": "1368 - 1644",
+      "score": 71,
+      "match_score": 71
+    },
+    {
+      "chu_han": "大明洪武年製",
+      "ten_viet": "Hồng Vũ niên chế",
+      "trieu_dai": "Minh Triều",
+      "nien_dai": "1368 - 1398",
+      "score": 56.7,
+      "match_score": 56.7
+    },
+    {
+      "chu_han": "大明建文年製",
+      "ten_viet": "Kiến Văn niên chế",
+      "trieu_dai": "Minh Triều",
+      "nien_dai": "1399 - 1402",
+      "score": 56.7,
+      "match_score": 56.7
+    }
+  ],
+  "report": {
+    "id": 9,
+    "chu_han": "大明成化年製",
+    "chu_han_4": "成化年製",
+    "bien_the": [
+      "成化年造"
+    ],
+    "phien_am": "Dà Míng Chéng Huà Nián Zhì",
+    "ten_viet": "Thành Hóa niên chế",
+    "hoang_de": "Thành Hóa (Zhu Jianshen)",
+    "trieu_dai": "Minh Triều",
+    "nam_bat_dau": 1465,
+    "nam_ket_thuc": 1487,
+    "ghi_chu": "Gốm đấu thái nổi tiếng nhất, được sao chép nhiều nhất",
+    "hien_thi_chinh": "Đại Minh Thành Hóa Niên Chế",
+    "nien_hieu": "Thành Hóa",
+    "nien_dai": "1465 - 1487",
+    "hieu_de_en": "Thành Hóa Period",
+    "mo_ta": "Gốm đấu thái nổi tiếng nhất, được sao chép nhiều nhất. Niên đại 1465 - 1487.",
+    "hieu_de_vi": "Đại Minh Thành Hóa Niên Chế",
+    "score": 100,
+    "match_score": 100
+  }
+}

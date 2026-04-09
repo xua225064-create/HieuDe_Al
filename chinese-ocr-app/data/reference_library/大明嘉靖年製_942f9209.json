@@ -1,0 +1,62 @@
+{
+  "success": true,
+  "chu_han": "大明嘉靖年製",
+  "confidence": 0.99,
+  "top5": [
+    {
+      "chu_han": "大明嘉靖年製",
+      "ten_viet": "Gia Tĩnh niên chế",
+      "trieu_dai": "Minh Triều",
+      "nien_dai": "1522 - 1566",
+      "score": 100,
+      "match_score": 100
+    },
+    {
+      "chu_han": "大明年製",
+      "ten_viet": "Đại Minh niên chế",
+      "trieu_dai": "Minh Triều",
+      "nien_dai": "1368 - 1644",
+      "score": 80.2,
+      "match_score": 80.2
+    },
+    {
+      "chu_han": "大明洪武年製",
+      "ten_viet": "Hồng Vũ niên chế",
+      "trieu_dai": "Minh Triều",
+      "nien_dai": "1368 - 1398",
+      "score": 64.3,
+      "match_score": 64.3
+    },
+    {
+      "chu_han": "大明建文年製",
+      "ten_viet": "Kiến Văn niên chế",
+      "trieu_dai": "Minh Triều",
+      "nien_dai": "1399 - 1402",
+      "score": 64.3,
+      "match_score": 64.3
+    }
+  ],
+  "report": {
+    "id": 12,
+    "chu_han": "大明嘉靖年製",
+    "chu_han_4": "嘉靖年製",
+    "bien_the": [
+      "嘉靖年造"
+    ],
+    "phien_am": "Dà Míng Jiā Jìng Nián Zhì",
+    "ten_viet": "Gia Tĩnh niên chế",
+    "hoang_de": "Gia Tĩnh (Zhu Houcong)",
+    "trieu_dai": "Minh Triều",
+    "nam_bat_dau": 1522,
+    "nam_ket_thuc": 1566,
+    "ghi_chu": "Gốm ngũ thái rất phổ biến",
+    "hien_thi_chinh": "Đại Minh Gia Tĩnh Niên Chế",
+    "nien_hieu": "Gia Tĩnh",
+    "nien_dai": "1522 - 1566",
+    "hieu_de_en": "Gia Tĩnh Period",
+    "mo_ta": "Gốm ngũ thái rất phổ biến. Niên đại 1522 - 1566.",
+    "hieu_de_vi": "Đại Minh Gia Tĩnh Niên Chế",
+    "score": 100,
+    "match_score": 100
+  }
+}

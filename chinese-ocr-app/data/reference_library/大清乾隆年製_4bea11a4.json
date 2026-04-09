@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "chu_han": "大清乾隆年製",
+  "confidence": 0.99,
+  "top5": [
+    {
+      "chu_han": "大清乾隆年製",
+      "ten_viet": "Càn Long niên chế",
+      "trieu_dai": "Thanh Triều",
+      "nien_dai": "1736 - 1795",
+      "score": 100,
+      "match_score": 100
+    },
+    {
+      "chu_han": "乾隆年製",
+      "ten_viet": "Càn Long niên chế (4 chữ)",
+      "trieu_dai": "Thanh Triều",
+      "nien_dai": "1736 - 1795",
+      "score": 94.8,
+      "match_score": 94.8
+    },
+    {
+      "chu_han": "乾隆年玩",
+      "ten_viet": "Càn Long niên ngoạn",
+      "trieu_dai": "Thanh Triều",
+      "nien_dai": "1736 - 1795",
+      "score": 78.2,
+      "match_score": 78.2
+    },
+    {
+      "chu_han": "嘉隆年製",
+      "ten_viet": "Gia Long niên chế",
+      "trieu_dai": "Nhà Nguyễn (Việt Nam)",
+      "nien_dai": "1802 - 1820",
+      "score": 56.3,
+      "match_score": 56.3
+    },
+    {
+      "chu_han": "保大年製",
+      "ten_viet": "Bảo Đại niên chế",
+      "trieu_dai": "Nhà Nguyễn (Việt Nam)",
+      "nien_dai": "1926 - 1945",
+      "score": 52.2,
+      "match_score": 52.2
+    }
+  ],
+  "report": {
+    "id": 21,
+    "chu_han": "大清乾隆年製",
+    "chu_han_4": "乾隆年製",
+    "bien_the": [
+      "乾隆年造",
+      "乾隆御製"
+    ],
+    "phien_am": "Dà Qīng Qián Lóng Nián Zhì",
+    "ten_viet": "Càn Long niên chế",
+    "hoang_de": "Càn Long (Hongli)",
+    "trieu_dai": "Thanh Triều",
+    "nam_bat_dau": 1736,
+    "nam_ket_thuc": 1795,
+    "ghi_chu": "Phổ biến nhất, xuất hiện nhiều nhất trên đồ sứ ký kiểu VN",
+    "hien_thi_chinh": "Đại Thanh Càn Long Niên Chế",
+    "nien_hieu": "Càn Long",
+    "nien_dai": "1736 - 1795",
+    "hieu_de_en": "Càn Long Period",
+    "mo_ta": "Phổ biến nhất, xuất hiện nhiều nhất trên đồ sứ ký kiểu VN. Niên đại 1736 - 1795.",
+    "hieu_de_vi": "Đại Thanh Càn Long Niên Chế",
+    "score": 100,
+    "match_score": 100
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "chu_han": "康熙年製",
+  "confidence": 0.99,
+  "top5": [
+    {
+      "chu_han": "大清康熙年製",
+      "ten_viet": "Khang Hy niên chế",
+      "trieu_dai": "Thanh Triều",
+      "nien_dai": "1662 - 1722",
+      "score": 100,
+      "match_score": 100
+    },
+    {
+      "chu_han": "康熙年製",
+      "ten_viet": "Khang Hy niên chế (4 chữ)",
+      "trieu_dai": "Thanh Triều",
+      "nien_dai": "1662 - 1722",
+      "score": 100,
+      "match_score": 100
+    },
+    {
+      "chu_han": "康熙年玩",
+      "ten_viet": "Khang Hy niên ngoạn",
+      "trieu_dai": "Thanh Triều",
+      "nien_dai": "1662 - 1722",
+      "score": 82.5,
+      "match_score": 82.5
+    },
+    {
+      "chu_han": "大明洪熙年製",
+      "ten_viet": "Hồng Hy niên chế",
+      "trieu_dai": "Minh Triều",
+      "nien_dai": "1424 - 1425",
+      "score": 71.1,
+      "match_score": 71.1
+    },
+    {
+      "chu_han": "大明洪武年製",
+      "ten_viet": "Hồng Vũ niên chế",
+      "trieu_dai": "Minh Triều",
+      "nien_dai": "1368 - 1398",
+      "score": 40.4,
+      "match_score": 40.4
+    }
+  ],
+  "report": {
+    "id": 19,
+    "chu_han": "大清康熙年製",
+    "chu_han_4": "康熙年製",
+    "bien_the": [
+      "康熙年造",
+      "康熙御製"
+    ],
+    "phien_am": "Dà Qīng Kāng Xī Nián Zhì",
+    "ten_viet": "Khang Hy niên chế",
+    "hoang_de": "Khang Hy (Xuanye)",
+    "trieu_dai": "Thanh Triều",
+    "nam_bat_dau": 1662,
+    "nam_ket_thuc": 1722,
+    "ghi_chu": "Trị vì lâu nhất lịch sử TQ; hiệu đề bị giả nhiều",
+    "hien_thi_chinh": "Đại Thanh Khang Hy Niên Chế",
+    "nien_hieu": "Khang Hy",
+    "nien_dai": "1662 - 1722",
+    "hieu_de_en": "Khang Hy Period",
+    "mo_ta": "Trị vì lâu nhất lịch sử TQ; hiệu đề bị giả nhiều. Niên đại 1662 - 1722.",
+    "hieu_de_vi": "Đại Thanh Khang Hy Niên Chế",
+    "score": 100,
+    "match_score": 100
+  }
+}

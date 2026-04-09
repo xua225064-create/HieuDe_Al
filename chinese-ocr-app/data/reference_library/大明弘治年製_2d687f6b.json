@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "chu_han": "大明弘治年製",
+  "confidence": 0.9,
+  "top5": [
+    {
+      "chu_han": "大明弘治年製",
+      "ten_viet": "Hoằng Trị niên chế",
+      "trieu_dai": "Minh Triều",
+      "nien_dai": "1488 - 1505",
+      "score": 100,
+      "match_score": 100
+    },
+    {
+      "chu_han": "大清順治年製",
+      "ten_viet": "Thuận Trị niên chế",
+      "trieu_dai": "Thanh Triều",
+      "nien_dai": "1644 - 1661",
+      "score": 82.3,
+      "match_score": 82.3
+    },
+    {
+      "chu_han": "大清同治年製",
+      "ten_viet": "Đồng Trị niên chế",
+      "trieu_dai": "Thanh Triều",
+      "nien_dai": "1862 - 1874",
+      "score": 82.3,
+      "match_score": 82.3
+    },
+    {
+      "chu_han": "紹治年製",
+      "ten_viet": "Thiệu Trị niên chế",
+      "trieu_dai": "Nhà Nguyễn (Việt Nam)",
+      "nien_dai": "1841 - 1847",
+      "score": 82.3,
+      "match_score": 82.3
+    },
+    {
+      "chu_han": "明命年製",
+      "ten_viet": "Minh Mạng niên chế",
+      "trieu_dai": "Nhà Nguyễn (Việt Nam)",
+      "nien_dai": "1820 - 1841",
+      "score": 75.5,
+      "match_score": 75.5
+    }
+  ],
+  "report": {
+    "id": 10,
+    "chu_han": "大明弘治年製",
+    "chu_han_4": "弘治年製",
+    "bien_the": [
+      "弘治年造"
+    ],
+    "phien_am": "Dà Míng Hóng Zhì Nián Zhì",
+    "ten_viet": "Hoằng Trị niên chế",
+    "hoang_de": "Hoằng Trị (Zhu Youtang)",
+    "trieu_dai": "Minh Triều",
+    "nam_bat_dau": 1488,
+    "nam_ket_thuc": 1505,
+    "ghi_chu": "",
+    "hien_thi_chinh": "Đại Minh Hoằng Trị Niên Chế",
+    "nien_hieu": "弘治",
+    "nien_dai": "1488 - 1505",
+    "hieu_de_en": "Hoằng Trị Period",
+    "mo_ta": "Niên đại 1488 - 1505.",
+    "score": 100,
+    "match_score": 100
+  }
+}

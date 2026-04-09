@@ -1,0 +1,69 @@
+{
+  "success": true,
+  "chu_han": "大明弘治年製",
+  "confidence": 0.9,
+  "top5": [
+    {
+      "chu_han": "大明弘治年製",
+      "ten_viet": "Hoằng Trị niên chế",
+      "trieu_dai": "Minh Triều",
+      "nien_dai": "1488 - 1505",
+      "score": 100,
+      "match_score": 100
+    },
+    {
+      "chu_han": "大明",
+      "ten_viet": "Đại Minh",
+      "trieu_dai": "Minh Triều",
+      "nien_dai": "1368 - 1644",
+      "score": 89.1,
+      "match_score": 89.1
+    },
+    {
+      "chu_han": "大清",
+      "ten_viet": "Đại Thanh",
+      "trieu_dai": "Thanh Triều",
+      "nien_dai": "1644 - 1912",
+      "score": 89.1,
+      "match_score": 89.1
+    },
+    {
+      "chu_han": "大南",
+      "ten_viet": "Đại Nam",
+      "trieu_dai": "Nhà Nguyễn (Việt Nam)",
+      "nien_dai": "1820 - 1945",
+      "score": 89.1,
+      "match_score": 89.1
+    },
+    {
+      "chu_han": "大雅齋",
+      "ten_viet": "Đại Nhã Trai",
+      "trieu_dai": "Đặc biệt - Cung đình Thanh",
+      "nien_dai": "1875 - 1908",
+      "score": 69.5,
+      "match_score": 69.5
+    }
+  ],
+  "report": {
+    "id": 10,
+    "chu_han": "大明弘治年製",
+    "chu_han_4": "弘治年製",
+    "bien_the": [
+      "弘治年造"
+    ],
+    "phien_am": "Dà Míng Hóng Zhì Nián Zhì",
+    "ten_viet": "Hoằng Trị niên chế",
+    "hoang_de": "Hoằng Trị (Zhu Youtang)",
+    "trieu_dai": "Minh Triều",
+    "nam_bat_dau": 1488,
+    "nam_ket_thuc": 1505,
+    "ghi_chu": "",
+    "hien_thi_chinh": "Đại Minh Hoằng Trị Niên Chế",
+    "nien_hieu": "弘治",
+    "nien_dai": "1488 - 1505",
+    "hieu_de_en": "Hoằng Trị Period",
+    "mo_ta": "Niên đại 1488 - 1505.",
+    "score": 100,
+    "match_score": 100
+  }
+}

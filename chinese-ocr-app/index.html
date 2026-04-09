@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MarkSense AI - Nhận dạng hiệu đề</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f2f4f8;
+      --ink: #0f172a;
+      --muted: #64748b;
+      --navy: #0b1220;
+      --navy-2: #111a2e;
+      --card: #ffffff;
+      --stroke: #e2e8f0;
+      --accent: #2563eb;
+      --accent-soft: rgba(37, 99, 235, 0.12);
+      --warn: #f59e0b;
+      --warn-soft: #fff7ed;
+      --success: #10b981;
+      --shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Manrope", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: radial-gradient(circle at top, #f8fafc 0%, #e2e8f0 45%, var(--bg) 100%);
+      min-height: 100vh;
+    }
+
+    .nav {
+      background: linear-gradient(90deg, #0b1020 0%, #0f172a 100%);
+      color: #fff;
+      padding: 18px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 8px 30px rgba(2, 6, 23, 0.35);
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand span {
+      color: #60a5fa;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-size: 14px;
+      color: #cbd5f5;
+    }
+
+    .hero {
+      background: linear-gradient(180deg, var(--navy) 0%, var(--navy-2) 100%);
+      color: #fff;
+      padding: 72px 24px 140px;
+      text-align: center;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(96, 165, 250, 0.12);
+      color: #93c5fd;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-family: "Fraunces", "Georgia", serif;
+      font-size: clamp(32px, 4vw, 54px);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 span {
+      color: #60a5fa;
+    }
+
+    .hero p {
+      color: #cbd5f5;
+      font-size: 16px;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .content {
+      width: min(1100px, 92%);
+      margin: -80px auto 80px;
+      display: grid;
+      gap: 28px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 20px;
+      border: 1px solid var(--stroke);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+
+    .upload-card {
+      display: grid;
+      gap: 16px;
+    }
+
+    .upload-title {
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1.1px;
+      font-size: 12px;
+    }
+
+    .dropzone {
+      border: 2px dashed #cbd5f5;
+      border-radius: 18px;
+      background: #f8fafc;
+      padding: 26px;
+      display: grid;
+      gap: 10px;
+      text-align: center;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .dropzone.dragover {
+      border-color: var(--accent);
+      background: #eff6ff;
+    }
+
+    .dropzone input {
+      display: none;
+    }
+
+    .preview {
+      border-radius: 18px;
+      border: 1px solid var(--stroke);
+      background: #f8fafc;
+      padding: 14px;
+      display: none;
+      text-align: center;
+    }
+
+    .preview.show {
+      display: block;
+    }
+
+    .preview-stage {
+      position: relative;
+      display: inline-block;
+      line-height: 0;
+      max-width: 100%;
+      user-select: none;
+    }
+
+    .preview img {
+      max-width: 100%;
+      border-radius: 14px;
+      object-fit: contain;
+      max-height: 400px;
+      background: #fff;
+      display: block;
+    }
+
+    .button {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .analysis-mode {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--muted);
+      background: #f8fafc;
+      border: 1px solid var(--stroke);
+      border-radius: 999px;
+      padding: 8px 12px;
+    }
+
+
+    .report {
+      display: grid;
+      gap: 14px;
+    }
+
+    .report h3 {
+      font-family: "Fraunces", "Georgia", serif;
+      font-size: 20px;
+    }
+
+    .report-title {
+      font-family: "Fraunces", "Georgia", serif;
+      font-size: clamp(28px, 4vw, 40px);
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .top-matches {
+      border-radius: 16px;
+      border: 1px solid var(--stroke);
+      background: #f8fafc;
+      padding: 14px 16px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .top-matches h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+    }
+
+    .match-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .match-item {
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1px solid var(--stroke);
+      padding: 10px 12px;
+      display: grid;
+      gap: 4px;
+    }
+
+    .match-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .match-header strong {
+      font-size: 16px;
+      letter-spacing: 1px;
+    }
+
+    .match-meta {
+      color: var(--muted);
+      font-size: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .report-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .report-row {
+      display: grid;
+      gap: 6px;
+    }
+
+    .report-row span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--stroke);
+      background: #f8fafc;
+      font-size: 14px;
+    }
+
+    .info-card {
+      border-radius: 16px;
+      border: 1px solid var(--stroke);
+      background: #fff;
+      padding: 14px 16px;
+      display: grid;
+      gap: 6px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .info-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--accent);
+    }
+
+    .info-card h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+    }
+
+    .info-card p {
+      font-size: 14px;
+    }
+
+    .spinner {
+      width: 28px;
+      height: 28px;
+      border: 3px solid #e2e8f0;
+      border-top: 3px solid var(--accent);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 12px auto 0;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* New Detailed UI Styles */
+    .detail-table {
+        background: #ffffff;
+        border: 1px solid var(--stroke);
+        border-radius: 16px;
+        padding: 24px;
+        margin-bottom: 24px;
+        display: grid;
+        gap: 16px;
+    }
+    
+    .detail-row {
+        display: flex;
+        font-size: 15px;
+        align-items: flex-start;
+    }
+    
+    .detail-label {
+        width: 140px;
+        font-weight: 700;
+        color: var(--ink);
+    }
+    
+    .detail-colon {
+        margin: 0 16px 0 0;
+        color: var(--muted);
+    }
+    
+    .detail-value {
+        color: var(--muted);
+        flex: 1;
+    }
+
+    .context-card {
+        background: #ffffff;
+        border: 1px solid var(--stroke);
+        border-radius: 12px;
+        padding: 20px 24px;
+        margin-bottom: 16px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .context-card::before {
+        content: '';
+        position: absolute;
+        left: 0; top: 0; bottom: 0;
+        width: 4px;
+    }
+
+    .context-card.c-blue::before { background: #3b82f6; }
+    .context-card.c-yellow::before { background: #eab308; }
+    .context-card.c-green::before { background: #10b981; }
+
+    .context-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        margin-bottom: 10px;
+    }
+
+    .context-body {
+        font-size: 15px;
+        color: var(--muted);
+        line-height: 1.5;
+    }
+
+    @media (max-width: 720px) {
+      .nav { padding: 16px; }
+      .hero { padding: 56px 18px 120px; }
+      .content { margin-top: -70px; }
+      .detail-row { flex-direction: column; gap: 4px; }
+      .detail-label { width: auto; }
+      .detail-colon { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="brand">MarkSense <span>· AI</span></div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-tag">Hệ thống giám định thông minh</div>
+    <h1>Nhận dạng hiệu đề <span>Gốm Sứ</span><br />Bằng AI</h1>
+    <p>Tải ảnh lên — hệ thống tự tìm vùng hiệu đề trên ảnh, không cần khoanh vùng tay.</p>
+  </section>
+
+  <main class="content">
+    <section class="card upload-card">
+      <div class="upload-title">Tải ảnh hiệu đề</div>
+      <div class="dropzone" id="dropzone">
+        <strong>Kéo thả ảnh vào đây</strong>
+        <span>hoặc</span>
+        <label class="button">
+          Chọn ảnh
+          <input type="file" id="fileInput" accept="image/*" />
+        </label>
+        <small>Hỗ trợ JPG, PNG, WEBP</small>
+      </div>
+
+      <div class="preview" id="preview">
+        <div class="preview-stage" id="previewStage">
+          <img id="previewImage" alt="Ảnh hiệu đề" />
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="button" id="analyzeButton">Phân tích</button>
+      </div>
+    </section>
+
+    <section class="card report" id="report" hidden>
+      <h3 style="font-family: 'Manrope', sans-serif; font-size: 22px; font-weight: 800; display: flex; align-items: center; gap: 10px;">
+        🏛️ Báo Cáo Giám Định Chuyên Sâu
+      </h3>
+      <div id="dynamicReportContent"></div>
+      
+      <div class="top-matches" id="topMatches" style="margin-top: 24px;"></div>
+      <div class="report-grid" id="reportGrid"></div>
+      <div id="spinner" class="spinner" hidden></div>
+      
+      <div class="actions" style="margin-top: 20px;">
+        <button class="button" id="memorizeButton" style="background-color: var(--success);" hidden>Xác nhận đúng (Lưu vào Thư viện mẫu)</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    let lastReportData = null;
+    const dropzone = document.getElementById("dropzone");
+    const fileInput = document.getElementById("fileInput");
+    const analyzeButton = document.getElementById("analyzeButton");
+    const spinner = document.getElementById("spinner");
+    const preview = document.getElementById("preview");
+    const previewImage = document.getElementById("previewImage");
+    const report = document.getElementById("report");
+    const reportTitle = document.getElementById("reportTitle");
+    const topMatches = document.getElementById("topMatches");
+    const reportGrid = document.getElementById("reportGrid");
+
+    let selectedFile = null;
+
+    const setLoading = (state) => {
+      spinner.hidden = !state;
+      analyzeButton.disabled = state;
+    };
+
+    const showPreview = (file) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        previewImage.src = reader.result;
+        preview.classList.add("show");
+      };
+      reader.readAsDataURL(file);
+    };
+
+    const renderReport = (reportData) => {
+      const dynamicHTML = document.getElementById("dynamicReportContent");
+      const detail = reportData.report || reportData;
+      const shownMark = reportData.chu_han || detail.chu_han || "Không rõ";
+      const shownMarkLen = (shownMark.match(/[\u4e00-\u9fff]/g) || []).length;
+      const shownTitle = shownMarkLen <= 4
+        ? ((detail.nien_hieu ? `${detail.nien_hieu} niên chế` : detail.ten_viet) || (detail.hien_thi_chinh || detail.hieu_de_vi || shownMark))
+        : (detail.hieu_de_vi || detail.hien_thi_chinh || shownMark);
+      
+      const enPeriod = detail.hieu_de_en
+        || (detail.phien_am ? detail.phien_am.split(" ").slice(-2).join(" ") + " Period" : "Unknown Period");
+      const dt_trieu = detail.trieu_dai && detail.trieu_dai !== "Chưa xác định"
+        ? detail.trieu_dai
+        : "Chưa xác định";
+      
+      // Khối Thông tin chung
+        let html = `<div class="detail-table">
+            <div class="detail-row"><span class="detail-label">Hiệu đề</span><span class="detail-colon">:</span><span class="detail-value">${shownTitle}</span></div>
+            <div class="detail-row"><span class="detail-label">Chữ Hán</span><span class="detail-colon">:</span><span class="detail-value">${shownMark}</span></div>
+          <div class="detail-row"><span class="detail-label">Triều đại</span><span class="detail-colon">:</span><span class="detail-value">${dt_trieu}</span></div>
+            <div class="detail-row"><span class="detail-label">Niên hiệu</span><span class="detail-colon">:</span><span class="detail-value">${detail.nien_hieu || "Chưa xác định"}</span></div>
+            <div class="detail-row"><span class="detail-label">Niên đại</span><span class="detail-colon">:</span><span class="detail-value">${detail.nien_dai || "Chưa xác định"}</span></div>
+          <div class="detail-row"><span class="detail-label">Hiệu đề (EN)</span><span class="detail-colon">:</span><span class="detail-value">${enPeriod}</span></div>
+            <div class="detail-row"><span class="detail-label">Độ tin cậy</span><span class="detail-colon">:</span><span class="detail-value" style="color:var(--success); font-weight:bold;">${(reportData.confidence ?? detail.confidence) ? Math.round((reportData.confidence ?? detail.confidence) * 100) + '%' : '100%'}</span></div>
+      </div>`;
+      
+      // Trích xuất Ghi chú thành các block 
+      let note = detail.mo_ta || detail.ghi_chu || "Không có thông tin chi tiết.";
+      
+      html += `
+      <div class="context-card c-blue">
+          <div class="context-header"><span>🏛</span> Bối Cảnh Lịch Sử</div>
+          <div class="context-body">${note}</div>
+      </div>
+      <div class="context-card c-yellow">
+          <div class="context-header"><span>🖋</span> Thư Pháp & Bút Pháp (Epigraphy)</div>
+          <div class="context-body">Đang cập nhật...</div>
+      </div>
+      <div class="context-card c-green">
+          <div class="context-header"><span>🎨</span> Đặc Điểm Nghệ Thuật</div>
+          <div class="context-body">Đang cập nhật...</div>
+      </div>
+      `;
+      
+      dynamicHTML.innerHTML = html;
+
+      topMatches.hidden = true;
+      topMatches.innerHTML = "";
+
+        if (reportData.match_type === "exact_orb_memory") {
+            memorizeButton.hidden = true; // Không cần lưu lại nữa
+        } else {
+            memorizeButton.hidden = false;
+        }
+
+      report.hidden = false;
+      report.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+
+    const displayError = (message) => {
+      report.hidden = false;
+      const dynamicHTML = document.getElementById("dynamicReportContent");
+      dynamicHTML.innerHTML = `<div class="detail-table" style="color: #ef4444; font-weight: bold; text-align: center;">Thông báo: ${message}</div>`;
+      topMatches.hidden = true;
+      topMatches.innerHTML = "";
+    };
+
+    const callOcrApi = async (file, crop = null) => {
+      const formData = new FormData();
+      formData.append("file", file);
+      if (crop) {
+        formData.append("crop_x", String(crop.x));
+        formData.append("crop_y", String(crop.y));
+        formData.append("crop_w", String(crop.w));
+        formData.append("crop_h", String(crop.h));
+      }
+      const response = await fetch("/ocr", { method: "POST", body: formData });
+      if (!response.ok) {
+        const errText = await response.text();
+        throw new Error(`Server báo lỗi (${response.status}): ${errText}`);
+      }
+      return response.json();
+    };
+
+    const runOcr = async (file) => {
+      if (!file) {
+        alert("Vui lòng chọn hoặc kéo thả ảnh hiệu đề trước khi phân tích.");
+        return;
+      }
+      setLoading(true);
+      report.hidden = true;
+      try {
+        let result = await callOcrApi(file);
+        const hasResult = (r) => !!(r && (r.success || r.chu_han || r.text || r.report));
+
+        if (!hasResult(result)) {
+          const retryCrops = [
+            { x: 0.22, y: 0.22, w: 0.56, h: 0.56 },
+            { x: 0.30, y: 0.30, w: 0.40, h: 0.40 },
+          ];
+          for (const crop of retryCrops) {
+            const retried = await callOcrApi(file, crop);
+            if (hasResult(retried)) {
+              result = retried;
+              break;
+            }
+          }
+        }
+
+        if (result.error) {
+          displayError(result.error);
+          memorizeButton.hidden = true;
+        } else if (result.success || result.chu_han || result.text || result.report) {
+          lastReportData = result;
+          renderReport(result);
+        } else {
+          displayError("Hệ thống không nhận dạng được chữ trên ảnh. Vui lòng thử lại ảnh nét hơn.");
+          memorizeButton.hidden = true;
+        }
+      } catch (error) {
+        displayError(error.message);
+        memorizeButton.hidden = true;
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    const memorizeImage = async () => {
+        if (!selectedFile || !lastReportData) return;
+        
+        memorizeButton.textContent = "Đang lưu...";
+        memorizeButton.disabled = true;
+        
+        try {
+            const formData = new FormData();
+            formData.append("file", selectedFile);
+            formData.append("report_data", JSON.stringify(lastReportData));
+            
+            const response = await fetch("/memorize", { method: "POST", body: formData });
+            const result = await response.json();
+            
+            if (result.success) {
+                alert("Đã thêm thành công bức ảnh này vào Thư viện Tham chiếu. Lần sau hệ thống sẽ vượt qua OCR và nhận diện bức ảnh này ngay lập tức!");
+                memorizeButton.hidden = true;
+            } else {
+                alert("Lỗi: " + result.message);
+            }
+        } catch (e) {
+            alert("Lỗi kết nối máy chủ: " + e.message);
+        } finally {
+            memorizeButton.textContent = "Xác nhận đúng (Lưu vào Thư viện mẫu)";
+            memorizeButton.disabled = false;
+        }
+    };
+
+    const prepareFile = (file) => {
+      if (file && file.type.startsWith("image/")) {
+        selectedFile = file;
+        showPreview(file);
+        memorizeButton.hidden = true;
+      }
+    };
+
+    dropzone.addEventListener("dragover", (e) => { e.preventDefault(); dropzone.classList.add("dragover"); });
+    dropzone.addEventListener("dragleave", () => { dropzone.classList.remove("dragover"); });
+    dropzone.addEventListener("drop", (e) => {
+      e.preventDefault();
+      dropzone.classList.remove("dragover");
+      prepareFile(e.dataTransfer.files[0]);
+    });
+
+    fileInput.addEventListener("change", (e) => prepareFile(e.target.files[0]));
+    analyzeButton.addEventListener("click", () => runOcr(selectedFile));
+    memorizeButton.addEventListener("click", memorizeImage);
+  </script>
+</body>
+</html>

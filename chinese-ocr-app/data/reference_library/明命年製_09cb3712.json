@@ -1,0 +1,63 @@
+{
+  "success": true,
+  "chu_han": "明命年製",
+  "confidence": 0.99,
+  "top5": [
+    {
+      "chu_han": "明命年製",
+      "ten_viet": "Minh Mạng niên chế",
+      "trieu_dai": "Nhà Nguyễn (Việt Nam)",
+      "nien_dai": "1820 - 1841",
+      "score": 100,
+      "match_score": 100
+    },
+    {
+      "chu_han": "大明年製",
+      "ten_viet": "Đại Minh niên chế",
+      "trieu_dai": "Minh Triều",
+      "nien_dai": "1368 - 1644",
+      "score": 60,
+      "match_score": 60
+    },
+    {
+      "chu_han": "大明洪武年製",
+      "ten_viet": "Hồng Vũ niên chế",
+      "trieu_dai": "Minh Triều",
+      "nien_dai": "1368 - 1398",
+      "score": 46.3,
+      "match_score": 46.3
+    },
+    {
+      "chu_han": "大明建文年製",
+      "ten_viet": "Kiến Văn niên chế",
+      "trieu_dai": "Minh Triều",
+      "nien_dai": "1399 - 1402",
+      "score": 46.3,
+      "match_score": 46.3
+    }
+  ],
+  "report": {
+    "id": 29,
+    "chu_han": "明命年製",
+    "chu_han_4": "明命年製",
+    "chu_han_6": "大南明命年製",
+    "bien_the": [
+      "明命年造"
+    ],
+    "phien_am": "Míng Mìng Nián Zhì",
+    "ten_viet": "Minh Mạng niên chế",
+    "hoang_de": "Minh Mạng (Nguyễn Phúc Đảm)",
+    "trieu_dai": "Nhà Nguyễn (Việt Nam)",
+    "nam_bat_dau": 1820,
+    "nam_ket_thuc": 1841,
+    "ghi_chu": "Đặt nhiều đồ sứ ký kiểu tại Cảnh Đức Trấn",
+    "hien_thi_chinh": "Đại Nam Minh Mạng Niên Chế",
+    "nien_hieu": "Minh Mạng",
+    "nien_dai": "1820 - 1841",
+    "hieu_de_en": "Minh Mạng Period",
+    "mo_ta": "Đặt nhiều đồ sứ ký kiểu tại Cảnh Đức Trấn. Niên đại 1820 - 1841.",
+    "hieu_de_vi": "Đại Nam Minh Mạng Niên Chế",
+    "score": 100,
+    "match_score": 100
+  }
+}

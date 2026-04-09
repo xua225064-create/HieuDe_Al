@@ -1,0 +1,62 @@
+{
+  "success": true,
+  "chu_han": "大明萬曆年製",
+  "confidence": 0.99,
+  "top5": [
+    {
+      "chu_han": "大明萬曆年製",
+      "ten_viet": "Vạn Lịch niên chế",
+      "trieu_dai": "Minh Triều",
+      "nien_dai": "1573 - 1620",
+      "score": 100,
+      "match_score": 100
+    },
+    {
+      "chu_han": "大明年製",
+      "ten_viet": "Đại Minh niên chế",
+      "trieu_dai": "Minh Triều",
+      "nien_dai": "1368 - 1644",
+      "score": 99.4,
+      "match_score": 99.4
+    },
+    {
+      "chu_han": "保大年製",
+      "ten_viet": "Bảo Đại niên chế",
+      "trieu_dai": "Nhà Nguyễn (Việt Nam)",
+      "nien_dai": "1926 - 1945",
+      "score": 87,
+      "match_score": 87
+    },
+    {
+      "chu_han": "大明洪武年製",
+      "ten_viet": "Hồng Vũ niên chế",
+      "trieu_dai": "Minh Triều",
+      "nien_dai": "1368 - 1398",
+      "score": 80,
+      "match_score": 80
+    }
+  ],
+  "report": {
+    "id": 14,
+    "chu_han": "大明萬曆年製",
+    "chu_han_4": "萬曆年製",
+    "bien_the": [
+      "萬曆年造"
+    ],
+    "phien_am": "Dà Míng Wàn Lì Nián Zhì",
+    "ten_viet": "Vạn Lịch niên chế",
+    "hoang_de": "Vạn Lịch (Zhu Yijun)",
+    "trieu_dai": "Minh Triều",
+    "nam_bat_dau": 1573,
+    "nam_ket_thuc": 1620,
+    "ghi_chu": "Trị vì lâu nhất nhà Minh, gốm xuất khẩu nhiều sang VN",
+    "hien_thi_chinh": "Đại Minh Vạn Lịch Niên Chế",
+    "nien_hieu": "Vạn Lịch",
+    "nien_dai": "1573 - 1620",
+    "hieu_de_en": "Vạn Lịch Period",
+    "mo_ta": "Trị vì lâu nhất nhà Minh, gốm xuất khẩu nhiều sang VN. Niên đại 1573 - 1620.",
+    "hieu_de_vi": "Đại Minh Vạn Lịch Niên Chế",
+    "score": 100,
+    "match_score": 100
+  }
+}
