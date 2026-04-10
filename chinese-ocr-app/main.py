@@ -216,8 +216,25 @@ def _build_response(
         year_range = f"{match['nam_bat_dau']} - {match['nam_ket_thuc']}"
     translation_list = _build_translation_list(ocr_text)
     if match:
+        best_chu_han = match.get("chu_han")
+        ocr_len = len(ocr_text.strip())
+        candidates = []
+        if match.get("chu_han_6"): candidates.append(match.get("chu_han_6"))
+        if match.get("chu_han_4"): candidates.append(match.get("chu_han_4"))
+        if match.get("chu_han"): candidates.append(match.get("chu_han"))
+        if match.get("bien_the"): candidates.extend(match.get("bien_the"))
+        found_exact = False
+        for cand in candidates:
+            if cand and len(cand.strip()) == ocr_len:
+                best_chu_han = cand.strip()
+                found_exact = True
+                break
+        
+        if not found_exact and ocr_len >= 3:
+            best_chu_han = ocr_text.strip()
+
         return {
-            "chu_han": match.get("chu_han"),
+            "chu_han": best_chu_han,
             "chu_han_4": match.get("chu_han_4"),
             "chu_han_6": match.get("chu_han_6"),
             "bien_the": match.get("bien_the", []),
@@ -929,6 +946,13 @@ async def unhandled_exception_handler(request: Request, exc: Exception):
 def read_index():
     index_path = os.path.join(os.path.dirname(__file__), "index.html")
     return FileResponse(index_path)
+
+@app.get("/logo.png")
+def read_logo():
+    logo_path = os.path.join(os.path.dirname(__file__), "logo.png")
+    if os.path.exists(logo_path):
+        return FileResponse(logo_path)
+    return JSONResponse(status_code=404, content={"message": "Logo not found"})
 
 
 @app.get("/data/hieu_de_database.json")
