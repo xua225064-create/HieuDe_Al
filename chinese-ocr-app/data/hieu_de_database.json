@@ -18,7 +18,9 @@
     "nien_dai": "1368 - 1398",
     "hieu_de_en": "Hồng Vũ Period",
     "mo_ta": "Hoàng đế khai quốc nhà Minh. Niên đại 1368 - 1398.",
-    "hieu_de_vi": "Đại Minh Hồng Vũ Niên Chế"
+    "hieu_de_vi": "Đại Minh Hồng Vũ Niên Chế",
+    "thu_phap": "Đa phần dùng thể Khải thư (Kaishu). Nét bút dứt khoát, thường có độ đậm nhạt do kỹ thuật chấm bút lông đặc trưng. Đầu bút có xu hướng nhấn mạnh.",
+    "nghe_thuat": "Bố cục thường dàn trải đều, ký tự lam trên nền trắng (Thanh hoa) có hiện tượng tích tụ màu sậm (hắc tỳ). Men mượt và thấm sâu vào cốt gốm."
   },
   {
     "id": 2,
@@ -39,7 +41,9 @@
     "nien_dai": "1399 - 1402",
     "hieu_de_en": "Kiến Văn Period",
     "mo_ta": "Hiệu đề rất hiếm. Niên đại 1399 - 1402.",
-    "hieu_de_vi": "Đại Minh Kiến Văn Niên Chế"
+    "hieu_de_vi": "Đại Minh Kiến Văn Niên Chế",
+    "thu_phap": "Đa phần dùng thể Khải thư (Kaishu). Nét bút dứt khoát, thường có độ đậm nhạt do kỹ thuật chấm bút lông đặc trưng. Đầu bút có xu hướng nhấn mạnh.",
+    "nghe_thuat": "Bố cục thường dàn trải đều, ký tự lam trên nền trắng (Thanh hoa) có hiện tượng tích tụ màu sậm (hắc tỳ). Men mượt và thấm sâu vào cốt gốm."
   },
   {
     "id": 3,
@@ -60,7 +64,9 @@
     "nien_dai": "1403 - 1424",
     "hieu_de_en": "Vĩnh Lạc Period",
     "mo_ta": "Gốm sứ nổi tiếng, xuất khẩu nhiều. Niên đại 1403 - 1424.",
-    "hieu_de_vi": "Đại Minh Vĩnh Lạc Niên Chế"
+    "hieu_de_vi": "Đại Minh Vĩnh Lạc Niên Chế",
+    "thu_phap": "Chữ thường viết tự do hơn, nét gập (triết) rõ ràng. Thường không có khung viền hoặc có viền đôi mờ.",
+    "nghe_thuat": "Bố cục thường dàn trải đều, ký tự lam trên nền trắng (Thanh hoa) có hiện tượng tích tụ màu sậm (hắc tỳ). Men mượt và thấm sâu vào cốt gốm."
   },
   {
     "id": 4,
@@ -81,7 +87,9 @@
     "nien_dai": "1424 - 1425",
     "hieu_de_en": "Hồng Hy Period",
     "mo_ta": "Trị vì chỉ 1 năm, hiệu đề rất hiếm. Niên đại 1424 - 1425.",
-    "hieu_de_vi": "Đại Minh Hồng Hy Niên Chế"
+    "hieu_de_vi": "Đại Minh Hồng Hy Niên Chế",
+    "thu_phap": "Đa phần dùng thể Khải thư (Kaishu). Nét bút dứt khoát, thường có độ đậm nhạt do kỹ thuật chấm bút lông đặc trưng. Đầu bút có xu hướng nhấn mạnh.",
+    "nghe_thuat": "Bố cục thường dàn trải đều, ký tự lam trên nền trắng (Thanh hoa) có hiện tượng tích tụ màu sậm (hắc tỳ). Men mượt và thấm sâu vào cốt gốm."
   },
   {
     "id": 5,
@@ -102,7 +110,9 @@
     "nien_dai": "1426 - 1435",
     "hieu_de_en": "Tuyên Đức Period",
     "mo_ta": "Một trong những hiệu đề được sao chép nhiều nhất. Niên đại 1426 - 1435.",
-    "hieu_de_vi": "Đại Minh Tuyên Đức Niên Chế"
+    "hieu_de_vi": "Đại Minh Tuyên Đức Niên Chế",
+    "thu_phap": "Chữ thường viết tự do hơn, nét gập (triết) rõ ràng. Thường không có khung viền hoặc có viền đôi mờ.",
+    "nghe_thuat": "Bố cục thường dàn trải đều, ký tự lam trên nền trắng (Thanh hoa) có hiện tượng tích tụ màu sậm (hắc tỳ). Men mượt và thấm sâu vào cốt gốm."
   },
   {
     "id": 6,
@@ -123,7 +133,9 @@
     "nien_dai": "1436 - 1449",
     "hieu_de_en": "Chính Thống Period",
     "mo_ta": "Niên đại 1436 - 1449.",
-    "hieu_de_vi": "Đại Minh Chính Thống Niên Chế"
+    "hieu_de_vi": "Đại Minh Chính Thống Niên Chế",
+    "thu_phap": "Đa phần dùng thể Khải thư (Kaishu). Nét bút dứt khoát, thường có độ đậm nhạt do kỹ thuật chấm bút lông đặc trưng. Đầu bút có xu hướng nhấn mạnh.",
+    "nghe_thuat": "Bố cục thường dàn trải đều, ký tự lam trên nền trắng (Thanh hoa) có hiện tượng tích tụ màu sậm (hắc tỳ). Men mượt và thấm sâu vào cốt gốm."
   },
   {
     "id": 7,
@@ -144,7 +156,9 @@
     "nien_dai": "1450 - 1457",
     "hieu_de_en": "Cảnh Thái Period",
     "mo_ta": "Nổi tiếng với đồng cloisonné. Niên đại 1450 - 1457.",
-    "hieu_de_vi": "Đại Minh Cảnh Thái Niên Chế"
+    "hieu_de_vi": "Đại Minh Cảnh Thái Niên Chế",
+    "thu_phap": "Đa phần dùng thể Khải thư (Kaishu). Nét bút dứt khoát, thường có độ đậm nhạt do kỹ thuật chấm bút lông đặc trưng. Đầu bút có xu hướng nhấn mạnh.",
+    "nghe_thuat": "Bố cục thường dàn trải đều, ký tự lam trên nền trắng (Thanh hoa) có hiện tượng tích tụ màu sậm (hắc tỳ). Men mượt và thấm sâu vào cốt gốm."
   },
   {
     "id": 8,
@@ -165,7 +179,9 @@
     "nien_dai": "1457 - 1464",
     "hieu_de_en": "Thiên Thuận Period",
     "mo_ta": "Niên đại 1457 - 1464.",
-    "hieu_de_vi": "Đại Minh Thiên Thuận Niên Chế"
+    "hieu_de_vi": "Đại Minh Thiên Thuận Niên Chế",
+    "thu_phap": "Đa phần dùng thể Khải thư (Kaishu). Nét bút dứt khoát, thường có độ đậm nhạt do kỹ thuật chấm bút lông đặc trưng. Đầu bút có xu hướng nhấn mạnh.",
+    "nghe_thuat": "Bố cục thường dàn trải đều, ký tự lam trên nền trắng (Thanh hoa) có hiện tượng tích tụ màu sậm (hắc tỳ). Men mượt và thấm sâu vào cốt gốm."
   },
   {
     "id": 9,
@@ -186,7 +202,9 @@
     "nien_dai": "1465 - 1487",
     "hieu_de_en": "Thành Hóa Period",
     "mo_ta": "Gốm đấu thái nổi tiếng nhất, được sao chép nhiều nhất. Niên đại 1465 - 1487.",
-    "hieu_de_vi": "Đại Minh Thành Hóa Niên Chế"
+    "hieu_de_vi": "Đại Minh Thành Hóa Niên Chế",
+    "thu_phap": "Đa phần dùng thể Khải thư (Kaishu). Nét bút dứt khoát, thường có độ đậm nhạt do kỹ thuật chấm bút lông đặc trưng. Đầu bút có xu hướng nhấn mạnh.",
+    "nghe_thuat": "Bố cục thường dàn trải đều, ký tự lam trên nền trắng (Thanh hoa) có hiện tượng tích tụ màu sậm (hắc tỳ). Men mượt và thấm sâu vào cốt gốm."
   },
   {
     "id": 10,
@@ -207,7 +225,9 @@
     "nien_dai": "1488 - 1505",
     "hieu_de_en": "Hoằng Trị Period",
     "mo_ta": "Niên đại 1488 - 1505.",
-    "hieu_de_vi": "Đại Minh Hoằng Trị Niên Chế"
+    "hieu_de_vi": "Đại Minh Hoằng Trị Niên Chế",
+    "thu_phap": "Đa phần dùng thể Khải thư (Kaishu). Nét bút dứt khoát, thường có độ đậm nhạt do kỹ thuật chấm bút lông đặc trưng. Đầu bút có xu hướng nhấn mạnh.",
+    "nghe_thuat": "Bố cục thường dàn trải đều, ký tự lam trên nền trắng (Thanh hoa) có hiện tượng tích tụ màu sậm (hắc tỳ). Men mượt và thấm sâu vào cốt gốm."
   },
   {
     "id": 11,
@@ -228,7 +248,9 @@
     "nien_dai": "1506 - 1521",
     "hieu_de_en": "Chính Đức Period",
     "mo_ta": "Thường có chữ Ả Rập trên gốm. Niên đại 1506 - 1521.",
-    "hieu_de_vi": "Đại Minh Chính Đức Niên Chế"
+    "hieu_de_vi": "Đại Minh Chính Đức Niên Chế",
+    "thu_phap": "Đa phần dùng thể Khải thư (Kaishu). Nét bút dứt khoát, thường có độ đậm nhạt do kỹ thuật chấm bút lông đặc trưng. Đầu bút có xu hướng nhấn mạnh.",
+    "nghe_thuat": "Bố cục thường dàn trải đều, ký tự lam trên nền trắng (Thanh hoa) có hiện tượng tích tụ màu sậm (hắc tỳ). Men mượt và thấm sâu vào cốt gốm."
   },
   {
     "id": 12,
@@ -249,7 +271,9 @@
     "nien_dai": "1522 - 1566",
     "hieu_de_en": "Gia Tĩnh Period",
     "mo_ta": "Gốm ngũ thái rất phổ biến. Niên đại 1522 - 1566.",
-    "hieu_de_vi": "Đại Minh Gia Tĩnh Niên Chế"
+    "hieu_de_vi": "Đại Minh Gia Tĩnh Niên Chế",
+    "thu_phap": "Đa phần dùng thể Khải thư (Kaishu). Nét bút dứt khoát, thường có độ đậm nhạt do kỹ thuật chấm bút lông đặc trưng. Đầu bút có xu hướng nhấn mạnh.",
+    "nghe_thuat": "Bố cục thường dàn trải đều, ký tự lam trên nền trắng (Thanh hoa) có hiện tượng tích tụ màu sậm (hắc tỳ). Men mượt và thấm sâu vào cốt gốm."
   },
   {
     "id": 13,
@@ -270,7 +294,9 @@
     "nien_dai": "1567 - 1572",
     "hieu_de_en": "Long Khánh Period",
     "mo_ta": "Niên đại 1567 - 1572.",
-    "hieu_de_vi": "Đại Minh Long Khánh Niên Chế"
+    "hieu_de_vi": "Đại Minh Long Khánh Niên Chế",
+    "thu_phap": "Đa phần dùng thể Khải thư (Kaishu). Nét bút dứt khoát, thường có độ đậm nhạt do kỹ thuật chấm bút lông đặc trưng. Đầu bút có xu hướng nhấn mạnh.",
+    "nghe_thuat": "Bố cục thường dàn trải đều, ký tự lam trên nền trắng (Thanh hoa) có hiện tượng tích tụ màu sậm (hắc tỳ). Men mượt và thấm sâu vào cốt gốm."
   },
   {
     "id": 14,
@@ -291,7 +317,9 @@
     "nien_dai": "1573 - 1620",
     "hieu_de_en": "Vạn Lịch Period",
     "mo_ta": "Trị vì lâu nhất nhà Minh, gốm xuất khẩu nhiều sang VN. Niên đại 1573 - 1620.",
-    "hieu_de_vi": "Đại Minh Vạn Lịch Niên Chế"
+    "hieu_de_vi": "Đại Minh Vạn Lịch Niên Chế",
+    "thu_phap": "Đa phần dùng thể Khải thư (Kaishu). Nét bút dứt khoát, thường có độ đậm nhạt do kỹ thuật chấm bút lông đặc trưng. Đầu bút có xu hướng nhấn mạnh.",
+    "nghe_thuat": "Bố cục thường dàn trải đều, ký tự lam trên nền trắng (Thanh hoa) có hiện tượng tích tụ màu sậm (hắc tỳ). Men mượt và thấm sâu vào cốt gốm."
   },
   {
     "id": 15,
@@ -312,7 +340,9 @@
     "nien_dai": "1620 - 1620",
     "hieu_de_en": "Thái Xương Period",
     "mo_ta": "Trị vì chưa đầy 1 tháng. Niên đại 1620 - 1620.",
-    "hieu_de_vi": "Đại Minh Thái Xương Niên Chế"
+    "hieu_de_vi": "Đại Minh Thái Xương Niên Chế",
+    "thu_phap": "Đa phần dùng thể Khải thư (Kaishu). Nét bút dứt khoát, thường có độ đậm nhạt do kỹ thuật chấm bút lông đặc trưng. Đầu bút có xu hướng nhấn mạnh.",
+    "nghe_thuat": "Bố cục thường dàn trải đều, ký tự lam trên nền trắng (Thanh hoa) có hiện tượng tích tụ màu sậm (hắc tỳ). Men mượt và thấm sâu vào cốt gốm."
   },
   {
     "id": 16,
@@ -333,7 +363,9 @@
     "nien_dai": "1621 - 1627",
     "hieu_de_en": "Thiên Khải Period",
     "mo_ta": "Gốm ko-sometsuke xuất sang Nhật. Niên đại 1621 - 1627.",
-    "hieu_de_vi": "Đại Minh Thiên Khải Niên Chế"
+    "hieu_de_vi": "Đại Minh Thiên Khải Niên Chế",
+    "thu_phap": "Đa phần dùng thể Khải thư (Kaishu). Nét bút dứt khoát, thường có độ đậm nhạt do kỹ thuật chấm bút lông đặc trưng. Đầu bút có xu hướng nhấn mạnh.",
+    "nghe_thuat": "Bố cục thường dàn trải đều, ký tự lam trên nền trắng (Thanh hoa) có hiện tượng tích tụ màu sậm (hắc tỳ). Men mượt và thấm sâu vào cốt gốm."
   },
   {
     "id": 17,
@@ -354,7 +386,9 @@
     "nien_dai": "1628 - 1644",
     "hieu_de_en": "Sùng Trinh Period",
     "mo_ta": "Hoàng đế cuối nhà Minh. Niên đại 1628 - 1644.",
-    "hieu_de_vi": "Đại Minh Sùng Trinh Niên Chế"
+    "hieu_de_vi": "Đại Minh Sùng Trinh Niên Chế",
+    "thu_phap": "Đa phần dùng thể Khải thư (Kaishu). Nét bút dứt khoát, thường có độ đậm nhạt do kỹ thuật chấm bút lông đặc trưng. Đầu bút có xu hướng nhấn mạnh.",
+    "nghe_thuat": "Bố cục thường dàn trải đều, ký tự lam trên nền trắng (Thanh hoa) có hiện tượng tích tụ màu sậm (hắc tỳ). Men mượt và thấm sâu vào cốt gốm."
   },
   {
     "id": 18,
@@ -375,7 +409,9 @@
     "nien_dai": "1644 - 1661",
     "hieu_de_en": "Thuận Trị Period",
     "mo_ta": "Hoàng đế đầu tiên nhà Thanh. Niên đại 1644 - 1661.",
-    "hieu_de_vi": "Đại Thanh Thuận Trị Niên Chế"
+    "hieu_de_vi": "Đại Thanh Thuận Trị Niên Chế",
+    "thu_phap": "Thư pháp đạt đến độ chuẩn mực cao, các nét chữ ngay ngắn, sắc nét và cực kỳ tinh chuẩn. Thường dùng Khải thư cho dòng Quan diêu; đôi lúc dùng Triện tư (Seal script).",
+    "nghe_thuat": "Đường nét vô cùng trau chuốt, kỹ thuật nung và tráng men đạt đến đỉnh cao. Màu sắc đồng đều, không bị lem sậm như đời Minh, thể hiện sự kiểm soát kỹ thuật hoàn hảo."
   },
   {
     "id": 19,
@@ -397,7 +433,9 @@
     "nien_dai": "1662 - 1722",
     "hieu_de_en": "Khang Hy Period",
     "mo_ta": "Trị vì lâu nhất lịch sử TQ; hiệu đề bị giả nhiều. Niên đại 1662 - 1722.",
-    "hieu_de_vi": "Đại Thanh Khang Hy Niên Chế"
+    "hieu_de_vi": "Đại Thanh Khang Hy Niên Chế",
+    "thu_phap": "Thường viết thành ba dòng, mỗi dòng hai chữ. Nét chữ đầy đặn và mạnh mẽ.",
+    "nghe_thuat": "Lam trên nền lam (blue on blue) rất đặc trưng. Lối quy hoạch hiệu đề rất quy củ."
   },
   {
     "id": 20,
@@ -419,7 +457,9 @@
     "nien_dai": "1723 - 1735",
     "hieu_de_en": "Ung Chính Period",
     "mo_ta": "Gốm tinh xảo nhất nhà Thanh, hay dùng triện thư. Niên đại 1723 - 1735.",
-    "hieu_de_vi": "Đại Thanh Ung Chính Niên Chế"
+    "hieu_de_vi": "Đại Thanh Ung Chính Niên Chế",
+    "thu_phap": "Thư pháp đạt đến độ chuẩn mực cao, các nét chữ ngay ngắn, sắc nét và cực kỳ tinh chuẩn. Thường dùng Khải thư cho dòng Quan diêu; đôi lúc dùng Triện tư (Seal script).",
+    "nghe_thuat": "Đường nét vô cùng trau chuốt, kỹ thuật nung và tráng men đạt đến đỉnh cao. Màu sắc đồng đều, không bị lem sậm như đời Minh, thể hiện sự kiểm soát kỹ thuật hoàn hảo."
   },
   {
     "id": 21,
@@ -441,7 +481,9 @@
     "nien_dai": "1736 - 1795",
     "hieu_de_en": "Càn Long Period",
     "mo_ta": "Phổ biến nhất, xuất hiện nhiều nhất trên đồ sứ ký kiểu VN. Niên đại 1736 - 1795.",
-    "hieu_de_vi": "Đại Thanh Càn Long Niên Chế"
+    "hieu_de_vi": "Đại Thanh Càn Long Niên Chế",
+    "thu_phap": "Áp đảo bởi Triện thư (Seal script) sáu chữ tạo thành hình vuông cân đối như con dấu.",
+    "nghe_thuat": "Kỹ thuật đùn men sậm đỏ, vàng chanh, hoặc 粉彩 (Phấn thái) cực kỳ diễm lệ, xa hoa."
   },
   {
     "id": 22,
@@ -462,7 +504,9 @@
     "nien_dai": "1796 - 1820",
     "hieu_de_en": "Gia Khánh Period",
     "mo_ta": "Niên đại 1796 - 1820.",
-    "hieu_de_vi": "Đại Thanh Gia Khánh Niên Chế"
+    "hieu_de_vi": "Đại Thanh Gia Khánh Niên Chế",
+    "thu_phap": "Thư pháp đạt đến độ chuẩn mực cao, các nét chữ ngay ngắn, sắc nét và cực kỳ tinh chuẩn. Thường dùng Khải thư cho dòng Quan diêu; đôi lúc dùng Triện tư (Seal script).",
+    "nghe_thuat": "Đường nét vô cùng trau chuốt, kỹ thuật nung và tráng men đạt đến đỉnh cao. Màu sắc đồng đều, không bị lem sậm như đời Minh, thể hiện sự kiểm soát kỹ thuật hoàn hảo."
   },
   {
     "id": 23,
@@ -483,7 +527,9 @@
     "nien_dai": "1821 - 1850",
     "hieu_de_en": "Đạo Quang Period",
     "mo_ta": "Nhiều đồ sứ ký kiểu cho VN thời Nguyễn. Niên đại 1821 - 1850.",
-    "hieu_de_vi": "Đại Thanh Đạo Quang Niên Chế"
+    "hieu_de_vi": "Đại Thanh Đạo Quang Niên Chế",
+    "thu_phap": "Thư pháp đạt đến độ chuẩn mực cao, các nét chữ ngay ngắn, sắc nét và cực kỳ tinh chuẩn. Thường dùng Khải thư cho dòng Quan diêu; đôi lúc dùng Triện tư (Seal script).",
+    "nghe_thuat": "Đường nét vô cùng trau chuốt, kỹ thuật nung và tráng men đạt đến đỉnh cao. Màu sắc đồng đều, không bị lem sậm như đời Minh, thể hiện sự kiểm soát kỹ thuật hoàn hảo."
   },
   {
     "id": 24,
@@ -504,7 +550,9 @@
     "nien_dai": "1851 - 1861",
     "hieu_de_en": "Hàm Phong Period",
     "mo_ta": "Niên đại 1851 - 1861.",
-    "hieu_de_vi": "Đại Thanh Hàm Phong Niên Chế"
+    "hieu_de_vi": "Đại Thanh Hàm Phong Niên Chế",
+    "thu_phap": "Thư pháp đạt đến độ chuẩn mực cao, các nét chữ ngay ngắn, sắc nét và cực kỳ tinh chuẩn. Thường dùng Khải thư cho dòng Quan diêu; đôi lúc dùng Triện tư (Seal script).",
+    "nghe_thuat": "Đường nét vô cùng trau chuốt, kỹ thuật nung và tráng men đạt đến đỉnh cao. Màu sắc đồng đều, không bị lem sậm như đời Minh, thể hiện sự kiểm soát kỹ thuật hoàn hảo."
   },
   {
     "id": 25,
@@ -525,7 +573,9 @@
     "nien_dai": "1862 - 1874",
     "hieu_de_en": "Đồng Trị Period",
     "mo_ta": "Niên đại 1862 - 1874.",
-    "hieu_de_vi": "Đại Thanh Đồng Trị Niên Chế"
+    "hieu_de_vi": "Đại Thanh Đồng Trị Niên Chế",
+    "thu_phap": "Thư pháp đạt đến độ chuẩn mực cao, các nét chữ ngay ngắn, sắc nét và cực kỳ tinh chuẩn. Thường dùng Khải thư cho dòng Quan diêu; đôi lúc dùng Triện tư (Seal script).",
+    "nghe_thuat": "Đường nét vô cùng trau chuốt, kỹ thuật nung và tráng men đạt đến đỉnh cao. Màu sắc đồng đều, không bị lem sậm như đời Minh, thể hiện sự kiểm soát kỹ thuật hoàn hảo."
   },
   {
     "id": 26,
@@ -546,7 +596,9 @@
     "nien_dai": "1875 - 1908",
     "hieu_de_en": "Quang Tự Period",
     "mo_ta": "Nhiều đồ phục chế Khang Hy. Niên đại 1875 - 1908.",
-    "hieu_de_vi": "Đại Thanh Quang Tự Niên Chế"
+    "hieu_de_vi": "Đại Thanh Quang Tự Niên Chế",
+    "thu_phap": "Thư pháp đạt đến độ chuẩn mực cao, các nét chữ ngay ngắn, sắc nét và cực kỳ tinh chuẩn. Thường dùng Khải thư cho dòng Quan diêu; đôi lúc dùng Triện tư (Seal script).",
+    "nghe_thuat": "Đường nét vô cùng trau chuốt, kỹ thuật nung và tráng men đạt đến đỉnh cao. Màu sắc đồng đều, không bị lem sậm như đời Minh, thể hiện sự kiểm soát kỹ thuật hoàn hảo."
   },
   {
     "id": 27,
@@ -567,7 +619,9 @@
     "nien_dai": "1909 - 1912",
     "hieu_de_en": "Tuyên Thống Period",
     "mo_ta": "Hoàng đế cuối cùng nhà Thanh. Niên đại 1909 - 1912.",
-    "hieu_de_vi": "Đại Thanh Tuyên Thống Niên Chế"
+    "hieu_de_vi": "Đại Thanh Tuyên Thống Niên Chế",
+    "thu_phap": "Thư pháp đạt đến độ chuẩn mực cao, các nét chữ ngay ngắn, sắc nét và cực kỳ tinh chuẩn. Thường dùng Khải thư cho dòng Quan diêu; đôi lúc dùng Triện tư (Seal script).",
+    "nghe_thuat": "Đường nét vô cùng trau chuốt, kỹ thuật nung và tráng men đạt đến đỉnh cao. Màu sắc đồng đều, không bị lem sậm như đời Minh, thể hiện sự kiểm soát kỹ thuật hoàn hảo."
   },
   {
     "id": 28,
@@ -589,7 +643,9 @@
     "nien_dai": "1802 - 1820",
     "hieu_de_en": "Gia Long Period",
     "mo_ta": "Hoàng đế khai quốc nhà Nguyễn. Niên đại 1802 - 1820.",
-    "hieu_de_vi": "Đại Nam Gia Long Niên Chế"
+    "hieu_de_vi": "Đại Nam Gia Long Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 29,
@@ -611,7 +667,9 @@
     "nien_dai": "1820 - 1841",
     "hieu_de_en": "Minh Mạng Period",
     "mo_ta": "Đặt nhiều đồ sứ ký kiểu tại Cảnh Đức Trấn. Niên đại 1820 - 1841.",
-    "hieu_de_vi": "Đại Nam Minh Mạng Niên Chế"
+    "hieu_de_vi": "Đại Nam Minh Mạng Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 30,
@@ -633,7 +691,9 @@
     "nien_dai": "1841 - 1847",
     "hieu_de_en": "Thiệu Trị Period",
     "mo_ta": "Niên đại 1841 - 1847.",
-    "hieu_de_vi": "Đại Nam Thiệu Trị Niên Chế"
+    "hieu_de_vi": "Đại Nam Thiệu Trị Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 31,
@@ -655,7 +715,9 @@
     "nien_dai": "1847 - 1883",
     "hieu_de_en": "Tự Đức Period",
     "mo_ta": "Trị vì lâu nhất nhà Nguyễn. Niên đại 1847 - 1883.",
-    "hieu_de_vi": "Đại Nam Tự Đức Niên Chế"
+    "hieu_de_vi": "Đại Nam Tự Đức Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 32,
@@ -677,7 +739,9 @@
     "nien_dai": "1883 - 1884",
     "hieu_de_en": "Kiến Phúc Period",
     "mo_ta": "Trị vì chưa đầy 1 năm. Niên đại 1883 - 1884.",
-    "hieu_de_vi": "Đại Nam Kiến Phúc Niên Chế"
+    "hieu_de_vi": "Đại Nam Kiến Phúc Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 33,
@@ -699,7 +763,9 @@
     "nien_dai": "1884 - 1885",
     "hieu_de_en": "Hàm Nghi Period",
     "mo_ta": "Phong trào Cần Vương. Niên đại 1884 - 1885.",
-    "hieu_de_vi": "Đại Nam Hàm Nghi Niên Chế"
+    "hieu_de_vi": "Đại Nam Hàm Nghi Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 34,
@@ -721,7 +787,9 @@
     "nien_dai": "1885 - 1889",
     "hieu_de_en": "Đồng Khánh Period",
     "mo_ta": "Niên đại 1885 - 1889.",
-    "hieu_de_vi": "Đại Nam Đồng Khánh Niên Chế"
+    "hieu_de_vi": "Đại Nam Đồng Khánh Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 35,
@@ -743,7 +811,9 @@
     "nien_dai": "1889 - 1907",
     "hieu_de_en": "Thành Thái Period",
     "mo_ta": "Niên đại 1889 - 1907.",
-    "hieu_de_vi": "Đại Nam Thành Thái Niên Chế"
+    "hieu_de_vi": "Đại Nam Thành Thái Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 36,
@@ -765,7 +835,9 @@
     "nien_dai": "1907 - 1916",
     "hieu_de_en": "Duy Tân Period",
     "mo_ta": "Niên đại 1907 - 1916.",
-    "hieu_de_vi": "Đại Nam Duy Tân Niên Chế"
+    "hieu_de_vi": "Đại Nam Duy Tân Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 37,
@@ -787,7 +859,9 @@
     "nien_dai": "1916 - 1925",
     "hieu_de_en": "Khải Định Period",
     "mo_ta": "Nhiều đồ sứ ký kiểu còn lưu giữ tại Huế. Niên đại 1916 - 1925.",
-    "hieu_de_vi": "Đại Nam Khải Định Niên Chế"
+    "hieu_de_vi": "Đại Nam Khải Định Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 38,
@@ -809,7 +883,9 @@
     "nien_dai": "1926 - 1945",
     "hieu_de_en": "Bảo Đại Period",
     "mo_ta": "Hoàng đế cuối cùng Việt Nam. Niên đại 1926 - 1945.",
-    "hieu_de_vi": "Đại Nam Bảo Đại Niên Chế"
+    "hieu_de_vi": "Đại Nam Bảo Đại Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 39,
@@ -828,7 +904,9 @@
     "nien_dai": "",
     "hieu_de_en": "Nội Phủ Mark",
     "mo_ta": "Đồ dùng trong kho hoàng gia. Thuộc Đặc biệt - Cung đình.",
-    "hieu_de_vi": "Nội Phủ"
+    "hieu_de_vi": "Nội Phủ",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 40,
@@ -847,7 +925,9 @@
     "nien_dai": "",
     "hieu_de_en": "Nội Phủ Thị Tòng Mark",
     "mo_ta": "Đồ dùng phục vụ nội cung. Thuộc Đặc biệt - Cung đình.",
-    "hieu_de_vi": "Nội Phủ Thị Tòng"
+    "hieu_de_vi": "Nội Phủ Thị Tòng",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 41,
@@ -868,7 +948,9 @@
     "nien_dai": "",
     "hieu_de_en": "Ngự Chế Mark",
     "mo_ta": "Do hoàng đế tự làm hoặc đặt riêng. Thuộc Đặc biệt - Cung đình.",
-    "hieu_de_vi": "Ngự Chế"
+    "hieu_de_vi": "Ngự Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 42,
@@ -887,7 +969,9 @@
     "nien_dai": "",
     "hieu_de_en": "Ngự Dụng Mark",
     "mo_ta": "Chuyên dùng cho hoàng đế. Thuộc Đặc biệt - Cung đình.",
-    "hieu_de_vi": "Ngự Dụng"
+    "hieu_de_vi": "Ngự Dụng",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 43,
@@ -906,7 +990,9 @@
     "nien_dai": "",
     "hieu_de_en": "Quan Diêu Mark",
     "mo_ta": "Lò gốm của triều đình. Thuộc Đặc biệt - Cung đình.",
-    "hieu_de_vi": "Quan Diêu"
+    "hieu_de_vi": "Quan Diêu",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 44,
@@ -925,7 +1011,9 @@
     "nien_dai": "",
     "hieu_de_en": "Thiên Hạ Thái Bình Mark",
     "mo_ta": "Hiệu đề cát tường cung đình. Thuộc Đặc biệt - Cung đình.",
-    "hieu_de_vi": "Thiên Hạ Thái Bình"
+    "hieu_de_vi": "Thiên Hạ Thái Bình",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 45,
@@ -944,7 +1032,9 @@
     "nien_dai": "",
     "hieu_de_en": "Thanh Ngoạn Mark",
     "mo_ta": "Thú vui cao nhã của giới quý tộc. Thuộc Đặc biệt - Chúc tụng.",
-    "hieu_de_vi": "Thanh Ngoạn"
+    "hieu_de_vi": "Thanh Ngoạn",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 46,
@@ -963,7 +1053,9 @@
     "nien_dai": "",
     "hieu_de_en": "Trân Ngoạn Mark",
     "mo_ta": "Đồ chơi quý giá. Thuộc Đặc biệt - Chúc tụng.",
-    "hieu_de_vi": "Trân Ngoạn"
+    "hieu_de_vi": "Trân Ngoạn",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 47,
@@ -982,7 +1074,9 @@
     "nien_dai": "",
     "hieu_de_en": "Nhã Ngọc Mark",
     "mo_ta": "Ngọc đẹp tao nhã. Thuộc Đặc biệt - Chúc tụng.",
-    "hieu_de_vi": "Nhã Ngọc"
+    "hieu_de_vi": "Nhã Ngọc",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 48,
@@ -1001,7 +1095,9 @@
     "nien_dai": "",
     "hieu_de_en": "Nhược Thâm Trân Tàng Mark",
     "mo_ta": "Hiệu đề của nghệ nhân Nhược Thâm. Thuộc Đặc biệt - Nghệ nhân.",
-    "hieu_de_vi": "Nhược Thâm Trân Tàng"
+    "hieu_de_vi": "Nhược Thâm Trân Tàng",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 49,
@@ -1020,7 +1116,9 @@
     "nien_dai": "",
     "hieu_de_en": "Vạn Thọ Vô Cương Mark",
     "mo_ta": "Chúc hoàng đế sống lâu vô hạn. Thuộc Đặc biệt - Chúc tụng.",
-    "hieu_de_vi": "Vạn Thọ Vô Cương"
+    "hieu_de_vi": "Vạn Thọ Vô Cương",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 50,
@@ -1039,7 +1137,9 @@
     "nien_dai": "",
     "hieu_de_en": "Phúc Thọ Khang Ninh Mark",
     "mo_ta": "Chúc phúc lộc thọ bình an. Thuộc Đặc biệt - Chúc tụng.",
-    "hieu_de_vi": "Phúc Thọ Khang Ninh"
+    "hieu_de_vi": "Phúc Thọ Khang Ninh",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 51,
@@ -1060,7 +1160,9 @@
     "nien_dai": "",
     "hieu_de_en": "Trường Xuân Mark",
     "mo_ta": "Chúc xuân mãi mãi trường tồn. Thuộc Đặc biệt - Chúc tụng.",
-    "hieu_de_vi": "Trường Xuân"
+    "hieu_de_vi": "Trường Xuân",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 52,
@@ -1079,7 +1181,9 @@
     "nien_dai": "",
     "hieu_de_en": "Vạn Phúc Hội Tụ Mark",
     "mo_ta": "Vạn phúc hội tụ về một chỗ. Thuộc Đặc biệt - Chúc tụng.",
-    "hieu_de_vi": "Vạn Phúc Hội Tụ"
+    "hieu_de_vi": "Vạn Phúc Hội Tụ",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 53,
@@ -1098,7 +1202,9 @@
     "nien_dai": "",
     "hieu_de_en": "Phương Truyền Vạn Cổ Mark",
     "mo_ta": "Hương thơm lưu truyền muôn đời - thời Minh. Thuộc Đặc biệt - Chúc tụng.",
-    "hieu_de_vi": "Phương Truyền Vạn Cổ"
+    "hieu_de_vi": "Phương Truyền Vạn Cổ",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 54,
@@ -1119,7 +1225,9 @@
     "nien_dai": "",
     "hieu_de_en": "Cảnh Đức Trấn Chế Mark",
     "mo_ta": "Trung tâm gốm sứ nổi tiếng nhất TQ. Thuộc Đặc biệt - Địa danh.",
-    "hieu_de_vi": "Cảnh Đức Trấn Chế"
+    "hieu_de_vi": "Cảnh Đức Trấn Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 55,
@@ -1138,7 +1246,9 @@
     "nien_dai": "",
     "hieu_de_en": "Giang Tây Từ Khí Mark",
     "mo_ta": "Gốm sứ tỉnh Giang Tây. Thuộc Đặc biệt - Địa danh.",
-    "hieu_de_vi": "Giang Tây Từ Khí"
+    "hieu_de_vi": "Giang Tây Từ Khí",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 56,
@@ -1159,7 +1269,9 @@
     "nien_dai": "",
     "hieu_de_en": "Đức Hóa Chế Mark",
     "mo_ta": "Lò gốm Đức Hóa, Phúc Kiến - nổi tiếng đồ trắng. Thuộc Đặc biệt - Địa danh.",
-    "hieu_de_vi": "Đức Hóa Chế"
+    "hieu_de_vi": "Đức Hóa Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 57,
@@ -1178,7 +1290,9 @@
     "nien_dai": "1875 - 1908",
     "hieu_de_en": "Đại Nhã Trai Period",
     "mo_ta": "Hiệu đề riêng của Từ Hi Thái Hậu, đi kèm với Thiên Địa Nhất Gia Xuân. Niên đại 1875 - 1908.",
-    "hieu_de_vi": "Đại Nhã Trai"
+    "hieu_de_vi": "Đại Nhã Trai",
+    "thu_phap": "Thư pháp đạt đến độ chuẩn mực cao, các nét chữ ngay ngắn, sắc nét và cực kỳ tinh chuẩn. Thường dùng Khải thư cho dòng Quan diêu; đôi lúc dùng Triện tư (Seal script).",
+    "nghe_thuat": "Đường nét vô cùng trau chuốt, kỹ thuật nung và tráng men đạt đến đỉnh cao. Màu sắc đồng đều, không bị lem sậm như đời Minh, thể hiện sự kiểm soát kỹ thuật hoàn hảo."
   },
   {
     "id": 58,
@@ -1197,7 +1311,9 @@
     "nien_dai": "1875 - 1908",
     "hieu_de_en": "Thiên Địa Nhất Gia Xuân Period",
     "mo_ta": "Tên điện của Từ Hi trong Viên Minh Viên. Niên đại 1875 - 1908.",
-    "hieu_de_vi": "Thiên Địa Nhất Gia Xuân"
+    "hieu_de_vi": "Thiên Địa Nhất Gia Xuân",
+    "thu_phap": "Thư pháp đạt đến độ chuẩn mực cao, các nét chữ ngay ngắn, sắc nét và cực kỳ tinh chuẩn. Thường dùng Khải thư cho dòng Quan diêu; đôi lúc dùng Triện tư (Seal script).",
+    "nghe_thuat": "Đường nét vô cùng trau chuốt, kỹ thuật nung và tráng men đạt đến đỉnh cao. Màu sắc đồng đều, không bị lem sậm như đời Minh, thể hiện sự kiểm soát kỹ thuật hoàn hảo."
   },
   {
     "id": 59,
@@ -1216,7 +1332,9 @@
     "nien_dai": "",
     "hieu_de_en": "Vĩnh Khánh Trường Xuân Mark",
     "mo_ta": "Hiệu đề chúc tụng trên đồ của Từ Hi. Thuộc Đặc biệt - Chúc tụng.",
-    "hieu_de_vi": "Vĩnh Khánh Trường Xuân"
+    "hieu_de_vi": "Vĩnh Khánh Trường Xuân",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 60,
@@ -1237,7 +1355,9 @@
     "nien_dai": "1821 - 1850",
     "hieu_de_en": "Thận Đức Đường Chế Period",
     "mo_ta": "Hiệu đề tên trai phòng của Đạo Quang. Niên đại 1821 - 1850.",
-    "hieu_de_vi": "Thận Đức Đường Chế"
+    "hieu_de_vi": "Thận Đức Đường Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 61,
@@ -1256,7 +1376,9 @@
     "nien_dai": "",
     "hieu_de_en": "Dưỡng Hòa Đường Chế Mark",
     "mo_ta": "Hiệu đề tên trai phòng quý tộc. Thuộc Đặc biệt - Hall mark.",
-    "hieu_de_vi": "Dưỡng Hòa Đường Chế"
+    "hieu_de_vi": "Dưỡng Hòa Đường Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 62,
@@ -1277,7 +1399,9 @@
     "nien_dai": "1821 - 1850",
     "hieu_de_en": "Trần Quốc Trị Tạo Period",
     "mo_ta": "Nghệ nhân nổi tiếng thời Đạo Quang. Niên đại 1821 - 1850.",
-    "hieu_de_vi": "Trần Quốc Trị Tạo"
+    "hieu_de_vi": "Trần Quốc Trị Tạo",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 63,
@@ -1296,7 +1420,9 @@
     "nien_dai": "",
     "hieu_de_en": "Tuyên Hóa Mark",
     "mo_ta": "Kết hợp Tuyên Đức + Thành Hóa, không có thật - thường thấy trên đồ sứ ký kiểu VN. Thuộc Đặc biệt - Giả/Kết hợp.",
-    "hieu_de_vi": "Tuyên Hóa Niên Chế"
+    "hieu_de_vi": "Tuyên Hóa Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 64,
@@ -1315,7 +1441,9 @@
     "nien_dai": "1780 - 1820",
     "hieu_de_en": "Nguyễn Period",
     "mo_ta": "Vinh danh dòng họ Nguyễn, thường thấy trên đồ cuối TK18 đầu TK19. Niên đại 1780 - 1820.",
-    "hieu_de_vi": "Nguyễn"
+    "hieu_de_vi": "Nguyễn",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 65,
@@ -1334,7 +1462,9 @@
     "nien_dai": "1368 - 1644",
     "hieu_de_en": "Đại Minh Period",
     "mo_ta": "Hiệu đề rút gọn chỉ 2 chữ, hiếm gặp. Niên đại 1368 - 1644.",
-    "hieu_de_vi": "Đại Minh Đại Minh"
+    "hieu_de_vi": "Đại Minh Đại Minh",
+    "thu_phap": "Đa phần dùng thể Khải thư (Kaishu). Nét bút dứt khoát, thường có độ đậm nhạt do kỹ thuật chấm bút lông đặc trưng. Đầu bút có xu hướng nhấn mạnh.",
+    "nghe_thuat": "Bố cục thường dàn trải đều, ký tự lam trên nền trắng (Thanh hoa) có hiện tượng tích tụ màu sậm (hắc tỳ). Men mượt và thấm sâu vào cốt gốm."
   },
   {
     "id": 66,
@@ -1353,7 +1483,9 @@
     "nien_dai": "1644 - 1912",
     "hieu_de_en": "Đại Thanh Period",
     "mo_ta": "Hiệu đề rút gọn chỉ 2 chữ. Niên đại 1644 - 1912.",
-    "hieu_de_vi": "Đại Thanh Đại Thanh"
+    "hieu_de_vi": "Đại Thanh Đại Thanh",
+    "thu_phap": "Thư pháp đạt đến độ chuẩn mực cao, các nét chữ ngay ngắn, sắc nét và cực kỳ tinh chuẩn. Thường dùng Khải thư cho dòng Quan diêu; đôi lúc dùng Triện tư (Seal script).",
+    "nghe_thuat": "Đường nét vô cùng trau chuốt, kỹ thuật nung và tráng men đạt đến đỉnh cao. Màu sắc đồng đều, không bị lem sậm như đời Minh, thể hiện sự kiểm soát kỹ thuật hoàn hảo."
   },
   {
     "id": 67,
@@ -1372,7 +1504,9 @@
     "nien_dai": "1820 - 1945",
     "hieu_de_en": "Đại Nam Period",
     "mo_ta": "Quốc hiệu Việt Nam thời Nguyễn từ Minh Mạng. Niên đại 1820 - 1945.",
-    "hieu_de_vi": "Đại Nam Đại Nam"
+    "hieu_de_vi": "Đại Nam Đại Nam",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 68,
@@ -1391,7 +1525,9 @@
     "nien_dai": "1662 - 1722",
     "hieu_de_en": "Khang Hy Period",
     "mo_ta": "Biến thể dùng chữ 玩 (ngoạn) thay 製 - đồ nghệ thuật. Niên đại 1662 - 1722.",
-    "hieu_de_vi": "Khang Hy Niên Ngoạn"
+    "hieu_de_vi": "Khang Hy Niên Ngoạn",
+    "thu_phap": "Thường viết thành ba dòng, mỗi dòng hai chữ. Nét chữ đầy đặn và mạnh mẽ.",
+    "nghe_thuat": "Lam trên nền lam (blue on blue) rất đặc trưng. Lối quy hoạch hiệu đề rất quy củ."
   },
   {
     "id": 69,
@@ -1410,7 +1546,9 @@
     "nien_dai": "1736 - 1795",
     "hieu_de_en": "Càn Long Period",
     "mo_ta": "Biến thể dùng chữ 玩 (ngoạn) thay 製. Niên đại 1736 - 1795.",
-    "hieu_de_vi": "Càn Long Niên Ngoạn"
+    "hieu_de_vi": "Càn Long Niên Ngoạn",
+    "thu_phap": "Áp đảo bởi Triện thư (Seal script) sáu chữ tạo thành hình vuông cân đối như con dấu.",
+    "nghe_thuat": "Kỹ thuật đùn men sậm đỏ, vàng chanh, hoặc 粉彩 (Phấn thái) cực kỳ diễm lệ, xa hoa."
   },
   {
     "id": 70,
@@ -1429,7 +1567,9 @@
     "nien_dai": "1522 - 1566",
     "hieu_de_en": "Gia Tĩnh Period",
     "mo_ta": "Biến thể dùng 造 thay 製, phổ biến trên đồ dân dụng. Niên đại 1522 - 1566.",
-    "hieu_de_vi": "Gia Tĩnh Niên Tạo"
+    "hieu_de_vi": "Gia Tĩnh Niên Tạo",
+    "thu_phap": "Đa phần dùng thể Khải thư (Kaishu). Nét bút dứt khoát, thường có độ đậm nhạt do kỹ thuật chấm bút lông đặc trưng. Đầu bút có xu hướng nhấn mạnh.",
+    "nghe_thuat": "Bố cục thường dàn trải đều, ký tự lam trên nền trắng (Thanh hoa) có hiện tượng tích tụ màu sậm (hắc tỳ). Men mượt và thấm sâu vào cốt gốm."
   },
   {
     "id": 71,
@@ -1448,7 +1588,9 @@
     "nien_dai": "1573 - 1620",
     "hieu_de_en": "Vạn Lịch Period",
     "mo_ta": "Biến thể dùng 造 thay 製. Niên đại 1573 - 1620.",
-    "hieu_de_vi": "Vạn Lịch Niên Tạo"
+    "hieu_de_vi": "Vạn Lịch Niên Tạo",
+    "thu_phap": "Đa phần dùng thể Khải thư (Kaishu). Nét bút dứt khoát, thường có độ đậm nhạt do kỹ thuật chấm bút lông đặc trưng. Đầu bút có xu hướng nhấn mạnh.",
+    "nghe_thuat": "Bố cục thường dàn trải đều, ký tự lam trên nền trắng (Thanh hoa) có hiện tượng tích tụ màu sậm (hắc tỳ). Men mượt và thấm sâu vào cốt gốm."
   },
   {
     "id": 72,
@@ -1467,7 +1609,9 @@
     "nien_dai": "1465 - 1487",
     "hieu_de_en": "Thành Hóa Period",
     "mo_ta": "Biến thể dùng 造 thay 製 - thường thấy trên đồ sứ ký kiểu VN. Niên đại 1465 - 1487.",
-    "hieu_de_vi": "Thành Hóa Niên Tạo"
+    "hieu_de_vi": "Thành Hóa Niên Tạo",
+    "thu_phap": "Đa phần dùng thể Khải thư (Kaishu). Nét bút dứt khoát, thường có độ đậm nhạt do kỹ thuật chấm bút lông đặc trưng. Đầu bút có xu hướng nhấn mạnh.",
+    "nghe_thuat": "Bố cục thường dàn trải đều, ký tự lam trên nền trắng (Thanh hoa) có hiện tượng tích tụ màu sậm (hắc tỳ). Men mượt và thấm sâu vào cốt gốm."
   },
   {
     "id": 73,
@@ -1486,7 +1630,9 @@
     "nien_dai": "1736 - 1795",
     "hieu_de_en": "Càn Long Period",
     "mo_ta": "Dạng 4 chữ không có 大清 ở đầu. Niên đại 1736 - 1795.",
-    "hieu_de_vi": "Càn Long Niên Chế"
+    "hieu_de_vi": "Càn Long Niên Chế",
+    "thu_phap": "Áp đảo bởi Triện thư (Seal script) sáu chữ tạo thành hình vuông cân đối như con dấu.",
+    "nghe_thuat": "Kỹ thuật đùn men sậm đỏ, vàng chanh, hoặc 粉彩 (Phấn thái) cực kỳ diễm lệ, xa hoa."
   },
   {
     "id": 74,
@@ -1505,7 +1651,9 @@
     "nien_dai": "1662 - 1722",
     "hieu_de_en": "Khang Hy Period",
     "mo_ta": "Dạng 4 chữ - thường thấy trên đồ Quang Tự phục chế. Niên đại 1662 - 1722.",
-    "hieu_de_vi": "Khang Hy Niên Chế"
+    "hieu_de_vi": "Khang Hy Niên Chế",
+    "thu_phap": "Thường viết thành ba dòng, mỗi dòng hai chữ. Nét chữ đầy đặn và mạnh mẽ.",
+    "nghe_thuat": "Lam trên nền lam (blue on blue) rất đặc trưng. Lối quy hoạch hiệu đề rất quy củ."
   },
   {
     "id": 75,
@@ -1524,7 +1672,9 @@
     "nien_dai": "1723 - 1735",
     "hieu_de_en": "Ung Chính Period",
     "mo_ta": "Dạng 4 chữ không có 大清. Niên đại 1723 - 1735.",
-    "hieu_de_vi": "Ung Chính Niên Chế"
+    "hieu_de_vi": "Ung Chính Niên Chế",
+    "thu_phap": "Thư pháp đạt đến độ chuẩn mực cao, các nét chữ ngay ngắn, sắc nét và cực kỳ tinh chuẩn. Thường dùng Khải thư cho dòng Quan diêu; đôi lúc dùng Triện tư (Seal script).",
+    "nghe_thuat": "Đường nét vô cùng trau chuốt, kỹ thuật nung và tráng men đạt đến đỉnh cao. Màu sắc đồng đều, không bị lem sậm như đời Minh, thể hiện sự kiểm soát kỹ thuật hoàn hảo."
   },
   {
     "id": 76,
@@ -1543,7 +1693,9 @@
     "nien_dai": "1426 - 1435",
     "hieu_de_en": "Tuyên Đức Period",
     "mo_ta": "Dạng 4 chữ không có 大明. Niên đại 1426 - 1435.",
-    "hieu_de_vi": "Tuyên Đức Niên Chế"
+    "hieu_de_vi": "Tuyên Đức Niên Chế",
+    "thu_phap": "Chữ thường viết tự do hơn, nét gập (triết) rõ ràng. Thường không có khung viền hoặc có viền đôi mờ.",
+    "nghe_thuat": "Bố cục thường dàn trải đều, ký tự lam trên nền trắng (Thanh hoa) có hiện tượng tích tụ màu sậm (hắc tỳ). Men mượt và thấm sâu vào cốt gốm."
   },
   {
     "id": 77,
@@ -1562,7 +1714,9 @@
     "nien_dai": "1465 - 1487",
     "hieu_de_en": "Thành Hóa Period",
     "mo_ta": "Dạng 4 chữ - rất phổ biến trên đồ sứ ký kiểu VN. Niên đại 1465 - 1487.",
-    "hieu_de_vi": "Thành Hóa Niên Chế"
+    "hieu_de_vi": "Thành Hóa Niên Chế",
+    "thu_phap": "Đa phần dùng thể Khải thư (Kaishu). Nét bút dứt khoát, thường có độ đậm nhạt do kỹ thuật chấm bút lông đặc trưng. Đầu bút có xu hướng nhấn mạnh.",
+    "nghe_thuat": "Bố cục thường dàn trải đều, ký tự lam trên nền trắng (Thanh hoa) có hiện tượng tích tụ màu sậm (hắc tỳ). Men mượt và thấm sâu vào cốt gốm."
   },
   {
     "id": 78,
@@ -1581,7 +1735,9 @@
     "nien_dai": "1522 - 1566",
     "hieu_de_en": "Gia Tĩnh Period",
     "mo_ta": "Dạng 4 chữ không có 大明. Niên đại 1522 - 1566.",
-    "hieu_de_vi": "Gia Tĩnh Niên Chế"
+    "hieu_de_vi": "Gia Tĩnh Niên Chế",
+    "thu_phap": "Đa phần dùng thể Khải thư (Kaishu). Nét bút dứt khoát, thường có độ đậm nhạt do kỹ thuật chấm bút lông đặc trưng. Đầu bút có xu hướng nhấn mạnh.",
+    "nghe_thuat": "Bố cục thường dàn trải đều, ký tự lam trên nền trắng (Thanh hoa) có hiện tượng tích tụ màu sậm (hắc tỳ). Men mượt và thấm sâu vào cốt gốm."
   },
   {
     "id": 79,
@@ -1600,7 +1756,9 @@
     "nien_dai": "1573 - 1620",
     "hieu_de_en": "Vạn Lịch Period",
     "mo_ta": "Dạng 4 chữ không có 大明. Niên đại 1573 - 1620.",
-    "hieu_de_vi": "Vạn Lịch Niên Chế"
+    "hieu_de_vi": "Vạn Lịch Niên Chế",
+    "thu_phap": "Đa phần dùng thể Khải thư (Kaishu). Nét bút dứt khoát, thường có độ đậm nhạt do kỹ thuật chấm bút lông đặc trưng. Đầu bút có xu hướng nhấn mạnh.",
+    "nghe_thuat": "Bố cục thường dàn trải đều, ký tự lam trên nền trắng (Thanh hoa) có hiện tượng tích tụ màu sậm (hắc tỳ). Men mượt và thấm sâu vào cốt gốm."
   },
   {
     "id": 80,
@@ -1621,7 +1779,9 @@
     "nien_dai": "1368 - 1644",
     "hieu_de_en": "Đại Minh Period",
     "mo_ta": "Hiệu đề giả - không ghi rõ hoàng đế, dùng để lừa người mua. Niên đại 1368 - 1644.",
-    "hieu_de_vi": "Đại Minh Đại Minh Niên Chế"
+    "hieu_de_vi": "Đại Minh Đại Minh Niên Chế",
+    "thu_phap": "Đa phần dùng thể Khải thư (Kaishu). Nét bút dứt khoát, thường có độ đậm nhạt do kỹ thuật chấm bút lông đặc trưng. Đầu bút có xu hướng nhấn mạnh.",
+    "nghe_thuat": "Bố cục thường dàn trải đều, ký tự lam trên nền trắng (Thanh hoa) có hiện tượng tích tụ màu sậm (hắc tỳ). Men mượt và thấm sâu vào cốt gốm."
   },
   {
     "id": 81,
@@ -1640,7 +1800,9 @@
     "nien_dai": "1644 - 1912",
     "hieu_de_en": "Đại Thanh Period",
     "mo_ta": "Hiệu đề chung không ghi rõ hoàng đế. Niên đại 1644 - 1912.",
-    "hieu_de_vi": "Đại Thanh Đại Thanh Niên Chế"
+    "hieu_de_vi": "Đại Thanh Đại Thanh Niên Chế",
+    "thu_phap": "Thư pháp đạt đến độ chuẩn mực cao, các nét chữ ngay ngắn, sắc nét và cực kỳ tinh chuẩn. Thường dùng Khải thư cho dòng Quan diêu; đôi lúc dùng Triện tư (Seal script).",
+    "nghe_thuat": "Đường nét vô cùng trau chuốt, kỹ thuật nung và tráng men đạt đến đỉnh cao. Màu sắc đồng đều, không bị lem sậm như đời Minh, thể hiện sự kiểm soát kỹ thuật hoàn hảo."
   },
   {
     "id": 82,
@@ -1659,7 +1821,9 @@
     "nien_dai": "1796 - 1820",
     "hieu_de_en": "Gia Khánh Period",
     "mo_ta": "Dạng 4 chữ không có 大清. Niên đại 1796 - 1820.",
-    "hieu_de_vi": "Gia Khánh Niên Chế"
+    "hieu_de_vi": "Gia Khánh Niên Chế",
+    "thu_phap": "Thư pháp đạt đến độ chuẩn mực cao, các nét chữ ngay ngắn, sắc nét và cực kỳ tinh chuẩn. Thường dùng Khải thư cho dòng Quan diêu; đôi lúc dùng Triện tư (Seal script).",
+    "nghe_thuat": "Đường nét vô cùng trau chuốt, kỹ thuật nung và tráng men đạt đến đỉnh cao. Màu sắc đồng đều, không bị lem sậm như đời Minh, thể hiện sự kiểm soát kỹ thuật hoàn hảo."
   },
   {
     "id": 83,
@@ -1678,7 +1842,9 @@
     "nien_dai": "1821 - 1850",
     "hieu_de_en": "Đạo Quang Period",
     "mo_ta": "Dạng 4 chữ không có 大清. Niên đại 1821 - 1850.",
-    "hieu_de_vi": "Đạo Quang Niên Chế"
+    "hieu_de_vi": "Đạo Quang Niên Chế",
+    "thu_phap": "Thư pháp đạt đến độ chuẩn mực cao, các nét chữ ngay ngắn, sắc nét và cực kỳ tinh chuẩn. Thường dùng Khải thư cho dòng Quan diêu; đôi lúc dùng Triện tư (Seal script).",
+    "nghe_thuat": "Đường nét vô cùng trau chuốt, kỹ thuật nung và tráng men đạt đến đỉnh cao. Màu sắc đồng đều, không bị lem sậm như đời Minh, thể hiện sự kiểm soát kỹ thuật hoàn hảo."
   },
   {
     "id": 84,
@@ -1697,7 +1863,9 @@
     "nien_dai": "1875 - 1908",
     "hieu_de_en": "Quang Tự Period",
     "mo_ta": "Dạng 4 chữ không có 大清. Niên đại 1875 - 1908.",
-    "hieu_de_vi": "Quang Tự Niên Chế"
+    "hieu_de_vi": "Quang Tự Niên Chế",
+    "thu_phap": "Thư pháp đạt đến độ chuẩn mực cao, các nét chữ ngay ngắn, sắc nét và cực kỳ tinh chuẩn. Thường dùng Khải thư cho dòng Quan diêu; đôi lúc dùng Triện tư (Seal script).",
+    "nghe_thuat": "Đường nét vô cùng trau chuốt, kỹ thuật nung và tráng men đạt đến đỉnh cao. Màu sắc đồng đều, không bị lem sậm như đời Minh, thể hiện sự kiểm soát kỹ thuật hoàn hảo."
   },
   {
     "id": 85,
@@ -1718,7 +1886,9 @@
     "nien_dai": "TK17 - 1802",
     "hieu_de_en": "Nội Phủ Thị Chỉ Mark",
     "mo_ta": "Hiệu đề đặc trưng của Việt Nam thời chúa Nguyễn, đồ sứ ký kiểu đặt tại Cảnh Đức Trấn. Niên đại TK17 - 1802.",
-    "hieu_de_vi": "Nội Phủ Thị Chỉ"
+    "hieu_de_vi": "Nội Phủ Thị Chỉ",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 86,
@@ -1739,7 +1909,9 @@
     "nien_dai": "TK17 - 1802",
     "hieu_de_en": "Nội Phủ Thị Trung Mark",
     "mo_ta": "Hiệu đề đồ sứ ký kiểu thời chúa Nguyễn - phương Trung. Niên đại TK17 - 1802.",
-    "hieu_de_vi": "Nội Phủ Thị Trung"
+    "hieu_de_vi": "Nội Phủ Thị Trung",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 87,
@@ -1760,7 +1932,9 @@
     "nien_dai": "TK17 - 1802",
     "hieu_de_en": "Nội Phủ Thị Hữu Mark",
     "mo_ta": "Hiệu đề đồ sứ ký kiểu thời chúa Nguyễn - phương Hữu (Tây). Niên đại TK17 - 1802.",
-    "hieu_de_vi": "Nội Phủ Thị Hữu"
+    "hieu_de_vi": "Nội Phủ Thị Hữu",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 88,
@@ -1781,7 +1955,9 @@
     "nien_dai": "TK17 - 1802",
     "hieu_de_en": "Nội Phủ Thị Đông Mark",
     "mo_ta": "Hiệu đề đồ sứ ký kiểu thời chúa Nguyễn - phương Đông. Niên đại TK17 - 1802.",
-    "hieu_de_vi": "Nội Phủ Thị Đông"
+    "hieu_de_vi": "Nội Phủ Thị Đông",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 89,
@@ -1802,7 +1978,9 @@
     "nien_dai": "TK17 - 1802",
     "hieu_de_en": "Nội Phủ Thị Nam Mark",
     "mo_ta": "Hiệu đề đồ sứ ký kiểu thời chúa Nguyễn - phương Nam. Niên đại TK17 - 1802.",
-    "hieu_de_vi": "Nội Phủ Thị Nam"
+    "hieu_de_vi": "Nội Phủ Thị Nam",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 90,
@@ -1823,7 +2001,9 @@
     "nien_dai": "TK17 - 1802",
     "hieu_de_en": "Nội Phủ Thị Bắc Mark",
     "mo_ta": "Hiệu đề đồ sứ ký kiểu thời chúa Nguyễn - phương Bắc. Niên đại TK17 - 1802.",
-    "hieu_de_vi": "Nội Phủ Thị Bắc"
+    "hieu_de_vi": "Nội Phủ Thị Bắc",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 91,
@@ -1844,7 +2024,9 @@
     "nien_dai": "TK17 - 1802",
     "hieu_de_en": "Nội Phủ Thị Đoài Mark",
     "mo_ta": "Hiệu đề đồ sứ ký kiểu thời chúa Nguyễn - phương Đoài (Tây theo Bát Quái). Niên đại TK17 - 1802.",
-    "hieu_de_vi": "Nội Phủ Thị Đoài"
+    "hieu_de_vi": "Nội Phủ Thị Đoài",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 92,
@@ -1865,7 +2047,9 @@
     "nien_dai": "",
     "hieu_de_en": "Giáp Tý Period",
     "mo_ta": "Hiệu đề năm Giáp Tý theo Can Chi.",
-    "hieu_de_vi": "Giáp Tý Niên Chế"
+    "hieu_de_vi": "Giáp Tý Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 93,
@@ -1886,7 +2070,9 @@
     "nien_dai": "",
     "hieu_de_en": "Ất Sửu Period",
     "mo_ta": "Hiệu đề năm Ất Sửu theo Can Chi.",
-    "hieu_de_vi": "Ất Sửu Niên Chế"
+    "hieu_de_vi": "Ất Sửu Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 94,
@@ -1907,7 +2093,9 @@
     "nien_dai": "",
     "hieu_de_en": "Bính Dần Period",
     "mo_ta": "Hiệu đề năm Bính Dần theo Can Chi.",
-    "hieu_de_vi": "Bính Dần Niên Chế"
+    "hieu_de_vi": "Bính Dần Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 95,
@@ -1928,7 +2116,9 @@
     "nien_dai": "",
     "hieu_de_en": "Đinh Mão Period",
     "mo_ta": "Hiệu đề năm Đinh Mão theo Can Chi.",
-    "hieu_de_vi": "Đinh Mão Niên Chế"
+    "hieu_de_vi": "Đinh Mão Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 96,
@@ -1949,7 +2139,9 @@
     "nien_dai": "",
     "hieu_de_en": "Mậu Thìn Period",
     "mo_ta": "Hiệu đề năm Mậu Thìn theo Can Chi.",
-    "hieu_de_vi": "Mậu Thìn Niên Chế"
+    "hieu_de_vi": "Mậu Thìn Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 97,
@@ -1970,7 +2162,9 @@
     "nien_dai": "",
     "hieu_de_en": "Kỷ Tị Period",
     "mo_ta": "Hiệu đề năm Kỷ Tị theo Can Chi.",
-    "hieu_de_vi": "Kỷ Tị Niên Chế"
+    "hieu_de_vi": "Kỷ Tị Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 98,
@@ -1991,7 +2185,9 @@
     "nien_dai": "",
     "hieu_de_en": "Canh Ngọ Period",
     "mo_ta": "Hiệu đề năm Canh Ngọ theo Can Chi.",
-    "hieu_de_vi": "Canh Ngọ Niên Chế"
+    "hieu_de_vi": "Canh Ngọ Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 99,
@@ -2012,7 +2208,9 @@
     "nien_dai": "",
     "hieu_de_en": "Tân Mùi Period",
     "mo_ta": "Hiệu đề năm Tân Mùi theo Can Chi.",
-    "hieu_de_vi": "Tân Mùi Niên Chế"
+    "hieu_de_vi": "Tân Mùi Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 100,
@@ -2033,7 +2231,9 @@
     "nien_dai": "",
     "hieu_de_en": "Nhâm Thân Period",
     "mo_ta": "Hiệu đề năm Nhâm Thân theo Can Chi.",
-    "hieu_de_vi": "Nhâm Thân Niên Chế"
+    "hieu_de_vi": "Nhâm Thân Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 101,
@@ -2054,7 +2254,9 @@
     "nien_dai": "",
     "hieu_de_en": "Quý Dậu Period",
     "mo_ta": "Hiệu đề năm Quý Dậu theo Can Chi.",
-    "hieu_de_vi": "Quý Dậu Niên Chế"
+    "hieu_de_vi": "Quý Dậu Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 102,
@@ -2075,7 +2277,9 @@
     "nien_dai": "",
     "hieu_de_en": "Giáp Tuất Period",
     "mo_ta": "Hiệu đề năm Giáp Tuất theo Can Chi.",
-    "hieu_de_vi": "Giáp Tuất Niên Chế"
+    "hieu_de_vi": "Giáp Tuất Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 103,
@@ -2096,7 +2300,9 @@
     "nien_dai": "",
     "hieu_de_en": "Ất Hợi Period",
     "mo_ta": "Hiệu đề năm Ất Hợi theo Can Chi.",
-    "hieu_de_vi": "Ất Hợi Niên Chế"
+    "hieu_de_vi": "Ất Hợi Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 104,
@@ -2117,7 +2323,9 @@
     "nien_dai": "",
     "hieu_de_en": "Bính Tý Period",
     "mo_ta": "Hiệu đề năm Bính Tý theo Can Chi.",
-    "hieu_de_vi": "Bính Tý Niên Chế"
+    "hieu_de_vi": "Bính Tý Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 105,
@@ -2138,7 +2346,9 @@
     "nien_dai": "",
     "hieu_de_en": "Đinh Sửu Period",
     "mo_ta": "Hiệu đề năm Đinh Sửu theo Can Chi.",
-    "hieu_de_vi": "Đinh Sửu Niên Chế"
+    "hieu_de_vi": "Đinh Sửu Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 106,
@@ -2159,7 +2369,9 @@
     "nien_dai": "",
     "hieu_de_en": "Mậu Dần Period",
     "mo_ta": "Hiệu đề năm Mậu Dần theo Can Chi.",
-    "hieu_de_vi": "Mậu Dần Niên Chế"
+    "hieu_de_vi": "Mậu Dần Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 107,
@@ -2180,7 +2392,9 @@
     "nien_dai": "",
     "hieu_de_en": "Kỷ Mão Period",
     "mo_ta": "Hiệu đề năm Kỷ Mão theo Can Chi.",
-    "hieu_de_vi": "Kỷ Mão Niên Chế"
+    "hieu_de_vi": "Kỷ Mão Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 108,
@@ -2201,7 +2415,9 @@
     "nien_dai": "",
     "hieu_de_en": "Canh Thìn Period",
     "mo_ta": "Hiệu đề năm Canh Thìn theo Can Chi.",
-    "hieu_de_vi": "Canh Thìn Niên Chế"
+    "hieu_de_vi": "Canh Thìn Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 109,
@@ -2222,7 +2438,9 @@
     "nien_dai": "",
     "hieu_de_en": "Tân Tị Period",
     "mo_ta": "Hiệu đề năm Tân Tị theo Can Chi.",
-    "hieu_de_vi": "Tân Tị Niên Chế"
+    "hieu_de_vi": "Tân Tị Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 110,
@@ -2243,7 +2461,9 @@
     "nien_dai": "",
     "hieu_de_en": "Nhâm Ngọ Period",
     "mo_ta": "Hiệu đề năm Nhâm Ngọ theo Can Chi.",
-    "hieu_de_vi": "Nhâm Ngọ Niên Chế"
+    "hieu_de_vi": "Nhâm Ngọ Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 111,
@@ -2264,7 +2484,9 @@
     "nien_dai": "",
     "hieu_de_en": "Quý Mùi Period",
     "mo_ta": "Hiệu đề năm Quý Mùi theo Can Chi.",
-    "hieu_de_vi": "Quý Mùi Niên Chế"
+    "hieu_de_vi": "Quý Mùi Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 112,
@@ -2285,7 +2507,9 @@
     "nien_dai": "",
     "hieu_de_en": "Giáp Thân Period",
     "mo_ta": "Hiệu đề năm Giáp Thân theo Can Chi.",
-    "hieu_de_vi": "Giáp Thân Niên Chế"
+    "hieu_de_vi": "Giáp Thân Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 113,
@@ -2306,7 +2530,9 @@
     "nien_dai": "",
     "hieu_de_en": "Ất Dậu Period",
     "mo_ta": "Hiệu đề năm Ất Dậu theo Can Chi.",
-    "hieu_de_vi": "Ất Dậu Niên Chế"
+    "hieu_de_vi": "Ất Dậu Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 114,
@@ -2327,7 +2553,9 @@
     "nien_dai": "",
     "hieu_de_en": "Bính Tuất Period",
     "mo_ta": "Hiệu đề năm Bính Tuất theo Can Chi.",
-    "hieu_de_vi": "Bính Tuất Niên Chế"
+    "hieu_de_vi": "Bính Tuất Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 115,
@@ -2348,7 +2576,9 @@
     "nien_dai": "",
     "hieu_de_en": "Đinh Hợi Period",
     "mo_ta": "Hiệu đề năm Đinh Hợi theo Can Chi.",
-    "hieu_de_vi": "Đinh Hợi Niên Chế"
+    "hieu_de_vi": "Đinh Hợi Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 116,
@@ -2369,7 +2599,9 @@
     "nien_dai": "",
     "hieu_de_en": "Mậu Tý Period",
     "mo_ta": "Hiệu đề năm Mậu Tý theo Can Chi.",
-    "hieu_de_vi": "Mậu Tý Niên Chế"
+    "hieu_de_vi": "Mậu Tý Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 117,
@@ -2390,7 +2622,9 @@
     "nien_dai": "",
     "hieu_de_en": "Kỷ Sửu Period",
     "mo_ta": "Hiệu đề năm Kỷ Sửu theo Can Chi.",
-    "hieu_de_vi": "Kỷ Sửu Niên Chế"
+    "hieu_de_vi": "Kỷ Sửu Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 118,
@@ -2411,7 +2645,9 @@
     "nien_dai": "",
     "hieu_de_en": "Canh Dần Period",
     "mo_ta": "Hiệu đề năm Canh Dần theo Can Chi.",
-    "hieu_de_vi": "Canh Dần Niên Chế"
+    "hieu_de_vi": "Canh Dần Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 119,
@@ -2432,7 +2668,9 @@
     "nien_dai": "",
     "hieu_de_en": "Tân Mão Period",
     "mo_ta": "Hiệu đề năm Tân Mão theo Can Chi.",
-    "hieu_de_vi": "Tân Mão Niên Chế"
+    "hieu_de_vi": "Tân Mão Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 120,
@@ -2453,7 +2691,9 @@
     "nien_dai": "",
     "hieu_de_en": "Nhâm Thìn Period",
     "mo_ta": "Hiệu đề năm Nhâm Thìn theo Can Chi.",
-    "hieu_de_vi": "Nhâm Thìn Niên Chế"
+    "hieu_de_vi": "Nhâm Thìn Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 121,
@@ -2474,7 +2714,9 @@
     "nien_dai": "",
     "hieu_de_en": "Quý Tị Period",
     "mo_ta": "Hiệu đề năm Quý Tị theo Can Chi.",
-    "hieu_de_vi": "Quý Tị Niên Chế"
+    "hieu_de_vi": "Quý Tị Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 122,
@@ -2495,7 +2737,9 @@
     "nien_dai": "",
     "hieu_de_en": "Giáp Ngọ Period",
     "mo_ta": "Hiệu đề năm Giáp Ngọ theo Can Chi.",
-    "hieu_de_vi": "Giáp Ngọ Niên Chế"
+    "hieu_de_vi": "Giáp Ngọ Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 123,
@@ -2516,7 +2760,9 @@
     "nien_dai": "",
     "hieu_de_en": "Ất Mùi Period",
     "mo_ta": "Hiệu đề năm Ất Mùi theo Can Chi.",
-    "hieu_de_vi": "Ất Mùi Niên Chế"
+    "hieu_de_vi": "Ất Mùi Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 124,
@@ -2537,7 +2783,9 @@
     "nien_dai": "",
     "hieu_de_en": "Bính Thân Period",
     "mo_ta": "Hiệu đề năm Bính Thân theo Can Chi.",
-    "hieu_de_vi": "Bính Thân Niên Chế"
+    "hieu_de_vi": "Bính Thân Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 125,
@@ -2558,7 +2806,9 @@
     "nien_dai": "",
     "hieu_de_en": "Đinh Dậu Period",
     "mo_ta": "Hiệu đề năm Đinh Dậu theo Can Chi.",
-    "hieu_de_vi": "Đinh Dậu Niên Chế"
+    "hieu_de_vi": "Đinh Dậu Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 126,
@@ -2579,7 +2829,9 @@
     "nien_dai": "",
     "hieu_de_en": "Mậu Tuất Period",
     "mo_ta": "Hiệu đề năm Mậu Tuất theo Can Chi.",
-    "hieu_de_vi": "Mậu Tuất Niên Chế"
+    "hieu_de_vi": "Mậu Tuất Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 127,
@@ -2600,7 +2852,9 @@
     "nien_dai": "",
     "hieu_de_en": "Kỷ Hợi Period",
     "mo_ta": "Hiệu đề năm Kỷ Hợi theo Can Chi.",
-    "hieu_de_vi": "Kỷ Hợi Niên Chế"
+    "hieu_de_vi": "Kỷ Hợi Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 128,
@@ -2621,7 +2875,9 @@
     "nien_dai": "",
     "hieu_de_en": "Canh Tý Period",
     "mo_ta": "Hiệu đề năm Canh Tý theo Can Chi.",
-    "hieu_de_vi": "Canh Tý Niên Chế"
+    "hieu_de_vi": "Canh Tý Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 129,
@@ -2642,7 +2898,9 @@
     "nien_dai": "",
     "hieu_de_en": "Tân Sửu Period",
     "mo_ta": "Hiệu đề năm Tân Sửu theo Can Chi.",
-    "hieu_de_vi": "Tân Sửu Niên Chế"
+    "hieu_de_vi": "Tân Sửu Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 130,
@@ -2663,7 +2921,9 @@
     "nien_dai": "",
     "hieu_de_en": "Nhâm Dần Period",
     "mo_ta": "Hiệu đề năm Nhâm Dần theo Can Chi.",
-    "hieu_de_vi": "Nhâm Dần Niên Chế"
+    "hieu_de_vi": "Nhâm Dần Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 131,
@@ -2684,7 +2944,9 @@
     "nien_dai": "",
     "hieu_de_en": "Quý Mão Period",
     "mo_ta": "Hiệu đề năm Quý Mão theo Can Chi.",
-    "hieu_de_vi": "Quý Mão Niên Chế"
+    "hieu_de_vi": "Quý Mão Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 132,
@@ -2705,7 +2967,9 @@
     "nien_dai": "",
     "hieu_de_en": "Giáp Thìn Period",
     "mo_ta": "Hiệu đề năm Giáp Thìn theo Can Chi.",
-    "hieu_de_vi": "Giáp Thìn Niên Chế"
+    "hieu_de_vi": "Giáp Thìn Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 133,
@@ -2726,7 +2990,9 @@
     "nien_dai": "",
     "hieu_de_en": "Ất Tị Period",
     "mo_ta": "Hiệu đề năm Ất Tị theo Can Chi.",
-    "hieu_de_vi": "Ất Tị Niên Chế"
+    "hieu_de_vi": "Ất Tị Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 134,
@@ -2747,7 +3013,9 @@
     "nien_dai": "",
     "hieu_de_en": "Bính Ngọ Period",
     "mo_ta": "Hiệu đề năm Bính Ngọ theo Can Chi.",
-    "hieu_de_vi": "Bính Ngọ Niên Chế"
+    "hieu_de_vi": "Bính Ngọ Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 135,
@@ -2768,7 +3036,9 @@
     "nien_dai": "",
     "hieu_de_en": "Đinh Mùi Period",
     "mo_ta": "Hiệu đề năm Đinh Mùi theo Can Chi.",
-    "hieu_de_vi": "Đinh Mùi Niên Chế"
+    "hieu_de_vi": "Đinh Mùi Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 136,
@@ -2789,7 +3059,9 @@
     "nien_dai": "",
     "hieu_de_en": "Mậu Thân Period",
     "mo_ta": "Hiệu đề năm Mậu Thân theo Can Chi.",
-    "hieu_de_vi": "Mậu Thân Niên Chế"
+    "hieu_de_vi": "Mậu Thân Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 137,
@@ -2810,7 +3082,9 @@
     "nien_dai": "",
     "hieu_de_en": "Kỷ Dậu Period",
     "mo_ta": "Hiệu đề năm Kỷ Dậu theo Can Chi.",
-    "hieu_de_vi": "Kỷ Dậu Niên Chế"
+    "hieu_de_vi": "Kỷ Dậu Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 138,
@@ -2831,7 +3105,9 @@
     "nien_dai": "",
     "hieu_de_en": "Canh Tuất Period",
     "mo_ta": "Hiệu đề năm Canh Tuất theo Can Chi.",
-    "hieu_de_vi": "Canh Tuất Niên Chế"
+    "hieu_de_vi": "Canh Tuất Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 139,
@@ -2852,7 +3128,9 @@
     "nien_dai": "",
     "hieu_de_en": "Tân Hợi Period",
     "mo_ta": "Hiệu đề năm Tân Hợi theo Can Chi.",
-    "hieu_de_vi": "Tân Hợi Niên Chế"
+    "hieu_de_vi": "Tân Hợi Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 140,
@@ -2873,7 +3151,9 @@
     "nien_dai": "",
     "hieu_de_en": "Nhâm Tý Period",
     "mo_ta": "Hiệu đề năm Nhâm Tý theo Can Chi.",
-    "hieu_de_vi": "Nhâm Tý Niên Chế"
+    "hieu_de_vi": "Nhâm Tý Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 141,
@@ -2894,7 +3174,9 @@
     "nien_dai": "",
     "hieu_de_en": "Quý Sửu Period",
     "mo_ta": "Hiệu đề năm Quý Sửu theo Can Chi.",
-    "hieu_de_vi": "Quý Sửu Niên Chế"
+    "hieu_de_vi": "Quý Sửu Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 142,
@@ -2915,7 +3197,9 @@
     "nien_dai": "",
     "hieu_de_en": "Giáp Dần Period",
     "mo_ta": "Hiệu đề năm Giáp Dần theo Can Chi.",
-    "hieu_de_vi": "Giáp Dần Niên Chế"
+    "hieu_de_vi": "Giáp Dần Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 143,
@@ -2936,7 +3220,9 @@
     "nien_dai": "",
     "hieu_de_en": "Ất Mão Period",
     "mo_ta": "Hiệu đề năm Ất Mão theo Can Chi.",
-    "hieu_de_vi": "Ất Mão Niên Chế"
+    "hieu_de_vi": "Ất Mão Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 144,
@@ -2957,7 +3243,9 @@
     "nien_dai": "",
     "hieu_de_en": "Bính Thìn Period",
     "mo_ta": "Hiệu đề năm Bính Thìn theo Can Chi.",
-    "hieu_de_vi": "Bính Thìn Niên Chế"
+    "hieu_de_vi": "Bính Thìn Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 145,
@@ -2978,7 +3266,9 @@
     "nien_dai": "",
     "hieu_de_en": "Đinh Tị Period",
     "mo_ta": "Hiệu đề năm Đinh Tị theo Can Chi.",
-    "hieu_de_vi": "Đinh Tị Niên Chế"
+    "hieu_de_vi": "Đinh Tị Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 146,
@@ -2999,7 +3289,9 @@
     "nien_dai": "",
     "hieu_de_en": "Mậu Ngọ Period",
     "mo_ta": "Hiệu đề năm Mậu Ngọ theo Can Chi.",
-    "hieu_de_vi": "Mậu Ngọ Niên Chế"
+    "hieu_de_vi": "Mậu Ngọ Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 147,
@@ -3020,7 +3312,9 @@
     "nien_dai": "",
     "hieu_de_en": "Kỷ Mùi Period",
     "mo_ta": "Hiệu đề năm Kỷ Mùi theo Can Chi.",
-    "hieu_de_vi": "Kỷ Mùi Niên Chế"
+    "hieu_de_vi": "Kỷ Mùi Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 148,
@@ -3041,7 +3335,9 @@
     "nien_dai": "",
     "hieu_de_en": "Canh Thân Period",
     "mo_ta": "Hiệu đề năm Canh Thân theo Can Chi.",
-    "hieu_de_vi": "Canh Thân Niên Chế"
+    "hieu_de_vi": "Canh Thân Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 149,
@@ -3062,7 +3358,9 @@
     "nien_dai": "",
     "hieu_de_en": "Tân Dậu Period",
     "mo_ta": "Hiệu đề năm Tân Dậu theo Can Chi.",
-    "hieu_de_vi": "Tân Dậu Niên Chế"
+    "hieu_de_vi": "Tân Dậu Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 150,
@@ -3083,7 +3381,9 @@
     "nien_dai": "",
     "hieu_de_en": "Nhâm Tuất Period",
     "mo_ta": "Hiệu đề năm Nhâm Tuất theo Can Chi.",
-    "hieu_de_vi": "Nhâm Tuất Niên Chế"
+    "hieu_de_vi": "Nhâm Tuất Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 151,
@@ -3104,7 +3404,9 @@
     "nien_dai": "",
     "hieu_de_en": "Quý Hợi Period",
     "mo_ta": "Hiệu đề năm Quý Hợi theo Can Chi.",
-    "hieu_de_vi": "Quý Hợi Niên Chế"
+    "hieu_de_vi": "Quý Hợi Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 152,
@@ -3125,7 +3427,9 @@
     "nien_dai": "1875 - 1908",
     "hieu_de_en": "Thể Hòa Điện Chế Mark",
     "mo_ta": "Điện của Từ Hi Thái Hậu. Niên đại 1875 - 1908.",
-    "hieu_de_vi": "Thể Hòa Điện Chế"
+    "hieu_de_vi": "Thể Hòa Điện Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 153,
@@ -3146,7 +3450,9 @@
     "nien_dai": "1875 - 1908",
     "hieu_de_en": "Trữ Tú Cung Chế Mark",
     "mo_ta": "Cung của Từ Hi Thái Hậu trong Tử Cấm Thành. Niên đại 1875 - 1908.",
-    "hieu_de_vi": "Trữ Tú Cung Chế"
+    "hieu_de_vi": "Trữ Tú Cung Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 154,
@@ -3167,7 +3473,9 @@
     "nien_dai": "1644 - 1912",
     "hieu_de_en": "Khôn Ninh Cung Chế Mark",
     "mo_ta": "Cung hoàng hậu trong Tử Cấm Thành. Niên đại 1644 - 1912.",
-    "hieu_de_vi": "Khôn Ninh Cung Chế"
+    "hieu_de_vi": "Khôn Ninh Cung Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 155,
@@ -3188,7 +3496,9 @@
     "nien_dai": "1644 - 1912",
     "hieu_de_en": "Trường Xuân Cung Chế Mark",
     "mo_ta": "Cung trong Tử Cấm Thành, nơi ở của nhiều phi tần. Niên đại 1644 - 1912.",
-    "hieu_de_vi": "Trường Xuân Cung Chế"
+    "hieu_de_vi": "Trường Xuân Cung Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 156,
@@ -3209,7 +3519,9 @@
     "nien_dai": "1736 - 1795",
     "hieu_de_en": "Trùng Hoa Cung Chế Mark",
     "mo_ta": "Cung của Càn Long trước khi lên ngôi. Niên đại 1736 - 1795.",
-    "hieu_de_vi": "Trùng Hoa Cung Chế"
+    "hieu_de_vi": "Trùng Hoa Cung Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 157,
@@ -3230,7 +3542,9 @@
     "nien_dai": "1736 - 1795",
     "hieu_de_en": "Thấu Phương Trai Chế Mark",
     "mo_ta": "Trai phòng của Càn Long trong Tử Cấm Thành. Niên đại 1736 - 1795.",
-    "hieu_de_vi": "Thấu Phương Trai Chế"
+    "hieu_de_vi": "Thấu Phương Trai Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 158,
@@ -3251,7 +3565,9 @@
     "nien_dai": "",
     "hieu_de_en": "Tĩnh Di Hiên Chế Mark",
     "mo_ta": "Hiên trai phòng trong cung đình Thanh.",
-    "hieu_de_vi": "Tĩnh Di Hiên Chế"
+    "hieu_de_vi": "Tĩnh Di Hiên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 159,
@@ -3272,7 +3588,9 @@
     "nien_dai": "",
     "hieu_de_en": "Dục Đức Đường Chế Mark",
     "mo_ta": "Đường hiệu trai phòng quý tộc.",
-    "hieu_de_vi": "Dục Đức Đường Chế"
+    "hieu_de_vi": "Dục Đức Đường Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 160,
@@ -3293,7 +3611,9 @@
     "nien_dai": "",
     "hieu_de_en": "Lạc Đạo Đường Chế Mark",
     "mo_ta": "Đường hiệu trai phòng quý tộc.",
-    "hieu_de_vi": "Lạc Đạo Đường Chế"
+    "hieu_de_vi": "Lạc Đạo Đường Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 161,
@@ -3314,7 +3634,9 @@
     "nien_dai": "1883 - 1883",
     "hieu_de_en": "Hiệp Hòa Period",
     "mo_ta": "Trị vì chỉ 4 tháng, hiệu đề cực hiếm. Niên đại 1883.",
-    "hieu_de_vi": "Đại Nam Hiệp Hòa Niên Chế"
+    "hieu_de_vi": "Đại Nam Hiệp Hòa Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 162,
@@ -3335,7 +3657,9 @@
     "nien_dai": "1788 - 1792",
     "hieu_de_en": "Quang Trung Period",
     "mo_ta": "Hoàng đế Tây Sơn, hiệu đề trên đồ sứ rất hiếm. Niên đại 1788 - 1792.",
-    "hieu_de_vi": "Quang Trung Niên Chế"
+    "hieu_de_vi": "Quang Trung Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 163,
@@ -3356,7 +3680,9 @@
     "nien_dai": "1778 - 1793",
     "hieu_de_en": "Thái Đức Period",
     "mo_ta": "Nguyễn Nhạc - vua Tây Sơn, hiệu đề rất hiếm. Niên đại 1778 - 1793.",
-    "hieu_de_vi": "Thái Đức Niên Chế"
+    "hieu_de_vi": "Thái Đức Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 164,
@@ -3377,7 +3703,9 @@
     "nien_dai": "1793 - 1802",
     "hieu_de_en": "Cảnh Thịnh Period",
     "mo_ta": "Vua cuối nhà Tây Sơn, hiệu đề cực hiếm. Niên đại 1793 - 1802.",
-    "hieu_de_vi": "Cảnh Thịnh Niên Chế"
+    "hieu_de_vi": "Cảnh Thịnh Niên Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 165,
@@ -3396,7 +3724,9 @@
     "nien_dai": "",
     "hieu_de_en": "Vĩnh Lạc Trường Xuân Mark",
     "mo_ta": "Chúc niềm vui và xuân mãi trường tồn.",
-    "hieu_de_vi": "Vĩnh Lạc Trường Xuân"
+    "hieu_de_vi": "Vĩnh Lạc Trường Xuân",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 166,
@@ -3415,7 +3745,9 @@
     "nien_dai": "",
     "hieu_de_en": "Thọ Sơn Phúc Hải Mark",
     "mo_ta": "Chúc thọ như núi, phúc như biển.",
-    "hieu_de_vi": "Thọ Sơn Phúc Hải"
+    "hieu_de_vi": "Thọ Sơn Phúc Hải",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 167,
@@ -3434,7 +3766,9 @@
     "nien_dai": "",
     "hieu_de_en": "Phúc Thọ Song Toàn Mark",
     "mo_ta": "Chúc phúc lộc và trường thọ đều trọn vẹn.",
-    "hieu_de_vi": "Phúc Thọ Song Toàn"
+    "hieu_de_vi": "Phúc Thọ Song Toàn",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 168,
@@ -3453,7 +3787,9 @@
     "nien_dai": "",
     "hieu_de_en": "Cát Tường Như Ý Mark",
     "mo_ta": "Chúc mọi sự may mắn như ý muốn.",
-    "hieu_de_vi": "Cát Tường Như Ý"
+    "hieu_de_vi": "Cát Tường Như Ý",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 169,
@@ -3472,7 +3808,9 @@
     "nien_dai": "",
     "hieu_de_en": "Phú Quý Trường Xuân Mark",
     "mo_ta": "Chúc giàu sang phú quý mãi trường tồn.",
-    "hieu_de_vi": "Phú Quý Trường Xuân"
+    "hieu_de_vi": "Phú Quý Trường Xuân",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 170,
@@ -3491,7 +3829,9 @@
     "nien_dai": "",
     "hieu_de_en": "Ngọc Đường Giai Khí Mark",
     "mo_ta": "Đồ tốt của ngọc đường - thường trên đồ thời Minh.",
-    "hieu_de_vi": "Ngọc Đường Giai Khí"
+    "hieu_de_vi": "Ngọc Đường Giai Khí",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 171,
@@ -3510,7 +3850,9 @@
     "nien_dai": "",
     "hieu_de_en": "Kỳ Ngọc Bảo Đỉnh Chi Trân Mark",
     "mo_ta": "Của báu kỳ ngọc đỉnh quý - thường trên đồ thời Minh.",
-    "hieu_de_vi": "Kỳ Ngọc Bảo Đỉnh Chi Trân"
+    "hieu_de_vi": "Kỳ Ngọc Bảo Đỉnh Chi Trân",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 172,
@@ -3532,7 +3874,9 @@
     "nien_dai": "1875 - 1908",
     "hieu_de_en": "Vương Bính Vinh Chế Mark",
     "mo_ta": "Nghệ nhân nổi tiếng thời Quang Tự, chuyên đồ men màu. Niên đại 1875 - 1908.",
-    "hieu_de_vi": "Vương Bính Vinh Chế"
+    "hieu_de_vi": "Vương Bính Vinh Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 173,
@@ -3554,7 +3898,9 @@
     "nien_dai": "1875 - 1908",
     "hieu_de_en": "Vương Thiếu Lâm Chế Mark",
     "mo_ta": "Nghệ nhân gốm sứ thời Quang Tự. Niên đại 1875 - 1908.",
-    "hieu_de_vi": "Vương Thiếu Lâm Chế"
+    "hieu_de_vi": "Vương Thiếu Lâm Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 174,
@@ -3576,7 +3922,9 @@
     "nien_dai": "1821 - 1875",
     "hieu_de_en": "Trình Môn Chế Mark",
     "mo_ta": "Nghệ nhân tử sa và gốm sứ nổi tiếng thời Đạo Quang - Đồng Trị. Niên đại 1821 - 1875.",
-    "hieu_de_vi": "Trình Môn Chế"
+    "hieu_de_vi": "Trình Môn Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 175,
@@ -3597,7 +3945,9 @@
     "nien_dai": "1875 - 1912",
     "hieu_de_en": "Hứa Chi Hành Chế Mark",
     "mo_ta": "Nhà nghiên cứu và nghệ nhân gốm sứ cuối Thanh. Niên đại 1875 - 1912.",
-    "hieu_de_vi": "Hứa Chi Hành Chế"
+    "hieu_de_vi": "Hứa Chi Hành Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 176,
@@ -3619,7 +3969,9 @@
     "nien_dai": "",
     "hieu_de_en": "Nghi Hưng Chế Mark",
     "mo_ta": "Lò gốm tử sa Nghi Hưng, Giang Tô - nổi tiếng ấm trà.",
-    "hieu_de_vi": "Nghi Hưng Chế"
+    "hieu_de_vi": "Nghi Hưng Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 177,
@@ -3641,7 +3993,9 @@
     "nien_dai": "",
     "hieu_de_en": "Thạch Loan Chế Mark",
     "mo_ta": "Lò gốm Thạch Loan, Phật Sơn, Quảng Đông - nổi tiếng tượng gốm.",
-    "hieu_de_vi": "Thạch Loan Chế"
+    "hieu_de_vi": "Thạch Loan Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 178,
@@ -3663,7 +4017,9 @@
     "nien_dai": "",
     "hieu_de_en": "Triều Châu Chế Mark",
     "mo_ta": "Lò gốm Triều Châu, Quảng Đông - xuất khẩu nhiều sang Đông Nam Á.",
-    "hieu_de_vi": "Triều Châu Chế"
+    "hieu_de_vi": "Triều Châu Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 179,
@@ -3685,7 +4041,9 @@
     "nien_dai": "",
     "hieu_de_en": "Phúc Kiến Chế Mark",
     "mo_ta": "Gốm sứ tỉnh Phúc Kiến, xuất khẩu nhiều sang Đông Nam Á và châu Âu.",
-    "hieu_de_vi": "Phúc Kiến Chế"
+    "hieu_de_vi": "Phúc Kiến Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 180,
@@ -3707,7 +4065,9 @@
     "nien_dai": "1868 - 1945",
     "hieu_de_en": "Đại Nhật Bản Chế Mark",
     "mo_ta": "Hiệu đề xuất khẩu sang Đông Nam Á thời Minh Trị - Chiêu Hòa. Niên đại 1868 - 1945.",
-    "hieu_de_vi": "Đại Nhật Bản Chế"
+    "hieu_de_vi": "Đại Nhật Bản Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 181,
@@ -3728,7 +4088,9 @@
     "nien_dai": "1868 - 1945",
     "hieu_de_en": "Đại Nhật Bản Đế Quốc Chế Mark",
     "mo_ta": "Hiệu đề chính thức thời Đế quốc Nhật Bản, hay gặp trên đồ xuất khẩu. Niên đại 1868 - 1945.",
-    "hieu_de_vi": "Đại Nhật Bản Đế Quốc Chế"
+    "hieu_de_vi": "Đại Nhật Bản Đế Quốc Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 182,
@@ -3749,7 +4111,9 @@
     "nien_dai": "1904 - nay",
     "hieu_de_en": "Narumi Mark",
     "mo_ta": "Thương hiệu gốm sứ Narumi, Nagoya - xuất khẩu nhiều sang VN và Đông Nam Á. Thành lập 1904.",
-    "hieu_de_vi": "Narumi Chế"
+    "hieu_de_vi": "Narumi Chế",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 183,
@@ -3771,7 +4135,9 @@
     "nien_dai": "1600 - 1802",
     "hieu_de_en": "Nội Phủ Thị Hữu Mark",
     "mo_ta": "Hiệu đề đặc trưng của Việt Nam thời chúa Nguyễn, đồ sứ ký kiểu đặt tại Cảnh Đức Trấn. Niên đại 1600 - 1802.",
-    "hieu_de_vi": "Nội Phủ Thị Hữu"
+    "hieu_de_vi": "Nội Phủ Thị Hữu",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 184,
@@ -3793,7 +4159,9 @@
     "nien_dai": "1600 - 1802",
     "hieu_de_en": "Nội Phủ Thị Chỉ Mark",
     "mo_ta": "Hiệu đề đặc trưng của Việt Nam thời chúa Nguyễn, đồ sứ ký kiểu đặt tại Cảnh Đức Trấn. Niên đại 1600 - 1802.",
-    "hieu_de_vi": "Nội Phủ Thị Chỉ"
+    "hieu_de_vi": "Nội Phủ Thị Chỉ",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   },
   {
     "id": 185,
@@ -3814,6 +4182,29 @@
     "nien_dai": "TK17 - 1802",
     "hieu_de_en": "Nội Phủ Thị Tả Mark",
     "mo_ta": "Hiệu đề đồ sứ ký kiểu thời chúa Trịnh - dành cho cung điện (Tả). Niên đại TK17 - 1802.",
-    "hieu_de_vi": "Nội Phủ Thị Tả"
+    "hieu_de_vi": "Nội Phủ Thị Tả",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
+  },
+  {
+    "id": 186,
+    "chu_han": "滿福堂記",
+    "chu_han_4": "滿福堂記",
+    "bien_the": [],
+    "phien_am": "Mǎn Fú Táng Jì",
+    "ten_viet": "Mãn Phúc Đường Ký",
+    "hoang_de": null,
+    "trieu_dai": "Đặc biệt - Hall mark",
+    "nam_bat_dau": null,
+    "nam_ket_thuc": null,
+    "ghi_chu": "Đường hiệu chúc tụng ý nghĩa phúc lộc viên mãn",
+    "hien_thi_chinh": "Mãn Phúc Đường Ký",
+    "nien_hieu": "Mãn Phúc Đường Ký",
+    "nien_dai": "",
+    "hieu_de_en": "Mãn Phúc Đường Ký Mark",
+    "mo_ta": "Đường hiệu chúc tụng ý nghĩa phúc lộc viên mãn. Thường xuất hiện trên đồ sứ sinh hoạt mang tính chất chúc phúc.",
+    "hieu_de_vi": "Mãn Phúc Đường Ký",
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   }
 ]

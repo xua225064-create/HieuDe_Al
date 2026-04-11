@@ -6,3 +6,7 @@ opencv-python
 pillow
 paddlepaddle==2.6.2
 paddleocr==2.7.3
+pymysql
+passlib
+bcrypt
+python-jose

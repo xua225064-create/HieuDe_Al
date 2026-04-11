@@ -48,7 +48,10 @@
     "id": 87,
     "chu_han": "內府侍右",
     "chu_han_4": "內府侍右",
-    "bien_the": [],
+    "bien_the": [
+      "内府侍右",
+      "內府待右"
+    ],
     "phien_am": "Nèi Fǔ Shì Yòu",
     "ten_viet": "Nội Phủ Thị Hữu",
     "hoang_de": null,
@@ -60,9 +63,11 @@
     "nien_hieu": "Nội Phủ Thị Hữu",
     "nien_dai": "1600 - 1802",
     "hieu_de_en": "Nội Phủ Thị Hữu Mark",
-    "mo_ta": "Hiệu đề đồ sứ ký kiểu thời chúa Nguyễn - phương Hữu (Tây). Niên đại TK17 - 1802.",
+    "mo_ta": "Hiệu đề đặc trưng của Việt Nam thời chúa Nguyễn, đồ sứ ký kiểu đặt tại Cảnh Đức Trấn. Niên đại 1600 - 1802.",
     "hieu_de_vi": "Nội Phủ Thị Hữu",
     "score": 100,
-    "match_score": 100
+    "match_score": 100,
+    "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+    "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu."
   }
 }

@@ -2,6 +2,7 @@ from fastapi import FastAPI, File, UploadFile, Form
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi import Request
+from fastapi.staticfiles import StaticFiles
 import cv2
 import numpy as np
 from ocr_engine import read_chinese_mark
@@ -26,11 +27,36 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+if not os.path.exists("uploads"):
+    os.makedirs("uploads")
+app.mount("/uploads", StaticFiles(directory="uploads"), name="uploads")
+
 ALLOWED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp"}
 DATA_PATH = os.path.join(os.path.dirname(__file__), "data", "hieu_de_database.json")
 
 
+from db import fetch_all_marks, create_user, get_user_by_username, add_scan_history, get_scan_history, get_or_create_social_user, ensure_credits_column, get_user_credits, deduct_credit, add_credits
+from pydantic import BaseModel
+from passlib.context import CryptContext
+
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+
+class UserRegister(BaseModel):
+    username: str
+    password: str
+
+class UserLogin(BaseModel):
+    username: str
+    password: str
+
 def _load_database() -> List[Dict[str, Any]]:
+    print("[DB] Loading database...")
+    db_marks = fetch_all_marks()
+    if db_marks and len(db_marks) > 0:
+        print(f"[DB] Successfully loaded {len(db_marks)} marks from MySQL.")
+        return db_marks
+        
+    print("[DB] MySQL unavailable or empty, falling back to JSON...")
     if not os.path.exists(DATA_PATH):
         return []
     with open(DATA_PATH, "r", encoding="utf-8") as file:
@@ -51,6 +77,9 @@ def _get_targets(entry: Dict[str, Any]) -> List[str]:
 
 
 REIGN_DATABASE = _load_database()
+
+# Đảm bảo cột scan_credits tồn tại
+ensure_credits_column()
 
 
 def _find_match(ocr_text: str, database: List[Dict[str, Any]]) -> Tuple[Optional[Dict[str, Any]], str]:
@@ -233,18 +262,28 @@ def _build_response(
         if not found_exact and ocr_len >= 3:
             best_chu_han = ocr_text.strip()
 
+        best_ten_viet = match.get("ten_viet") or ""
+        if best_chu_han and best_ten_viet:
+            words = best_ten_viet.strip().split()
+            if len(best_chu_han) == 4 and len(words) >= 6:
+                if words[0].lower() == "đại" and words[1].lower() in ["minh", "thanh", "nam"]:
+                    best_ten_viet = " ".join(words[2:])
+
         return {
             "chu_han": best_chu_han,
             "chu_han_4": match.get("chu_han_4"),
             "chu_han_6": match.get("chu_han_6"),
             "bien_the": match.get("bien_the", []),
-            "ten_viet": match.get("ten_viet"),
+            "ten_viet": best_ten_viet,
             "trieu_dai": match.get("trieu_dai"),
             "hoang_de": match.get("hoang_de"),
             "nien_hieu": _extract_nien_hieu(match),
             "nien_dai": year_range,
             "phien_am": match.get("phien_am"),
             "ghi_chu": match.get("ghi_chu"),
+            "thu_phap": match.get("thu_phap"),
+            "nghe_thuat": match.get("nghe_thuat"),
+            "hieu_de_en": match.get("hieu_de_en"),
             "confidence": confidence,
             "match_type": match_type,
             "dich_nghia_tung_chu": translation_list,
@@ -963,6 +1002,7 @@ def read_reign_database():
 
 @app.post("/ocr")
 async def ocr_endpoint(
+    request: Request,
     file: UploadFile = File(...),
     crop_x: Optional[float] = Form(None),
     crop_y: Optional[float] = Form(None),
@@ -970,7 +1010,42 @@ async def ocr_endpoint(
     crop_h: Optional[float] = Form(None),
     deep_mode: Optional[bool] = Form(None),
 ):
+    def _save_history(image_bytes, display_text, report_matched):
+        user_id = request.headers.get("Authorization")
+        if user_id and user_id.startswith("Bearer "):
+            user_id = user_id.split("Bearer ")[1]
+            try:
+                import os as _os
+                import uuid
+                if not _os.path.exists("uploads"): _os.makedirs("uploads")
+                unique_suffix = uuid.uuid4().hex[:8]
+                hist_img_path = f"uploads/{user_id}_{unique_suffix}_scan.jpg"
+                
+                with open(hist_img_path, "wb") as f:
+                    f.write(image_bytes)
+                add_scan_history(int(user_id), hist_img_path, display_text, {
+                    "matched": True if report_matched else False,
+                    "top_mark": display_text
+                })
+                # Trừ 1 lượt phân tích
+                deduct_credit(int(user_id))
+            except Exception as e:
+                print("Failed to save history:", e)
     try:
+        # === KIỂM TRA LƯỢT PHÂN TÍCH ===
+        auth_header = request.headers.get("Authorization")
+        if auth_header and auth_header.startswith("Bearer "):
+            uid = auth_header.split("Bearer ")[1]
+            try:
+                remaining = get_user_credits(int(uid))
+                if remaining <= 0:
+                    return JSONResponse(
+                        status_code=403,
+                        content={"success": False, "no_credits": True, "message": "Bạn đã hết lượt phân tích miễn phí.", "credits": 0}
+                    )
+            except:
+                pass
+
         if not file:
             return JSONResponse(
                 status_code=400,
@@ -1020,6 +1095,7 @@ async def ocr_endpoint(
             if orb_ratio >= 1.5 and orb_best >= 50:
                 # ORB rất tự tin: best vượt trội hẳn second → tin ORB không cần OCR
                 print(f"[ORB verify] HIGH CONFIDENCE (ratio={orb_ratio:.2f}). Trusting ORB match.")
+                _save_history(image_bytes, matched_report.get("chu_han", ""), matched_report)
                 return JSONResponse(status_code=200, content=matched_report)
             
             # ORB match gần nhau → cần kiểm tra bằng OCR
@@ -1035,10 +1111,12 @@ async def ocr_endpoint(
             if not all_evidence_chars:
                 # OCR không đọc được gì → tin ORB
                 print("[ORB verify] No OCR evidence, trusting ORB match.")
+                _save_history(image_bytes, matched_report.get("chu_han", ""), matched_report)
                 return JSONResponse(status_code=200, content=matched_report)
             elif total_ref > 0 and overlap >= max(4, total_ref - 1):
                 # Đủ ký tự trùng → tin ORB
                 print(f"[ORB verify] PASS — overlap sufficient ({overlap}/{total_ref}). Returning ORB match.")
+                _save_history(image_bytes, matched_report.get("chu_han", ""), matched_report)
                 return JSONResponse(status_code=200, content=matched_report)
             else:
                 # Ký tự OCR mâu thuẫn với ORB → bỏ qua ORB, tiếp tục OCR
@@ -1158,6 +1236,7 @@ async def ocr_endpoint(
             orb_match, orb_score = match_image_by_prefix(image_bytes, [ocr_clean])
             if orb_match:
                 print(f"ORB Prefix Match: {orb_score} good matches for {ocr_clean}")
+                _save_history(image_bytes, orb_match.get("chu_han", ""), orb_match)
                 return JSONResponse(status_code=200, content=orb_match)
             return JSONResponse(
                 content={"success": False, "message": "Khong du thong tin de xac dinh. Vui long chup lai ro hon.", "chu_han": "", "top5": [], "report": None}
@@ -1242,6 +1321,8 @@ async def ocr_endpoint(
 
         display_text = _choose_display_mark(selected_report, merged_candidates, ocr_text)
 
+        _save_history(image_bytes, display_text, selected_report)
+
         return JSONResponse(
             content={
                 "success": True,
@@ -1283,4 +1364,97 @@ async def memorize_endpoint(
     except Exception as e:
         return JSONResponse(status_code=500, content={"success": False, "message": str(e)})
 
-# Trigger reload
+# API cho User
+@app.post("/register")
+def register_user(user: UserRegister):
+    existing = get_user_by_username(user.username)
+    if existing:
+        return JSONResponse(status_code=400, content={"success": False, "message": "Tên người dùng đã tồn tại."})
+    
+    hashed_password = pwd_context.hash(user.password)
+    success = create_user(user.username, hashed_password)
+    if success:
+        return {"success": True, "message": "Đăng ký thành công!"}
+    return JSONResponse(status_code=500, content={"success": False, "message": "Lỗi hệ thống."})
+
+@app.post("/login")
+def login_user(user: UserLogin):
+    db_user = get_user_by_username(user.username)
+    if not db_user or not pwd_context.verify(user.password, db_user['password_hash']):
+        return JSONResponse(status_code=401, content={"success": False, "message": "Sai tài khoản hoặc mật khẩu."})
+    
+    credits = get_user_credits(db_user['id'])
+    return {"success": True, "token": str(db_user['id']), "username": db_user['username'], "credits": credits}
+
+class SocialLoginRequest(BaseModel):
+    email: str
+    name: str
+    provider: str  # 'Google' hoặc 'Facebook'
+
+@app.post("/social-login")
+def social_login(data: SocialLoginRequest):
+    """Đăng nhập bằng Google hoặc Facebook - tạo tài khoản tự động nếu chưa có."""
+    user = get_or_create_social_user(data.email, data.name, data.provider)
+    if user:
+        credits = get_user_credits(user['id'])
+        return {
+            "success": True, 
+            "token": str(user['id']), 
+            "username": user['username'],
+            "name": data.name,
+            "credits": credits,
+            "message": f"Đăng nhập {data.provider} thành công!"
+        }
+    return JSONResponse(status_code=500, content={"success": False, "message": "Lỗi hệ thống khi xử lý đăng nhập."})
+
+@app.get("/history")
+def get_history(request: Request):
+    auth_header = request.headers.get("Authorization")
+    if not auth_header or not auth_header.startswith("Bearer "):
+        return JSONResponse(status_code=401, content={"success": False, "message": "Chưa đăng nhập."})
+    
+    user_id = auth_header.split("Bearer ")[1]
+    history = get_scan_history(user_id)
+    return {"success": True, "history": history}
+
+@app.get("/api/library")
+def get_library_api():
+    marks = _load_database()
+    return JSONResponse(content=marks)
+
+@app.get("/api/credits")
+def get_credits(request: Request):
+    """Lấy số lượt phân tích còn lại."""
+    auth_header = request.headers.get("Authorization")
+    if not auth_header or not auth_header.startswith("Bearer "):
+        return JSONResponse(status_code=401, content={"success": False, "message": "Chưa đăng nhập."})
+    user_id = auth_header.split("Bearer ")[1]
+    credits = get_user_credits(int(user_id))
+    return {"success": True, "credits": credits}
+
+class BuyCreditsRequest(BaseModel):
+    package: str  # 'basic', 'pro', 'enterprise'
+
+PACKAGES = {
+    'basic': {'name': 'Cơ bản', 'credits': 50, 'price': 490000},
+    'pro': {'name': 'Phổ biến', 'credits': 200, 'price': 2490000},
+    'enterprise': {'name': 'Chuyên nghiệp', 'credits': 99999, 'price': 9900000},
+}
+
+@app.post("/api/buy-credits")
+def buy_credits(data: BuyCreditsRequest, request: Request):
+    """Mua thêm lượt phân tích (giả lập thanh toán)."""
+    auth_header = request.headers.get("Authorization")
+    if not auth_header or not auth_header.startswith("Bearer "):
+        return JSONResponse(status_code=401, content={"success": False, "message": "Chưa đăng nhập."})
+    user_id = auth_header.split("Bearer ")[1]
+    
+    pkg = PACKAGES.get(data.package)
+    if not pkg:
+        return JSONResponse(status_code=400, content={"success": False, "message": "Gói không hợp lệ."})
+    
+    success = add_credits(int(user_id), pkg['credits'])
+    if success:
+        new_credits = get_user_credits(int(user_id))
+        return {"success": True, "credits": new_credits, "added": pkg['credits'], "package_name": pkg['name'], "message": f"Đã thêm {pkg['credits']} lượt phân tích!"}
+    return JSONResponse(status_code=500, content={"success": False, "message": "Lỗi hệ thống."})
