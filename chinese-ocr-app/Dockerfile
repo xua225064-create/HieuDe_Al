@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
 
 COPY requirements.txt .
 
-RUN pip install --no-cache-dir paddlepaddle==2.5.2
+RUN pip install --no-cache-dir paddlepaddle==3.0.0
 RUN pip install --no-cache-dir paddleocr==2.7.3
 RUN pip install --no-cache-dir -r requirements.txt
 
