@@ -35,9 +35,11 @@ ALLOWED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp"}
 DATA_PATH = os.path.join(os.path.dirname(__file__), "data", "hieu_de_database.json")
 
 
-from db import fetch_all_marks, create_user, get_user_by_username, add_scan_history, get_scan_history, get_or_create_social_user, ensure_credits_column, get_user_credits, deduct_credit, add_credits
+from db import fetch_all_marks, create_user, get_user_by_username, add_scan_history, get_scan_history, get_or_create_social_user, ensure_credits_column, get_user_credits, deduct_credit, add_credits, create_payment, get_payment, complete_payment
 from pydantic import BaseModel
 from passlib.context import CryptContext
+import httpx
+import re
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
@@ -1023,14 +1025,20 @@ async def ocr_endpoint(
                 
                 with open(hist_img_path, "wb") as f:
                     f.write(image_bytes)
-                add_scan_history(int(user_id), hist_img_path, display_text, {
+                details = {
                     "matched": True if report_matched else False,
                     "top_mark": display_text
-                })
+                }
+                if isinstance(report_matched, dict):
+                    details.update(report_matched)
+                    
+                add_scan_history(int(user_id), hist_img_path, display_text, details)
                 # Trừ 1 lượt phân tích
-                deduct_credit(int(user_id))
+                new_cr = deduct_credit(int(user_id))
+                return new_cr
             except Exception as e:
                 print("Failed to save history:", e)
+        return None
     try:
         # === KIỂM TRA LƯỢT PHÂN TÍCH ===
         auth_header = request.headers.get("Authorization")
@@ -1095,7 +1103,8 @@ async def ocr_endpoint(
             if orb_ratio >= 1.5 and orb_best >= 50:
                 # ORB rất tự tin: best vượt trội hẳn second → tin ORB không cần OCR
                 print(f"[ORB verify] HIGH CONFIDENCE (ratio={orb_ratio:.2f}). Trusting ORB match.")
-                _save_history(image_bytes, matched_report.get("chu_han", ""), matched_report)
+                new_cr = _save_history(image_bytes, matched_report.get("chu_han", ""), matched_report)
+                if new_cr is not None: matched_report["credits"] = new_cr
                 return JSONResponse(status_code=200, content=matched_report)
             
             # ORB match gần nhau → cần kiểm tra bằng OCR
@@ -1111,12 +1120,14 @@ async def ocr_endpoint(
             if not all_evidence_chars:
                 # OCR không đọc được gì → tin ORB
                 print("[ORB verify] No OCR evidence, trusting ORB match.")
-                _save_history(image_bytes, matched_report.get("chu_han", ""), matched_report)
+                new_cr = _save_history(image_bytes, matched_report.get("chu_han", ""), matched_report)
+                if new_cr is not None: matched_report["credits"] = new_cr
                 return JSONResponse(status_code=200, content=matched_report)
             elif total_ref > 0 and overlap >= max(4, total_ref - 1):
                 # Đủ ký tự trùng → tin ORB
                 print(f"[ORB verify] PASS — overlap sufficient ({overlap}/{total_ref}). Returning ORB match.")
-                _save_history(image_bytes, matched_report.get("chu_han", ""), matched_report)
+                new_cr = _save_history(image_bytes, matched_report.get("chu_han", ""), matched_report)
+                if new_cr is not None: matched_report["credits"] = new_cr
                 return JSONResponse(status_code=200, content=matched_report)
             else:
                 # Ký tự OCR mâu thuẫn với ORB → bỏ qua ORB, tiếp tục OCR
@@ -1236,7 +1247,8 @@ async def ocr_endpoint(
             orb_match, orb_score = match_image_by_prefix(image_bytes, [ocr_clean])
             if orb_match:
                 print(f"ORB Prefix Match: {orb_score} good matches for {ocr_clean}")
-                _save_history(image_bytes, orb_match.get("chu_han", ""), orb_match)
+                new_cr = _save_history(image_bytes, orb_match.get("chu_han", ""), orb_match)
+                if new_cr is not None: orb_match["credits"] = new_cr
                 return JSONResponse(status_code=200, content=orb_match)
             return JSONResponse(
                 content={"success": False, "message": "Khong du thong tin de xac dinh. Vui long chup lai ro hon.", "chu_han": "", "top5": [], "report": None}
@@ -1321,17 +1333,19 @@ async def ocr_endpoint(
 
         display_text = _choose_display_mark(selected_report, merged_candidates, ocr_text)
 
-        _save_history(image_bytes, display_text, selected_report)
+        new_cr = _save_history(image_bytes, display_text, selected_report)
 
-        return JSONResponse(
-            content={
-                "success": True,
-                "chu_han": display_text,
-                "confidence": result.get("confidence", 0),
-                "top5": top5,
-                "report": selected_report,
-            }
-        )
+        response_content = {
+            "success": True,
+            "chu_han": display_text,
+            "confidence": result.get("confidence", 0),
+            "top5": top5,
+            "report": selected_report,
+        }
+        if new_cr is not None:
+            response_content["credits"] = new_cr
+
+        return JSONResponse(content=response_content)
 
     except Exception as e:
         import traceback
@@ -1436,10 +1450,101 @@ class BuyCreditsRequest(BaseModel):
     package: str  # 'basic', 'pro', 'enterprise'
 
 PACKAGES = {
-    'basic': {'name': 'Cơ bản', 'credits': 50, 'price': 490000},
-    'pro': {'name': 'Phổ biến', 'credits': 200, 'price': 2490000},
-    'enterprise': {'name': 'Chuyên nghiệp', 'credits': 99999, 'price': 9900000},
+    'basic': {'name': 'Cơ bản', 'credits': 50, 'amount': 490000},
+    'pro': {'name': 'Phổ biến', 'credits': 200, 'amount': 447712},
+    'enterprise': {'name': 'Chuyên nghiệp', 'credits': 9999, 'amount': 2490000},
 }
+
+# Cấu hình thanh toán SePay
+SEPAY_API_KEY = "YOUR_SEPAY_API_KEY"
+ACCOUNT_NUMBER = "STK_CUA_BAN"
+BANK_ID = "MB"
+NAME_WEB = "HIEUDEAI"
+SECRET_XOR_KEY = 0x5EAFB
+
+def encode_payment_id(p_id: int) -> str:
+    return hex(p_id ^ SECRET_XOR_KEY)[2:].upper()
+
+@app.post("/api/v1/payment/create")
+async def create_payment_api(req: BuyCreditsRequest, request: Request):
+    auth_header = request.headers.get("Authorization")
+    if not auth_header or not auth_header.startswith("Bearer "):
+        return JSONResponse(status_code=401, content={"success": False, "message": "Chưa đăng nhập."})
+    user_id = int(auth_header.split("Bearer ")[1])
+    
+    pkg = PACKAGES.get(req.package)
+    if not pkg:
+        return JSONResponse(status_code=400, content={"error": "Gói không hợp lệ"})
+    
+    payment_id = create_payment(user_id, pkg["amount"], pkg["credits"])
+    if payment_id is None:
+        return JSONResponse(status_code=500, content={"error": "Không thể lưu giao dịch vào CSDL. Vui lòng kiểm tra MySQL (XAMPP) đã bật chưa."})
+    
+    hex_id = encode_payment_id(payment_id)
+    content = f"{NAME_WEB}NAPTOKEN{hex_id}"
+    
+    qr_url = f"https://img.vietqr.io/image/{BANK_ID}-{ACCOUNT_NUMBER}-compact2.png?amount={pkg['amount']}&addInfo={content}"
+    
+    return {
+        "success": True,
+        "payment_id": payment_id,
+        "hex_id": hex_id,
+        "amount": pkg["amount"],
+        "content": content,
+        "qr_url": qr_url
+    }
+
+@app.get("/api/v1/payment/status/{payment_id}")
+async def check_payment_status(payment_id: int):
+    payment = get_payment(payment_id)
+    if not payment: return JSONResponse(status_code=404, content={"error": "Không tìm thấy"})
+    if payment['status'] == 'completed':
+         return {"status": "completed"}
+         
+    async with httpx.AsyncClient() as client:
+        try:
+            resp = await client.get("https://my.sepay.vn/userapi/transactions/list", 
+                headers={"Authorization": f"Bearer {SEPAY_API_KEY}"})
+            data = resp.json()
+            transactions = data.get("transactions", [])
+        except Exception as e:
+            return {"status": "pending", "message": "Đang kết nối ngân hàng..."}
+        
+        target_hex = encode_payment_id(payment_id)
+        pattern = rf"{NAME_WEB}NAPTOKEN([A-Fa-f0-9]+)"
+        
+        for tx in transactions:
+            content = tx.get("transaction_content", "")
+            amount_in = float(tx.get("amount_in", 0))
+            
+            match = re.search(pattern, content, re.IGNORECASE)
+            if match:
+                found_hex = match.group(1).upper()
+                if found_hex == target_hex and amount_in >= payment['amount_vnd']:
+                    success = complete_payment(payment_id, tx.get("id"))
+                    if success:
+                        add_credits(payment['user_id'], payment['credits'])
+                        return {"status": "completed"}
+                        
+    return {"status": "pending"}
+
+@app.post("/api/v1/payment/mock/{payment_id}")
+async def mock_payment(payment_id: int):
+    """API giả lập thanh toán thành công dành cho Developer"""
+    payment = get_payment(payment_id)
+    if not payment: return JSONResponse(status_code=404, content={"error": "Hóa đơn không tồn tại"})
+    
+    if payment['status'] == 'pending':
+        # Giả lập mã giao dịch ngân hàng là một số ngẫu nhiên lớn
+        import random
+        mock_tx_id = random.randint(10000000, 99999999)
+        
+        success = complete_payment(payment_id, mock_tx_id)
+        if success:
+            add_credits(payment['user_id'], payment['credits'])
+            return {"status": "completed", "message": "Giả lập thanh toán thành công!"}
+    
+    return {"status": payment['status']}
 
 @app.post("/api/buy-credits")
 def buy_credits(data: BuyCreditsRequest, request: Request):

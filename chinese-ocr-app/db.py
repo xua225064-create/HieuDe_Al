@@ -228,3 +228,41 @@ def add_credits(user_id, amount):
         return False
     finally:
         conn.close()
+
+def create_payment(user_id: int, amount_vnd: int, credits: int):
+    conn = get_db_connection()
+    if not conn: return None
+    try:
+        with conn.cursor() as cursor:
+            cursor.execute(
+                "INSERT INTO payments (user_id, amount_vnd, credits) VALUES (%s, %s, %s)",
+                (user_id, amount_vnd, credits)
+            )
+            conn.commit()
+            return cursor.lastrowid
+    finally:
+        if conn: conn.close()
+
+def get_payment(payment_id: int):
+    conn = get_db_connection()
+    if not conn: return None
+    try:
+        with conn.cursor() as cursor:
+            cursor.execute("SELECT * FROM payments WHERE id = %s", (payment_id,))
+            return cursor.fetchone()
+    finally:
+        if conn: conn.close()
+
+def complete_payment(payment_id: int, sepay_tx_id: int):
+    conn = get_db_connection()
+    if not conn: return False
+    try:
+        with conn.cursor() as cursor:
+            cursor.execute(
+                "UPDATE payments SET status = 'completed', sepay_tx_id = %s WHERE id = %s",
+                (sepay_tx_id, payment_id)
+            )
+            conn.commit()
+            return cursor.rowcount > 0
+    finally:
+        if conn: conn.close()

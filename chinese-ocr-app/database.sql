@@ -44,3 +44,15 @@ CREATE TABLE IF NOT EXISTS scan_history (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
+
+-- Bảng lưu trữ hóa đơn nạp tiền
+CREATE TABLE IF NOT EXISTS payments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    amount_vnd INT NOT NULL,
+    credits INT NOT NULL,
+    status VARCHAR(20) DEFAULT 'pending', -- 'pending', 'completed', 'failed'
+    sepay_tx_id INT NULL UNIQUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
