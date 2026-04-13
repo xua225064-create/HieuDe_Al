@@ -1563,3 +1563,31 @@ def buy_credits(data: BuyCreditsRequest, request: Request):
         new_credits = get_user_credits(int(user_id))
         return {"success": True, "credits": new_credits, "added": pkg['credits'], "package_name": pkg['name'], "message": f"Đã thêm {pkg['credits']} lượt phân tích!"}
     return JSONResponse(status_code=500, content={"success": False, "message": "Lỗi hệ thống."})
+
+class ChatMessage(BaseModel):
+    message: str
+
+@app.post("/api/chat")
+async def chat_bot(data: ChatMessage):
+    msg = data.message.lower().strip()
+    words = msg.split()
+    if any(k in msg for k in ["chào", "hello", "xin chào"]) or "hi" in words:
+        resp = "Chào bạn! Tôi là trợ lý MarkSense AI. Tôi có thể giúp bạn giải đáp các thông tin về nhận dạng hiệu đề gốm sứ và hỗ trợ sử dụng hệ thống."
+    elif any(k in msg for k in ["hiệu đề là gì", "hiệu đề", "đáy gốm", "chữ hán", "khái niệm", "ý nghĩa"]):
+        resp = "Hiệu đề là dòng chữ nhỏ in dưới đáy các món đồ gốm sứ (thường gồm 4 hoặc 6 chữ Hán/Nôm), chỉ rõ niên hiệu của triều đại hoàng đế trị vì hoặc phiên hiệu xưởng sản xuất."
+    elif any(k in msg for k in ["cách dùng", "hướng dẫn", "giám định", "kiểm tra", "quét", "phân tích", "chỉ tôi", "làm sao", "làm thế nào", "sử dụng", "tìm hiểu"]):
+        resp = "Rất đơn giản! Bạn chỉ cần ấn vào khu vực Khu Vực Tải Ảnh (Trang chủ) và chọn bức ảnh chụp rõ mặt chữ ở đáy gốm. Trí tuệ nhân tạo sẽ lập tức dịch từng mảng nhỏ và phân tích sâu vào bối cảnh lịch sử cho bạn!"
+    elif any(k in msg for k in ["giá", "nâng cấp", "lượt", "bao nhiêu", "tiền", "mua", "vip", "pro", "thanh toán", "gói cước"]):
+        resp = "Tài khoản mới sẽ có sẵn một số lượt phân tích. Nếu cần nhiều hơn, bạn có thể Nâng cấp tài khoản. Gói Chuyên Nghiệp (17$/tháng) tặng 200 lượt phân tích tốc độ cao. Gói Tối Đa (100$/tháng) cho phép quét không giới hạn."
+    elif any(k in msg for k in ["lịch sử", "triều đại", "minh", "thanh", "nguyễn", "nhà minh", "nhà thanh", "thư viện", "dữ liệu"]):
+        resp = "Dữ liệu MarkSense lưu trữ lịch sử hàng trăm hiệu đề lớn nhỏ suốt các triều Đại Minh, Đại Thanh (Trung Quốc) lẫn dòng gốm ngự dụng nhà Nguyễn (Việt Nam). Bạn có thể bấm sang 'Thư viện' để xem bộ Bách Khoa Toàn Thư nhé."
+    elif any(k in msg for k in ["sai", "không đúng", "lỗi", "mờ", "không nhận ra", "không dịch được"]):
+        resp = "Để tăng tối đa độ chính xác (OCR), bạn vui lòng chụp ảnh căn góc từ trên xuống, hạn chế ánh đèn flash chiếu lóa bề mặt sứ và đảm bảo các vết mực rạn phải rõ nét nhất có thể."
+    elif any(k in msg for k in ["cảm ơn", "thanks", "ok", "tuyệt", "hay", "tốt", "hiểu rồi"]):
+        resp = "Dạ, rất vui được hỗ trợ! Chúc bạn có những phiên tiếp cận cổ vật thật xuất sắc."
+    else:
+        resp = "Trợ lý ảo hiện đang ở phiên bản hỗ trợ cơ bản. Bạn hãy thử dùng lại các từ khoá đơn giản: 'cách phân tích', 'giá cước', 'hiệu đề là gì?', hoặc 'thông tin triều đại' để mình hỗ trợ nhé!"
+
+    import asyncio
+    await asyncio.sleep(0.6) # Giả lập delay suy nghĩ
+    return {"reply": resp}
