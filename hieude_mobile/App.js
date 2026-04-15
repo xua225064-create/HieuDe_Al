@@ -12,6 +12,9 @@ import ProfileScreen from './src/screens/ProfileScreen';
 import PricingScreen from './src/screens/PricingScreen';
 import CheckoutScreen from './src/screens/CheckoutScreen';
 import AboutScreen from './src/screens/AboutScreen';
+import TermsScreen from './src/screens/TermsScreen';
+import PrivacyScreen from './src/screens/PrivacyScreen';
+import SettingsScreen from './src/screens/SettingsScreen';
 
 export default function App() {
   const [screen, setScreen] = useState('Home');
@@ -72,6 +75,9 @@ export default function App() {
       case 'Pricing':   return <PricingScreen {...props} />;
       case 'Checkout':  return <CheckoutScreen {...props} />;
       case 'About':     return <AboutScreen {...props} />;
+      case 'Terms':     return <TermsScreen {...props} />;
+      case 'Privacy':   return <PrivacyScreen {...props} />;
+      case 'Settings':  return <SettingsScreen {...props} />;
       default:          return <HomeScreen {...props} />;
     }
   };

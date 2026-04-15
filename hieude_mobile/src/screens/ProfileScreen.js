@@ -1,14 +1,37 @@
-import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Alert, Platform } from 'react-native';
-import { clearUser } from '../api';
+import React, { useState } from 'react';
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Alert, Platform, StatusBar, TextInput, Image, KeyboardAvoidingView } from 'react-native';
+import { clearUser, storeUser } from '../api';
 import { AppFooter } from '../components/NavHeader';
+import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 
-export default function ProfileScreen({ user, credits, setScreen, handleLogout }) {
+export default function ProfileScreen({ user, setScreen, handleLogout, handleLogin }) {
   if (!user) { setScreen('Login'); return null; }
 
-  const initial = (user.name || user.email || 'U')[0].toUpperCase();
-  const displayName = user.name || user.email?.split('@')[0] || 'Người dùng';
-  const displayEmail = user.email || 'Chưa cập nhật';
+  const [name, setName] = useState(user.name || user.email?.split('@')[0] || 'Người dùng');
+  const [email, setEmail] = useState(user.email || '');
+
+  const initial = (name || 'U')[0].toUpperCase();
+  const avatarUrl = user.picture || null;
+
+  const handleSave = async () => {
+    if (!name.trim()) {
+      Alert.alert('Lỗi', 'Tên hiển thị không được bỏ trống');
+      return;
+    }
+    const updatedUser = { ...user, name, email };
+    await storeUser(updatedUser);
+    
+    // Gọi hàm set user ở cấp App. Hành vi này có thể đưa về Home.
+    if (handleLogin) {
+      await handleLogin(updatedUser);
+    }
+    
+    if (Platform.OS === 'web') {
+      window.alert('Thông tin tài khoản đã được lưu!');
+    } else {
+      Alert.alert('Thành công', 'Thông tin tài khoản đã được lưu!');
+    }
+  };
 
   const doLogout = async () => {
     if (Platform.OS === 'web') {
@@ -37,160 +60,131 @@ export default function ProfileScreen({ user, credits, setScreen, handleLogout }
   };
 
   return (
-    <View style={s.flex}>
-      <ScrollView contentContainerStyle={s.scroll}>
+    <KeyboardAvoidingView style={s.flex} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+      <StatusBar barStyle="light-content" backgroundColor="#064e3b" />
+      
+      {/* Decorative Top Background */}
+      <View style={s.topBg}>
+        <View style={s.blob1} />
+        <View style={s.blob2} />
+      </View>
 
-        <View style={s.pgHd}>
-          <Text style={s.pgTitle}>Tài khoản</Text>
+      <ScrollView contentContainerStyle={s.scroll} showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="handled">
+        <View style={s.headerRow}>
+          <View style={{ width: 44 }} />
+          <Text style={s.pgTitle}>Hồ Sơ</Text>
+          <TouchableOpacity style={s.settingsBtn} activeOpacity={0.8} onPress={() => setScreen('Settings')}>
+            <Feather name="settings" size={24} color="#fff" />
+          </TouchableOpacity>
         </View>
 
-        {/* Profile Header */}
-        <View style={s.profileHeader}>
-          <View style={s.profileInfo}>
-            <View style={s.avatarRing}>
-              <View style={s.avatar}>
+        {/* Form and Avatar Card */}
+        <View style={s.profileCard}>
+          <View style={s.avatarWrap}>
+            <View style={s.avatarInner}>
+              {avatarUrl ? (
+                <Image source={{ uri: avatarUrl }} style={s.avatarImage} />
+              ) : (
                 <Text style={s.avatarLetter}>{initial}</Text>
-              </View>
+              )}
             </View>
-            <Text style={s.profileName} numberOfLines={1}>{displayName}</Text>
-            <Text style={s.profileEmail} numberOfLines={1}>{displayEmail}</Text>
-            <View style={s.roleBadge}>
-              <Text style={s.roleIcon}>👑</Text>
-              <Text style={s.roleText}>Thành viên</Text>
-            </View>
-          </View>
-        </View>
-
-        {/* Quick Stats */}
-        <View style={s.statsRow}>
-          <TouchableOpacity style={s.statCard} onPress={() => setScreen('Pricing')}>
-            <Text style={s.statIcon}>🔑</Text>
-            <Text style={s.statNum}>{credits ?? '--'}</Text>
-            <Text style={s.statLabel}>Lượt phân tích</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={s.statCard} onPress={() => setScreen('History')}>
-            <Text style={s.statIcon}>📋</Text>
-            <Text style={s.statNum}>Xem</Text>
-            <Text style={s.statLabel}>Lịch sử</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={s.statCard} onPress={() => setScreen('Library')}>
-            <Text style={s.statIcon}>📚</Text>
-            <Text style={s.statNum}>21+</Text>
-            <Text style={s.statLabel}>Thư viện</Text>
-          </TouchableOpacity>
-        </View>
-
-        {/* Account Info */}
-        <View style={s.section}>
-          <Text style={s.sTitle}>Thông tin tài khoản</Text>
-          <View style={s.infoCard}>
-            <View style={s.infoRow}>
-              <View style={s.infoIconWrap}><Text style={s.infoEmoji}>👤</Text></View>
-              <View style={s.infoContent}>
-                <Text style={s.infoLabel}>Họ và tên</Text>
-                <Text style={s.infoVal} numberOfLines={1}>{displayName}</Text>
-              </View>
-            </View>
-            <View style={s.infoSep} />
-            <View style={s.infoRow}>
-              <View style={s.infoIconWrap}><Text style={s.infoEmoji}>✉️</Text></View>
-              <View style={s.infoContent}>
-                <Text style={s.infoLabel}>Email</Text>
-                <Text style={s.infoVal} numberOfLines={1}>{displayEmail}</Text>
-              </View>
-            </View>
-            <View style={s.infoSep} />
-            <View style={s.infoRow}>
-              <View style={s.infoIconWrap}><Text style={s.infoEmoji}>🔗</Text></View>
-              <View style={s.infoContent}>
-                <Text style={s.infoLabel}>Đăng nhập qua</Text>
-                <Text style={s.infoVal}>{user.picture ? 'Google' : 'Email & Mật khẩu'}</Text>
-              </View>
-            </View>
-          </View>
-        </View>
-
-        {/* Quick Actions */}
-        <View style={s.section}>
-          <Text style={s.sTitle}>Thao tác nhanh</Text>
-          <View style={s.actionsGrid}>
-            <TouchableOpacity style={s.actionCard} onPress={() => setScreen('Pricing')}>
-              <Text style={s.actionIcon}>💎</Text>
-              <Text style={s.actionText}>Nâng cấp</Text>
+            <TouchableOpacity style={s.cameraBadge} activeOpacity={0.8}>
+              <Feather name="camera" size={14} color="#fff" />
             </TouchableOpacity>
-            <TouchableOpacity style={s.actionCard} onPress={() => setScreen('About')}>
-              <Text style={s.actionIcon}>ℹ️</Text>
-              <Text style={s.actionText}>Giới thiệu</Text>
+          </View>
+
+          <View style={s.formWrap}>
+            <Text style={s.label}>Họ và tên</Text>
+            <View style={s.inputBox}>
+              <Feather name="user" size={18} color="#065f46" style={s.inputIcon} />
+              <TextInput 
+                style={s.input} 
+                value={name} 
+                onChangeText={setName} 
+                placeholder="Nhập tên hiển thị"
+                placeholderTextColor="#a8a29e"
+              />
+            </View>
+
+            <Text style={s.label}>Email liên kết</Text>
+            <View style={s.inputBox}>
+              <Feather name="mail" size={18} color="#065f46" style={s.inputIcon} />
+              <TextInput 
+                style={s.input} 
+                value={email} 
+                onChangeText={setEmail} 
+                placeholder="name@example.com"
+                placeholderTextColor="#a8a29e"
+                keyboardType="email-address"
+                autoCapitalize="none"
+              />
+            </View>
+
+            <Text style={s.label}>Phương thức đăng nhập</Text>
+            <View style={[s.inputBox, s.inputBoxDisabled]}>
+              <MaterialCommunityIcons name="shield-check-outline" size={18} color="#a8a29e" style={s.inputIcon} />
+              <TextInput 
+                style={[s.input, { color: '#78716c' }]} 
+                value={user.picture ? 'Google OAuth' : 'Theo email / mật khẩu'} 
+                editable={false} 
+              />
+            </View>
+
+            <TouchableOpacity style={s.saveBtn} activeOpacity={0.8} onPress={handleSave}>
+              <Feather name="save" size={18} color="#fff" />
+              <Text style={s.saveBtnText}>Lưu thông tin</Text>
             </TouchableOpacity>
           </View>
         </View>
 
-        {/* Logout Button */}
-        <TouchableOpacity style={s.logoutBtn} onPress={doLogout} activeOpacity={0.7}>
-          <Text style={s.logoutIcon}>🚪</Text>
-          <Text style={s.logoutText}>Đăng xuất</Text>
+        {/* Logout */}
+        <TouchableOpacity style={s.logoutBtn} activeOpacity={0.8} onPress={doLogout}>
+          <Feather name="log-out" size={20} color="#ef4444" />
+          <Text style={s.logoutText}>Đăng xuất khỏi thiết bị</Text>
         </TouchableOpacity>
 
-        <Text style={s.version}>MarkSense AI v1.0 — © 2026</Text>
+        <Text style={s.version}>MarkSense AI v1.0 — Premium Build</Text>
 
         <View style={{ height: 120 }} />
       </ScrollView>
       <AppFooter current="Profile" setScreen={setScreen} />
-    </View>
+    </KeyboardAvoidingView>
   );
 }
 
 const s = StyleSheet.create({
   flex: { flex: 1, backgroundColor: '#fdfbf7' },
-  scroll: { paddingHorizontal: 20, paddingTop: 55 },
+  topBg: { position: 'absolute', top: 0, left: 0, right: 0, height: 260, backgroundColor: '#064e3b', borderBottomLeftRadius: 40, borderBottomRightRadius: 40, overflow: 'hidden' },
+  blob1: { position: 'absolute', top: -50, right: -40, width: 200, height: 200, borderRadius: 100, backgroundColor: 'rgba(255,255,255,0.06)' },
+  blob2: { position: 'absolute', top: 120, left: -60, width: 140, height: 140, borderRadius: 70, backgroundColor: 'rgba(255,255,255,0.04)' },
+  scroll: { paddingHorizontal: 20, paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight + 20 : 60 },
   
-  pgHd: { marginBottom: 24 },
-  pgTitle: { fontSize: 32, fontFamily: 'serif', color: '#064e3b', fontWeight: 'bold' },
+  headerRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 30, paddingHorizontal: 10 },
+  pgTitle: { fontSize: 26, fontFamily: 'serif', color: '#fff', fontWeight: 'bold' },
+  settingsBtn: { width: 44, height: 44, borderRadius: 22, backgroundColor: 'rgba(255,255,255,0.15)', justifyContent: 'center', alignItems: 'center' },
 
-  // Profile Header
-  profileHeader: { marginBottom: 24, borderRadius: 24, padding: 24, backgroundColor: '#064e3b', elevation: 6, shadowColor: '#064e3b', shadowOpacity: 0.3, shadowRadius: 15 },
-  profileInfo: { alignItems: 'center' },
-  avatarRing: { width: 76, height: 76, borderRadius: 38, backgroundColor: '#fdfbf7', justifyContent: 'center', alignItems: 'center', marginBottom: 16 },
-  avatar: { width: 68, height: 68, borderRadius: 34, backgroundColor: '#065f46', justifyContent: 'center', alignItems: 'center' },
-  avatarLetter: { color: '#fff', fontSize: 24, fontFamily: 'serif', fontWeight: '800' },
-  profileName: { fontSize: 20, fontFamily: 'serif', color: '#fff', maxWidth: 280, textAlign: 'center', marginBottom: 4 },
-  profileEmail: { fontSize: 13, color: '#ecfdf5', maxWidth: 280, textAlign: 'center', opacity: 0.8 },
-  roleBadge: { flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 12, backgroundColor: '#a7f3d0', paddingHorizontal: 12, paddingVertical: 6, borderRadius: 20 },
-  roleIcon: { fontSize: 12 },
-  roleText: { color: '#064e3b', fontSize: 10, fontWeight: '800', letterSpacing: 0.5, textTransform: 'uppercase' },
-
-  // Stats
-  statsRow: { flexDirection: 'row', gap: 12, marginBottom: 30 },
-  statCard: { flex: 1, backgroundColor: '#fff', borderRadius: 20, padding: 16, alignItems: 'center', elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8 },
-  statIcon: { fontSize: 20, marginBottom: 8 },
-  statNum: { fontSize: 20, fontWeight: '800', color: '#065f46', marginBottom: 4 },
-  statLabel: { fontSize: 10, color: '#78716c', fontWeight: '700', textTransform: 'uppercase', letterSpacing: 0.5 },
-
-  // Section
-  section: { marginBottom: 30 },
-  sTitle: { fontSize: 12, fontWeight: '800', color: '#a8a29e', marginBottom: 12, letterSpacing: 1, textTransform: 'uppercase' },
-
-  // Info Card
-  infoCard: { backgroundColor: '#fff', borderRadius: 20, padding: 6, elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8 },
-  infoRow: { flexDirection: 'row', alignItems: 'center', padding: 14, gap: 14 },
-  infoSep: { height: 1, backgroundColor: '#f5f5f4', marginHorizontal: 14 },
-  infoIconWrap: { width: 40, height: 40, borderRadius: 12, backgroundColor: '#f0fdf4', justifyContent: 'center', alignItems: 'center' },
-  infoEmoji: { fontSize: 18 },
-  infoContent: { flex: 1 },
-  infoLabel: { fontSize: 11, color: '#78716c', fontWeight: '600', marginBottom: 2 },
-  infoVal: { fontSize: 15, color: '#1c1917', fontWeight: '700' },
-
-  // Actions Grid
-  actionsGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 12 },
-  actionCard: { width: '48%', flexGrow: 1, backgroundColor: '#fff', borderRadius: 20, padding: 20, alignItems: 'center', gap: 8, elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8 },
-  actionIcon: { fontSize: 24 },
-  actionText: { fontSize: 13, color: '#44403c', fontWeight: '700' },
+  // Profile Card
+  profileCard: { backgroundColor: '#fff', borderRadius: 24, padding: 24, alignItems: 'center', elevation: 8, shadowColor: '#064e3b', shadowOpacity: 0.15, shadowRadius: 20, shadowOffset: { width: 0, height: 10 }, marginBottom: 36 },
+  avatarWrap: { position: 'relative', marginBottom: 26, marginTop: -60 },
+  avatarInner: { width: 110, height: 110, borderRadius: 55, backgroundColor: '#f0fdf4', justifyContent: 'center', alignItems: 'center', borderWidth: 4, borderColor: '#fff', elevation: 4, shadowColor: '#000', shadowOpacity: 0.1, shadowRadius: 8, overflow: 'hidden' },
+  avatarLetter: { color: '#065f46', fontSize: 48, fontFamily: 'serif', fontWeight: 'bold' },
+  avatarImage: { width: '100%', height: '100%', resizeMode: 'cover' },
+  cameraBadge: { position: 'absolute', bottom: 4, right: 4, width: 34, height: 34, borderRadius: 17, backgroundColor: '#065f46', justifyContent: 'center', alignItems: 'center', borderWidth: 2, borderColor: '#fff' },
+  
+  // Form Setup
+  formWrap: { width: '100%' },
+  label: { fontSize: 12, color: '#78716c', fontWeight: '700', marginBottom: 8, marginLeft: 4, textTransform: 'uppercase', letterSpacing: 0.5 },
+  inputBox: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#fdfbf7', borderWidth: 1, borderColor: '#e7e5e4', borderRadius: 14, marginBottom: 20, height: 50 },
+  inputBoxDisabled: { backgroundColor: '#f5f5f4', borderColor: '#d6d3d1' },
+  inputIcon: { paddingHorizontal: 16 },
+  input: { flex: 1, height: '100%', fontSize: 15, color: '#1c1917', fontWeight: '600' },
+  
+  saveBtn: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', backgroundColor: '#065f46', borderRadius: 14, paddingVertical: 18, marginTop: 10, gap: 10, elevation: 6, shadowColor: '#065f46', shadowOpacity: 0.3, shadowRadius: 10, shadowOffset: { width: 0, height: 4 } },
+  saveBtnText: { color: '#fff', fontSize: 16, fontWeight: '800' },
 
   // Logout
-  logoutBtn: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8, padding: 18, backgroundColor: '#fef2f2', borderRadius: 20, marginBottom: 20 },
-  logoutIcon: { fontSize: 18 },
-  logoutText: { color: '#dc2626', fontSize: 14, fontWeight: '800', letterSpacing: 0.5 },
+  logoutBtn: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 10, padding: 18, backgroundColor: '#fff', borderRadius: 20, borderWidth: 1, borderColor: '#fee2e2', marginBottom: 24, borderStyle: 'dashed' },
+  logoutText: { color: '#ef4444', fontSize: 15, fontWeight: '700' },
 
-  // Footer
-  version: { textAlign: 'center', color: '#d6d3d1', fontSize: 11, fontWeight: '600', letterSpacing: 0.5 },
+  version: { textAlign: 'center', color: '#d6d3d1', fontSize: 12, fontWeight: '600' },
 });

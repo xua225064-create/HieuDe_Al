@@ -105,8 +105,8 @@ export default function PricingScreen({ user, credits, setScreen, goCheckout }) 
 
         {/* Terms / Privacy */}
         <View style={s.legalRow}>
-          <TouchableOpacity><Text style={s.legalText}>Điều khoản</Text></TouchableOpacity>
-          <TouchableOpacity><Text style={s.legalText}>Chính sách</Text></TouchableOpacity>
+          <TouchableOpacity onPress={() => setScreen('Terms')}><Text style={s.legalText}>Điều khoản</Text></TouchableOpacity>
+          <TouchableOpacity onPress={() => setScreen('Privacy')}><Text style={s.legalText}>Chính sách</Text></TouchableOpacity>
         </View>
 
         <View style={{ height: 30 }} />
