@@ -15,16 +15,20 @@ import AboutScreen from './src/screens/AboutScreen';
 import TermsScreen from './src/screens/TermsScreen';
 import PrivacyScreen from './src/screens/PrivacyScreen';
 import SettingsScreen from './src/screens/SettingsScreen';
+import LanguageScreen from './src/screens/LanguageScreen';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function App() {
   const [screen, setScreen] = useState('Home');
   const [user, setUser] = useState(null);
   const [credits, setCredits] = useState(null);
   const [checkoutPkg, setCheckoutPkg] = useState(null);
+  const [language, setLanguage] = useState('English');
 
   // Restore session
   useEffect(() => {
     getStoredUser().then((u) => { if (u) { setUser(u); } });
+    AsyncStorage.getItem('appLang').then(l => { if (l) setLanguage(l); });
   }, []);
 
   // Fetch credits on user change
@@ -62,7 +66,12 @@ export default function App() {
     setScreen('Checkout');
   };
 
-  const props = { user, credits, setScreen, handleLogin, handleLogout, refreshCredits, goCheckout, checkoutPkg };
+  const changeLanguage = async (val) => {
+    setLanguage(val);
+    await AsyncStorage.setItem('appLang', val);
+  };
+
+  const props = { user, credits, setScreen, handleLogin, handleLogout, refreshCredits, goCheckout, checkoutPkg, language, setLanguage: changeLanguage };
 
   const renderScreen = () => {
     switch (screen) {
@@ -78,6 +87,7 @@ export default function App() {
       case 'Terms':     return <TermsScreen {...props} />;
       case 'Privacy':   return <PrivacyScreen {...props} />;
       case 'Settings':  return <SettingsScreen {...props} />;
+      case 'Language':  return <LanguageScreen {...props} />;
       default:          return <HomeScreen {...props} />;
     }
   };

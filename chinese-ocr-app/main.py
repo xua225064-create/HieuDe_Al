@@ -34,6 +34,9 @@ app.mount("/uploads", StaticFiles(directory="uploads"), name="uploads")
 ALLOWED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp"}
 DATA_PATH = os.path.join(os.path.dirname(__file__), "data", "hieu_de_database.json")
 
+# Auto-Learning: lưu tạm ảnh vừa phân tích để user xác nhận → lưu vào thư viện tham chiếu
+_last_analyzed_images: Dict[str, bytes] = {}
+
 
 from db import fetch_all_marks, create_user, get_user_by_username, add_scan_history, get_scan_history, get_or_create_social_user, ensure_credits_column, get_user_credits, deduct_credit, add_credits, create_payment, get_payment, complete_payment
 from pydantic import BaseModel
@@ -315,11 +318,11 @@ def find_best_matches(ocr_text: str, database: List[Dict[str, Any]], top_n: int 
         {"平", "干", "千", "年", "半"},
         {"順", "頓", "碩", "預", "煩"},
         {"年", "牛", "午", "平", "半"},
-        {"製", "制"},
+        {"製", "制", "脊"},
         {"隆", "降", "窿", "融"},
-        {"慶", "麗", "廢", "應"},
-        {"嘉", "喜", "家", "善"},
-        {"靖", "清", "情", "精", "請"},
+        {"慶", "麗", "廢", "應", "魔", "磨", "廣"},
+        {"嘉", "喜", "家", "善", "嘗"},
+        {"靖", "清", "情", "精", "請", "靜", "藏"},
         {"萬", "万"},
         {"曆", "歷", "厤", "歴"},
         {"宣", "官", "宜", "直"},
@@ -330,12 +333,40 @@ def find_best_matches(ocr_text: str, database: List[Dict[str, Any]], top_n: int 
         {"弘", "宏", "泓"},
         {"正", "政", "証", "征"},
         {"統", "緒", "絲"},
-        {"内", "內"},  # simplified/traditional
+        {"内", "內"},
         {"贵", "貴"},
         {"长", "長"},
         {"宝", "寶"},
         {"龙", "龍"},
         {"万", "萬"},
+        {"春", "舂", "椿"},
+        {"侍", "待", "持", "特", "恃"},
+        {"左", "佐", "右", "石", "有"},
+        {"中", "杜", "牡", "社", "址", "仲", "忠", "柱"},
+        {"旨", "皆", "官"},
+        {"東", "束", "柬", "棟"},
+        {"南", "楠", "喃"},
+        {"北", "背", "兆"},
+        {"西", "曲", "酉"},
+        {"府", "腐", "附"},
+        {"康", "庚", "唐", "廉"},
+        {"熙", "照", "熊", "然", "煕"},
+        {"雍", "維", "雅"},
+        {"乾", "幹", "軒"},
+        {"道", "進", "適", "遒"},
+        {"光", "先", "克", "充"},
+        {"緒", "絲", "續", "紹"},
+        {"同", "銅", "僮"},
+        {"祥", "詳", "翔"},
+        {"瑞", "端"},
+        {"玉", "王", "主"},
+        {"堂", "常", "當"},
+        {"福", "富"},
+        {"禄", "祿", "綠"},
+        {"壽", "寿"},
+        {"玄", "去", "云", "元", "亢"},
+        {"窯", "窑"},
+        {"造", "迴", "遭"},
     ]
 
     def similarity(ch1: str, ch2: str) -> float:
@@ -360,10 +391,30 @@ def find_best_matches(ocr_text: str, database: List[Dict[str, Any]], top_n: int 
                 if 0 <= i + offset < len2
             )
             best_align = max(best_align, score / max_len)
-        set_score = (
-            sum(max((similarity(c1, c2) for c2 in s2), default=0) for c1 in s1) / max_len
-        )
-        return positional_score * 0.40 + best_align * 0.35 + set_score * 0.25
+        # Tỷ lệ ký tự s1 có mặt trong s2
+        m1 = sum(max((similarity(c1, c2) for c2 in s2), default=0) for c1 in s1)
+        # Tỷ lệ ký tự s2 có mặt trong s1
+        m2 = sum(max((similarity(c2, c1) for c1 in s1), default=0) for c2 in s2)
+        set_score = (m1 / len1 + m2 / len2) / 2
+
+        base = positional_score * 0.20 + best_align * 0.30 + set_score * 0.50
+
+        # CONTAINMENT BONUS: Nếu MỌI chữ OCR đọc được đều nằm trong target (fuzzy),
+        # → rất có thể OCR chỉ đọc được 1 phần (3/6 chữ) nhưng đúng hiệu đề.
+        s1_in_s2_count = sum(1 for c1 in s1 if max((similarity(c1, c2) for c2 in s2), default=0) >= 0.7)
+        containment = s1_in_s2_count / len1  # 0.0 ~ 1.0
+        
+        # Chỉ áp dụng khi OCR đọc >= 3 chữ hợp lệ
+        if len1 >= 3 and containment >= 0.9:
+            # Cộng điểm phạt bu trừ cho "s2 có mặt trong s1" bị thấp do OCR đọc thiếu chữ
+            # Và thưởng mạnh nếu đích (target s2) là chuỗi 6 chữ
+            length_bonus = 0.15 if len2 == 6 else (0.05 if len2 == 4 else 0.0)
+            base += 0.3 + length_bonus
+        elif len1 >= 3 and containment >= 0.75:
+            length_bonus = 0.10 if len2 == 6 else (0.02 if len2 == 4 else 0.0)
+            base += 0.15 + length_bonus
+
+        return base
 
     scored = []
     for item in database:
@@ -406,13 +457,24 @@ def rank_by_multi_candidates(
     candidates: List[str], database: List[Dict[str, Any]], top_n: int = 5
 ) -> List[Dict[str, Any]]:
     """Gộp nhiều candidate OCR để giảm sai lệch do 1 lần đọc nhầm."""
-    clean_candidates = [_normalize_cjk(c) for c in candidates if _normalize_cjk(c)]
+    raw_clean = []
+    for c in candidates:
+        norm = _normalize_cjk(c)
+        if norm and norm not in raw_clean:
+            raw_clean.append(norm)
+    # Ưu tiên ứng viên có độ dài lớn hơn
+    clean_candidates = sorted(raw_clean, key=len, reverse=True)
+    
     if not clean_candidates:
         return []
 
     agg: Dict[int, Dict[str, Any]] = {}
     for idx, candidate in enumerate(clean_candidates):
-        weight = 1.0 if idx == 0 else 0.72
+        # Weight thấp cho candidate ở sau, và weight cực thấp nếu OCR chỉ đọc được 1-2 chữ
+        base_weight = 1.0 if idx == 0 else 0.72
+        len_weight = min(len(candidate) / 4.0, 1.2)
+        weight = base_weight * len_weight
+        
         ranked = find_best_matches(candidate, database, top_n=top_n)
         for rank, match in enumerate(ranked):
             item_id = match.get("id")
@@ -1071,6 +1133,10 @@ async def ocr_endpoint(
         if None not in (crop_x, crop_y, crop_w, crop_h):
             image_bytes = _apply_crop(image_bytes, {"x": crop_x, "y": crop_y, "w": crop_w, "h": crop_h})
 
+        # Lưu tạm ảnh để hỗ trợ Auto-Learning (xác nhận kết quả đúng → lưu vào thư viện)
+        user_token = request.headers.get("Authorization", "anonymous")
+        _last_analyzed_images[user_token] = image_bytes
+
         # 1. Kiểm tra thư viện tham chiếu (ORB)
         matched_report = match_image(image_bytes)
 
@@ -1113,18 +1179,66 @@ async def ocr_endpoint(
             for c in candidates:
                 all_evidence_chars.update(set(_normalize_cjk(c)))
 
-            overlap = len(all_evidence_chars & ref_chars)
+            # Fuzzy overlap: tính cả ký tự tương tự (OCR hay nhầm)
+            SIMILAR_GROUPS_ORB = [
+                {"慶", "麗", "廢", "應", "魔", "磨", "廣"},
+                {"春", "舂", "椿"},
+                {"侍", "待", "持", "特", "恃"},
+                {"左", "佐", "右", "石", "有"},
+                {"中", "杜", "牡", "社", "址", "仲", "忠", "柱"},
+                {"東", "束", "柬", "棟"}, {"南", "楠", "喃"},
+                {"北", "背", "兆"}, {"西", "曲", "酉"},
+                {"內", "内"}, {"府", "腐", "附"},
+                {"大", "天", "太", "夫"}, {"明", "朋", "目", "月"},
+                {"清", "靖", "情", "精", "請", "靜", "藏"},
+                {"康", "庚", "唐", "廉"}, {"熙", "照", "熊", "煕"},
+                {"雍", "維", "雅"}, {"乾", "幹", "軒"},
+                {"萬", "万"}, {"曆", "歷", "厤", "歴"},
+                {"年", "牛", "午", "平"}, {"製", "制", "脊"},
+                {"隆", "降", "窿", "融"},
+                {"宣", "官", "宜"}, {"德", "徳", "得"},
+                {"嘉", "喜", "家", "善"},
+                {"玄", "去", "云", "元", "亢"},
+                {"正", "政", "証", "征"},
+                {"光", "先", "克", "充"},
+                {"祥", "詳", "翔"},
+                {"瑞", "端"},
+                {"玉", "王", "主"},
+                {"造", "迴", "遭"},
+                {"壽", "寿"}, {"福", "富"},
+                {"堂", "常", "當"},
+            ]
+            def _fuzzy_char_match(c1, c2):
+                if c1 == c2:
+                    return True
+                for g in SIMILAR_GROUPS_ORB:
+                    if c1 in g and c2 in g:
+                        return True
+                return False
+
+            exact_overlap = len(all_evidence_chars & ref_chars)
+            fuzzy_overlap = 0
+            for ec in all_evidence_chars:
+                for rc in ref_chars:
+                    if _fuzzy_char_match(ec, rc):
+                        fuzzy_overlap += 1
+                        break
+            overlap = max(exact_overlap, fuzzy_overlap)
             total_ref = len(ref_chars)
-            print(f"[ORB verify] ocr_evidence={all_evidence_chars}, overlap={overlap}/{total_ref}")
+            print(f"[ORB verify] ocr_evidence={all_evidence_chars}, exact_overlap={exact_overlap}, fuzzy_overlap={fuzzy_overlap}, total_ref={total_ref}")
 
             if not all_evidence_chars:
-                # OCR không đọc được gì → tin ORB
-                print("[ORB verify] No OCR evidence, trusting ORB match.")
-                new_cr = _save_history(image_bytes, matched_report.get("chu_han", ""), matched_report)
-                if new_cr is not None: matched_report["credits"] = new_cr
-                return JSONResponse(status_code=200, content=matched_report)
-            elif total_ref > 0 and overlap >= max(4, total_ref - 1):
-                # Đủ ký tự trùng → tin ORB
+                # OCR không đọc được gì → chỉ tin ORB khi ratio đủ cao
+                if orb_ratio >= 1.3 and orb_best >= 80:
+                    print(f"[ORB verify] No OCR but ORB ratio={orb_ratio:.2f} >= 1.3, trusting ORB.")
+                    new_cr = _save_history(image_bytes, matched_report.get("chu_han", ""), matched_report)
+                    if new_cr is not None: matched_report["credits"] = new_cr
+                    return JSONResponse(status_code=200, content=matched_report)
+                else:
+                    print(f"[ORB verify] No OCR evidence AND ORB ratio={orb_ratio:.2f} too low. Discarding ORB.")
+                    matched_report = None
+            elif total_ref > 0 and overlap >= max(3, total_ref - 2):
+                # Đủ ký tự trùng (fuzzy) → tin ORB
                 print(f"[ORB verify] PASS — overlap sufficient ({overlap}/{total_ref}). Returning ORB match.")
                 new_cr = _save_history(image_bytes, matched_report.get("chu_han", ""), matched_report)
                 if new_cr is not None: matched_report["credits"] = new_cr
@@ -1210,9 +1324,7 @@ async def ocr_endpoint(
             # Re-slice top 5 sau khi đã boost lại điểm
             top5 = matches[:5]
         else:
-            top5 = _get_top_matches_from_candidates(merged_candidates, REIGN_DATABASE, limit=5)
-            if not top5:
-                top5 = matches
+            top5 = matches[:5]
             
             if dynasty_prefixes:
                 filtered_top5 = [
@@ -1378,6 +1490,40 @@ async def memorize_endpoint(
     except Exception as e:
         return JSONResponse(status_code=500, content={"success": False, "message": str(e)})
 
+@app.post("/api/confirm-learning")
+async def confirm_learning(request: Request):
+    """Auto-Learning: Khi user xác nhận kết quả đúng, lưu ảnh vào thư viện tham chiếu.
+    Lần sau gặp ảnh tương tự → ORB khớp ngay, không cần OCR."""
+    try:
+        body = await request.json()
+        report_data = body.get("report", {})
+        user_token = request.headers.get("Authorization", "anonymous")
+        
+        image_bytes = _last_analyzed_images.get(user_token)
+        if not image_bytes:
+            return JSONResponse(status_code=400, content={"success": False, "message": "Không tìm thấy ảnh. Vui lòng phân tích lại."})
+        
+        if not report_data or not report_data.get("chu_han"):
+            return JSONResponse(status_code=400, content={"success": False, "message": "Thiếu dữ liệu hiệu đề."})
+        
+        saved = save_reference(image_bytes, report_data)
+        if saved:
+            # Xóa cache sau khi lưu
+            _last_analyzed_images.pop(user_token, None)
+            from reference_matcher import _reference_cache
+            ref_count = len(_reference_cache)
+            print(f"[Auto-Learning] Saved '{report_data.get('chu_han')}' to reference library. Total refs: {ref_count}")
+            return JSONResponse(status_code=200, content={
+                "success": True, 
+                "message": f"Đã học thành công! Thư viện hiện có {ref_count} mẫu tham chiếu.",
+                "ref_count": ref_count
+            })
+        else:
+            return JSONResponse(status_code=500, content={"success": False, "message": "Không thể lưu mẫu."})
+    except Exception as e:
+        print(f"[Auto-Learning] Error: {e}")
+        return JSONResponse(status_code=500, content={"success": False, "message": str(e)})
+
 # API cho User
 @app.post("/register")
 def register_user(user: UserRegister):
@@ -1457,8 +1603,8 @@ PACKAGES = {
 
 # Cấu hình thanh toán SePay
 SEPAY_API_KEY = "YOUR_SEPAY_API_KEY"
-ACCOUNT_NUMBER = "STK_CUA_BAN"
-BANK_ID = "MB"
+ACCOUNT_NUMBER = "0852641851"
+BANK_ID = "OCB"
 NAME_WEB = "HIEUDEAI"
 SECRET_XOR_KEY = 0x5EAFB
 

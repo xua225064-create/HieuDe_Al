@@ -22,12 +22,12 @@ ocr = PaddleOCR(
 print("PaddleOCR ready!")
 
 MAX_OCR_DIM = 1600
-MIN_CONF = 0.55  # Ngưỡng chuẩn
+MIN_CONF = 0.50  # Ngưỡng chuẩn: 0.50 đủ để vớt '康' nhưng không quá rác
 MIN_CONF_FALLBACK = 0.35  # Ảnh mờ: nới ngưỡng để tránh mất toàn bộ ký tự
-EARLY_ACCEPT_SCORE = 3.9  # Dừng sớm hơn để giảm thời gian
+EARLY_ACCEPT_SCORE = 3.0  # Hạ ngưỡng để dừng sớm hơn, tiết kiệm thời gian
 EARLY_ACCEPT_LEN = 4
 MAX_VARIANTS_PER_REQUEST = 8  # Giới hạn số variant OCR để giảm độ trễ
-DEEP_EXTRA_VARIANTS = 6  # Chỉ dùng khi pass nhanh không đọc được
+DEEP_EXTRA_VARIANTS = 4  # Giảm từ 6 → 4, chỉ dùng khi pass nhanh không đọc được
 SAVE_DEBUG_VARIANTS = False  # Tắt ghi file debug để tăng tốc
 
 
@@ -146,7 +146,27 @@ def remove_red_stamp(img):
     hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
     m1 = cv2.inRange(hsv, (0, 60, 60), (15, 255, 255))
     m2 = cv2.inRange(hsv, (155, 60, 60), (180, 255, 255))
-    mask = cv2.dilate(cv2.bitwise_or(m1, m2), np.ones((9, 9), np.uint8), iterations=2)
+    red_mask = cv2.bitwise_or(m1, m2)
+
+    # Phát hiện hồng đề (chữ đỏ): nếu pixel đỏ tập trung ở trung tâm ảnh
+    # → đây là chữ đỏ, KHÔNG xóa
+    h, w = red_mask.shape[:2]
+    center_region = red_mask[int(h*0.2):int(h*0.8), int(w*0.2):int(w*0.8)]
+    total_red = np.count_nonzero(red_mask)
+    center_red = np.count_nonzero(center_region)
+    
+    if total_red > 0:
+        center_ratio = center_red / max(total_red, 1)
+        red_density = total_red / max(h * w, 1)
+        print(f"  [red_detect] total_red_ratio={red_density:.3f}, center_ratio={center_ratio:.3f}")
+        
+        # Nếu đỏ tập trung ở trung tâm (>40%) VÀ mật độ đỏ đáng kể (>0.5%)
+        # → hồng đề, không xóa
+        if center_ratio > 0.40 and red_density > 0.005:
+            print("  [red_detect] Hồng đề detected (red text). Skipping red removal.")
+            return img
+
+    mask = cv2.dilate(red_mask, np.ones((9, 9), np.uint8), iterations=2)
     return cv2.inpaint(img, mask, 5, cv2.INPAINT_TELEA)
 
 def red_channel_best(img_bgr):
@@ -973,7 +993,17 @@ def read_chinese_mark(img_bytes: bytes, deep_mode: bool = False) -> dict:
         fast_phase_cut = min(base_fast_limit, len(ordered_variants))
         deep_phase_cut = min(len(ordered_variants), fast_phase_cut + base_deep_extra)
 
+        # Smart skip: theo dõi các prefix ROI liên tiếp không đọc được
+        _empty_streak = {}  # prefix -> số lần liên tiếp không đọc được
+        _SKIP_THRESHOLD = 2  # Skip các variant cùng prefix nếu 2 liên tiếp rỗng
+
         for idx, (vname, vimg) in enumerate(ordered_variants[:fast_phase_cut]):
+            # Smart skip: nếu cùng 1 ROI prefix đã trống 2 lần liên tiếp, bỏ qua
+            prefix = vname.rsplit('_', 1)[0] if '_' in vname else vname
+            if _empty_streak.get(prefix, 0) >= _SKIP_THRESHOLD:
+                print(f"  [{vname}] SKIPPED (prefix '{prefix}' empty {_empty_streak[prefix]}x)")
+                continue
+
             if SAVE_DEBUG_VARIANTS:
                 cv2.imwrite(os.path.join(DEBUG_DIR, f"03_{vname}.jpg"), vimg)
             text, score = run_ocr(vimg, vname)
@@ -981,13 +1011,13 @@ def read_chinese_mark(img_bytes: bytes, deep_mode: bool = False) -> dict:
                 all_candidates.append(text)
                 variant_results.append((text, score, vname))
                 print(f"  [{vname}] text='{text}' score={score:.2f}")
-                if (
-                    score >= EARLY_ACCEPT_SCORE
-                    and len(text) >= EARLY_ACCEPT_LEN
-                    and _plausible_reign_ocr_string(text)
-                ):
+                _empty_streak[prefix] = 0  # reset streak
+                # Dừng sớm: KHÔNG yêu cầu _plausible (để dừng cho cả hiệu đề Nội Phủ, Khánh Xuân...)
+                if score >= EARLY_ACCEPT_SCORE and len(text) >= EARLY_ACCEPT_LEN:
                     print(f"  [early-stop] accept '{text}' from '{vname}' score={score:.2f}")
                     break
+            else:
+                _empty_streak[prefix] = _empty_streak.get(prefix, 0) + 1
 
         # Nếu pass nhanh không đủ thông tin thì mới chạy pass sâu (nặng hơn) cho ảnh mờ.
         best_len_fast = max((len(t) for t, _, _ in variant_results), default=0)
@@ -1001,11 +1031,7 @@ def read_chinese_mark(img_bytes: bytes, deep_mode: bool = False) -> dict:
                     all_candidates.append(text)
                     variant_results.append((text, score, vname))
                     print(f"  [{vname}] text='{text}' score={score:.2f}")
-                    if (
-                        score >= EARLY_ACCEPT_SCORE
-                        and len(text) >= EARLY_ACCEPT_LEN
-                        and _plausible_reign_ocr_string(text)
-                    ):
+                    if score >= EARLY_ACCEPT_SCORE and len(text) >= EARLY_ACCEPT_LEN:
                         print(f"  [deep-early-stop] accept '{text}' from '{vname}' score={score:.2f}")
                         break
 

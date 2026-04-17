@@ -1,0 +1,29 @@
+{
+  "id": 20,
+  "chu_han": "大清雍正年製",
+  "chu_han_4": "雍正年製",
+  "chu_han_6": null,
+  "bien_the": [
+    "雍正年造",
+    "雍正御製"
+  ],
+  "phien_am": "Dà Qīng Yōng Zhèng Nián Zhì",
+  "ten_viet": "Ung Chính niên chế",
+  "hoang_de": "Ung Chính (Yinzhen)",
+  "trieu_dai": "Thanh Triều",
+  "nam_bat_dau": 1723,
+  "nam_ket_thuc": 1735,
+  "ghi_chu": "Gốm tinh xảo nhất nhà Thanh, hay dùng triện thư",
+  "hien_thi_chinh": "Đại Thanh Ung Chính Niên Chế",
+  "nien_hieu": "Ung Chính",
+  "nien_dai": "1723 - 1735",
+  "hieu_de_en": "Ung Chính Period",
+  "mo_ta": "Gốm tinh xảo nhất nhà Thanh, hay dùng triện thư. Niên đại 1723 - 1735.",
+  "hieu_de_vi": "Đại Thanh Ung Chính Niên Chế",
+  "thu_phap": "Thư pháp đạt đến độ chuẩn mực cao, các nét chữ ngay ngắn, sắc nét và cực kỳ tinh chuẩn. Thường dùng Khải thư cho dòng Quan diêu; đôi lúc dùng Triện tư (Seal script).",
+  "nghe_thuat": "Đường nét vô cùng trau chuốt, kỹ thuật nung và tráng men đạt đến đỉnh cao. Màu sắc đồng đều, không bị lem sậm như đời Minh, thể hiện sự kiểm soát kỹ thuật hoàn hảo.",
+  "match_score": 100,
+  "raw_score": 2.1,
+  "agg_score": 2.1,
+  "votes": 1
+}

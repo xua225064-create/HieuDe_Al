@@ -1,0 +1,29 @@
+{
+  "id": 86,
+  "chu_han": "內府侍中",
+  "chu_han_4": "內府侍中",
+  "chu_han_6": null,
+  "bien_the": [
+    "内府侍中"
+  ],
+  "phien_am": "Nèi Fǔ Shì Zhōng",
+  "ten_viet": "Nội Phủ Thị Trung",
+  "hoang_de": null,
+  "trieu_dai": "Nhà Nguyễn (Việt Nam) - Thời Chúa Nguyễn",
+  "nam_bat_dau": 1600,
+  "nam_ket_thuc": 1802,
+  "ghi_chu": "Hiệu đề đồ sứ ký kiểu thời chúa Nguyễn - phương Trung",
+  "hien_thi_chinh": "Nội Phủ Thị Trung",
+  "nien_hieu": "Nội Phủ Thị Trung",
+  "nien_dai": "TK17 - 1802",
+  "hieu_de_en": "Nội Phủ Thị Trung Mark",
+  "mo_ta": "Hiệu đề đồ sứ ký kiểu thời chúa Nguyễn - phương Trung. Niên đại TK17 - 1802.",
+  "hieu_de_vi": "Nội Phủ Thị Trung",
+  "thu_phap": "Nét chữ mang phong cách triện thư, lệ thư hoặc khải thư phụ thuộc lớn vào kỹ thuật của xưởng gốm địa phương.",
+  "nghe_thuat": "Phong cách trang trí mang dấu ấn văn hóa vùng miền đậm nét, kỹ thuật nung có chênh lệch giữa dòng Dân diêu và Quan diêu.",
+  "match_score": 100,
+  "raw_score": 2.0723,
+  "agg_score": 2.0722500000000004,
+  "votes": 3,
+  "_neifu_adjusted": true
+}
