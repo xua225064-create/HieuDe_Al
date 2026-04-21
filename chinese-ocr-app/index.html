@@ -2989,7 +2989,7 @@
             <div
               style="height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 40px;">
               <div style="display: flex; align-items: baseline; gap: 4px;">
-                <span style="font-size: 3.5rem; font-weight: 700; color: #fff; line-height: 1;">17$</span>
+                <span id="ui_pro_price" style="font-size: 3.5rem; font-weight: 700; color: #fff; line-height: 1;">17$</span>
                 <span style="color: rgba(255,255,255,0.4); font-size: 0.9rem;">/tháng</span>
               </div>
               <span
@@ -3005,7 +3005,7 @@
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3">
                     <polyline points="20 6 9 17 4 12" />
                   </svg></div>
-                <span style="color: rgba(255,255,255,0.8); font-size: 0.95rem;">Thêm 200 lượt phân tích</span>
+                <span id="ui_pro_credits" style="color: rgba(255,255,255,0.8); font-size: 0.95rem;">Thêm 200 lượt phân tích</span>
               </div>
               <div style="display: flex; align-items: center; gap: 12px;">
                 <div
@@ -3068,7 +3068,7 @@
               style="height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 40px;">
               <div style="display: flex; align-items: baseline; gap: 4px;">
                 <span style="color: rgba(255,255,255,0.4); font-size: 0.9rem; margin-right: 4px;">từ</span>
-                <span style="font-size: 3.5rem; font-weight: 700; color: #fff; line-height: 1;">100$</span>
+                <span id="ui_enterprise_price" style="font-size: 3.5rem; font-weight: 700; color: #fff; line-height: 1;">100$</span>
                 <span style="color: rgba(255,255,255,0.4); font-size: 0.9rem;">/tháng</span>
               </div>
             </div>
@@ -3081,7 +3081,7 @@
                   <span
                     style="color: #60a5fa; font-weight: 900; font-size: 12px; line-height: 1; transform: translateY(-1px);">∞</span>
                 </div>
-                <span style="color: rgba(255,255,255,0.7); font-size: 0.95rem;">Quét không giới hạn</span>
+                <span id="ui_enterprise_credits" style="color: rgba(255,255,255,0.7); font-size: 0.95rem;">Quét không giới hạn</span>
               </div>
               <div style="display: flex; align-items: center; gap: 12px;">
                 <div
@@ -4090,9 +4090,38 @@
 
     var PACKAGES_INFO = {
       basic: { name: 'Gói Cơ bản', credits: 50, price: 490000 },
-      pro: { name: 'Gói Archivist Pro ($17)', credits: 200, price: 447712 },
-      enterprise: { name: 'Gói Chuyên nghiệp ($100)', credits: 99999, price: 2490000 }
+      pro: { name: 'Gói Phổ biến', credits: 200, price: 447712 },
+      enterprise: { name: 'Gói Chuyên nghiệp', credits: 99999, price: 2490000 }
     };
+
+    // Auto-fetch the dynamic packages configuration when page loads
+    async function loadPackagesConfig() {
+      try {
+        let resp = await fetch('/api/v1/packages');
+        let data = await resp.json();
+        if (data.success && data.packages) {
+          PACKAGES_INFO = {
+            basic: { name: 'Gói Cơ bản', credits: data.packages.basic.credits, price: data.packages.basic.amount },
+            pro: { name: 'Gói Phổ biến', credits: data.packages.pro.credits, price: data.packages.pro.amount },
+            enterprise: { name: 'Gói Chuyên nghiệp', credits: data.packages.enterprise.credits, price: data.packages.enterprise.amount }
+          };
+          
+          // Try to update UI elements directly if they exist
+          const eProPrice = document.getElementById('ui_pro_price');
+          const eProCredits = document.getElementById('ui_pro_credits');
+          const eEntPrice = document.getElementById('ui_enterprise_price');
+          const eEntCredits = document.getElementById('ui_enterprise_credits');
+          
+          if (eProPrice) eProPrice.textContent = (data.packages.pro.amount / 1000) + 'K';
+          if (eProCredits) eProCredits.textContent = 'Trọn gói ' + data.packages.pro.credits + ' lượt quét';
+          if (eEntPrice) eEntPrice.textContent = (data.packages.enterprise.amount / 1000) + 'K';
+          if (eEntCredits) eEntCredits.textContent = 'Trọn gói ' + (data.packages.enterprise.credits >= 99999 ? 'vô hạn' : data.packages.enterprise.credits) + ' lượt';
+        }
+      } catch (e) {
+        console.error('Error loading packages:', e);
+      }
+    }
+    loadPackagesConfig();
 
     function formatVND(n) {
       return n.toLocaleString('vi-VN') + 'đ';
@@ -4277,6 +4306,13 @@
         });
         let data = await resp.json();
         if (data.success) {
+          // Kiểm tra nếu là admin → chuyển hướng sang trang Admin Panel
+          if (data.role === 'admin') {
+            localStorage.setItem('admin_token', data.token);
+            localStorage.setItem('admin_name', data.username);
+            window.location.href = '/admin';
+            return;
+          }
           curU = { name: data.username, email: em, token: data.token };
           updUI();
           goPage('home');

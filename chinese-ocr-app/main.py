@@ -38,7 +38,13 @@ DATA_PATH = os.path.join(os.path.dirname(__file__), "data", "hieu_de_database.js
 _last_analyzed_images: Dict[str, bytes] = {}
 
 
-from db import fetch_all_marks, create_user, get_user_by_username, add_scan_history, get_scan_history, get_or_create_social_user, ensure_credits_column, get_user_credits, deduct_credit, add_credits, create_payment, get_payment, complete_payment
+from db import (fetch_all_marks, create_user, get_user_by_username, add_scan_history, 
+    get_scan_history, get_or_create_social_user, ensure_credits_column, get_user_credits, 
+    deduct_credit, add_credits, create_payment, get_payment, complete_payment,
+    ensure_admin_columns, create_admin_account, admin_login, get_all_users_admin,
+    toggle_user_lock, admin_update_credits, admin_reset_password, get_all_payments_admin, 
+    admin_approve_payment, get_all_scan_history_admin, get_dashboard_stats,
+    admin_add_mark, admin_update_mark, admin_delete_mark, get_system_settings, update_system_setting)
 from pydantic import BaseModel
 from passlib.context import CryptContext
 import httpx
@@ -85,6 +91,12 @@ REIGN_DATABASE = _load_database()
 
 # Đảm bảo cột scan_credits tồn tại
 ensure_credits_column()
+
+# Khởi tạo hệ thống Admin
+ensure_admin_columns()
+_admin_hash = pwd_context.hash("123@")
+create_admin_account("admin", _admin_hash)
+print("[Admin] Admin system initialized.")
 
 
 def _find_match(ocr_text: str, database: List[Dict[str, Any]]) -> Tuple[Optional[Dict[str, Any]], str]:
@@ -1543,8 +1555,13 @@ def login_user(user: UserLogin):
     if not db_user or not pwd_context.verify(user.password, db_user['password_hash']):
         return JSONResponse(status_code=401, content={"success": False, "message": "Sai tài khoản hoặc mật khẩu."})
     
+    # Kiểm tra tài khoản bị khóa
+    if db_user.get('locked'):
+        return JSONResponse(status_code=403, content={"success": False, "message": "Tài khoản của bạn đã bị khóa. Vui lòng liên hệ quản trị viên."})
+    
     credits = get_user_credits(db_user['id'])
-    return {"success": True, "token": str(db_user['id']), "username": db_user['username'], "credits": credits}
+    role = db_user.get('role', 'user') or 'user'
+    return {"success": True, "token": str(db_user['id']), "username": db_user['username'], "credits": credits, "role": role}
 
 class SocialLoginRequest(BaseModel):
     email: str
@@ -1595,11 +1612,29 @@ def get_credits(request: Request):
 class BuyCreditsRequest(BaseModel):
     package: str  # 'basic', 'pro', 'enterprise'
 
-PACKAGES = {
-    'basic': {'name': 'Cơ bản', 'credits': 50, 'amount': 490000},
-    'pro': {'name': 'Phổ biến', 'credits': 200, 'amount': 447712},
-    'enterprise': {'name': 'Chuyên nghiệp', 'credits': 9999, 'amount': 2490000},
-}
+def get_packages_config():
+    settings = get_system_settings()
+    return {
+        'basic': {
+            'name': 'Cơ bản', 
+            'credits': int(settings.get('pkg_basic_credits', 50)), 
+            'amount': int(settings.get('pkg_basic_price', 490000))
+        },
+        'pro': {
+            'name': 'Phổ biến', 
+            'credits': int(settings.get('pkg_pro_credits', 200)), 
+            'amount': int(settings.get('pkg_pro_price', 447712))
+        },
+        'enterprise': {
+            'name': 'Chuyên nghiệp', 
+            'credits': int(settings.get('pkg_enterprise_credits', 99999)), 
+            'amount': int(settings.get('pkg_enterprise_price', 2490000))
+        }
+    }
+
+@app.get("/api/v1/packages")
+def api_get_packages():
+    return {"success": True, "packages": get_packages_config()}
 
 # Cấu hình thanh toán SePay
 SEPAY_API_KEY = "YOUR_SEPAY_API_KEY"
@@ -1618,7 +1653,8 @@ async def create_payment_api(req: BuyCreditsRequest, request: Request):
         return JSONResponse(status_code=401, content={"success": False, "message": "Chưa đăng nhập."})
     user_id = int(auth_header.split("Bearer ")[1])
     
-    pkg = PACKAGES.get(req.package)
+    packages = get_packages_config()
+    pkg = packages.get(req.package)
     if not pkg:
         return JSONResponse(status_code=400, content={"error": "Gói không hợp lệ"})
     
@@ -1700,7 +1736,8 @@ def buy_credits(data: BuyCreditsRequest, request: Request):
         return JSONResponse(status_code=401, content={"success": False, "message": "Chưa đăng nhập."})
     user_id = auth_header.split("Bearer ")[1]
     
-    pkg = PACKAGES.get(data.package)
+    packages = get_packages_config()
+    pkg = packages.get(data.package)
     if not pkg:
         return JSONResponse(status_code=400, content={"success": False, "message": "Gói không hợp lệ."})
     
@@ -1737,3 +1774,214 @@ async def chat_bot(data: ChatMessage):
     import asyncio
     await asyncio.sleep(0.6) # Giả lập delay suy nghĩ
     return {"reply": resp}
+
+
+# ========== ADMIN API ENDPOINTS ==========
+
+class AdminLogin(BaseModel):
+    username: str
+    password: str
+
+class AdminCreditUpdate(BaseModel):
+    user_id: int
+    amount: int
+    action: str = 'add'  # 'add', 'subtract', 'set'
+
+class AdminResetPassword(BaseModel):
+    user_id: int
+    new_password: str
+
+class AdminMarkData(BaseModel):
+    chu_han: str = ''
+    chu_han_4: str = ''
+    chu_han_6: str = ''
+    bien_the: list = []
+    phien_am: str = ''
+    ten_viet: str = ''
+    hoang_de: str = ''
+    trieu_dai: str = ''
+    nam_bat_dau: Optional[int] = None
+    nam_ket_thuc: Optional[int] = None
+    ghi_chu: str = ''
+    hien_thi_chinh: str = ''
+    nien_hieu: str = ''
+    nien_dai: str = ''
+    hieu_de_en: str = ''
+    mo_ta: str = ''
+    hieu_de_vi: str = ''
+    thu_phap: str = ''
+    nghe_thuat: str = ''
+
+class AdminSettingUpdate(BaseModel):
+    key: str
+    value: str
+
+def _verify_admin(request: Request):
+    """Xác thực admin từ header Authorization."""
+    auth = request.headers.get("Authorization", "")
+    if not auth.startswith("Admin "):
+        return None
+    admin_id = auth.split("Admin ")[1]
+    try:
+        from db import get_db_connection
+        conn = get_db_connection()
+        if not conn: return None
+        with conn.cursor() as cursor:
+            cursor.execute("SELECT * FROM users WHERE id = %s AND role = 'admin'", (int(admin_id),))
+            admin_user = cursor.fetchone()
+        conn.close()
+        return admin_user
+    except:
+        return None
+
+@app.get("/admin")
+def read_admin():
+    admin_path = os.path.join(os.path.dirname(__file__), "admin.html")
+    return FileResponse(admin_path)
+
+@app.post("/api/admin/login")
+def admin_login_endpoint(data: AdminLogin):
+    user = admin_login(data.username, pwd_context.verify, data.password)
+    if not user:
+        return JSONResponse(status_code=401, content={"success": False, "message": "Sai tài khoản hoặc mật khẩu, hoặc không có quyền admin."})
+    return {"success": True, "token": str(user['id']), "username": user['username']}
+
+@app.get("/api/admin/dashboard")
+def admin_dashboard(request: Request):
+    admin = _verify_admin(request)
+    if not admin:
+        return JSONResponse(status_code=401, content={"success": False, "message": "Unauthorized"})
+    stats = get_dashboard_stats()
+    return {"success": True, "stats": stats}
+
+@app.get("/api/admin/users")
+def admin_users(request: Request):
+    admin = _verify_admin(request)
+    if not admin:
+        return JSONResponse(status_code=401, content={"success": False, "message": "Unauthorized"})
+    users = get_all_users_admin()
+    return {"success": True, "users": users}
+
+@app.post("/api/admin/users/lock/{user_id}")
+def admin_lock_user(user_id: int, request: Request):
+    admin = _verify_admin(request)
+    if not admin:
+        return JSONResponse(status_code=401, content={"success": False, "message": "Unauthorized"})
+    body_bytes = None
+    try:
+        import asyncio
+        loop = asyncio.get_event_loop()
+    except:
+        pass
+    success = toggle_user_lock(user_id, True)
+    return {"success": success, "message": "Đã khóa tài khoản" if success else "Lỗi"}
+
+@app.post("/api/admin/users/unlock/{user_id}")
+def admin_unlock_user(user_id: int, request: Request):
+    admin = _verify_admin(request)
+    if not admin:
+        return JSONResponse(status_code=401, content={"success": False, "message": "Unauthorized"})
+    success = toggle_user_lock(user_id, False)
+    return {"success": success, "message": "Đã mở khóa tài khoản" if success else "Lỗi"}
+
+@app.post("/api/admin/users/credits")
+def admin_credits_endpoint(data: AdminCreditUpdate, request: Request):
+    admin = _verify_admin(request)
+    if not admin:
+        return JSONResponse(status_code=401, content={"success": False, "message": "Unauthorized"})
+    success = admin_update_credits(data.user_id, data.amount, data.action)
+    return {"success": success, "message": f"Đã cập nhật credits" if success else "Lỗi"}
+
+@app.post("/api/admin/users/reset-password")
+def admin_reset_pwd(data: AdminResetPassword, request: Request):
+    admin = _verify_admin(request)
+    if not admin:
+        return JSONResponse(status_code=401, content={"success": False, "message": "Unauthorized"})
+    new_hash = pwd_context.hash(data.new_password)
+    success = admin_reset_password(data.user_id, new_hash)
+    return {"success": success, "message": "Đã reset mật khẩu" if success else "Lỗi"}
+
+@app.get("/api/admin/payments")
+def admin_payments(request: Request, status: Optional[str] = None):
+    admin = _verify_admin(request)
+    if not admin:
+        return JSONResponse(status_code=401, content={"success": False, "message": "Unauthorized"})
+    payments = get_all_payments_admin(status)
+    return {"success": True, "payments": payments}
+
+@app.post("/api/admin/payments/approve/{payment_id}")
+def admin_approve_payment_endpoint(payment_id: int, request: Request):
+    admin = _verify_admin(request)
+    if not admin:
+        return JSONResponse(status_code=401, content={"success": False, "message": "Unauthorized"})
+    success, message = admin_approve_payment(payment_id)
+    return {"success": success, "message": message}
+
+@app.get("/api/admin/scans")
+def admin_scans(request: Request):
+    admin = _verify_admin(request)
+    if not admin:
+        return JSONResponse(status_code=401, content={"success": False, "message": "Unauthorized"})
+    scans = get_all_scan_history_admin()
+    return {"success": True, "scans": scans}
+
+@app.get("/api/admin/marks")
+def admin_marks(request: Request):
+    admin = _verify_admin(request)
+    if not admin:
+        return JSONResponse(status_code=401, content={"success": False, "message": "Unauthorized"})
+    marks = fetch_all_marks() or []
+    return {"success": True, "marks": marks}
+
+@app.post("/api/admin/marks")
+def admin_add_mark_endpoint(data: AdminMarkData, request: Request):
+    admin = _verify_admin(request)
+    if not admin:
+        return JSONResponse(status_code=401, content={"success": False, "message": "Unauthorized"})
+    new_id = admin_add_mark(data.dict())
+    if new_id:
+        # Reload database
+        global REIGN_DATABASE
+        REIGN_DATABASE = _load_database()
+        return {"success": True, "id": new_id, "message": "Đã thêm hiệu đề mới"}
+    return JSONResponse(status_code=500, content={"success": False, "message": "Lỗi thêm hiệu đề"})
+
+@app.put("/api/admin/marks/{mark_id}")
+def admin_update_mark_endpoint(mark_id: int, data: AdminMarkData, request: Request):
+    admin = _verify_admin(request)
+    if not admin:
+        return JSONResponse(status_code=401, content={"success": False, "message": "Unauthorized"})
+    success = admin_update_mark(mark_id, data.dict())
+    if success:
+        global REIGN_DATABASE
+        REIGN_DATABASE = _load_database()
+        return {"success": True, "message": "Đã cập nhật hiệu đề"}
+    return JSONResponse(status_code=500, content={"success": False, "message": "Lỗi cập nhật hiệu đề"})
+
+@app.delete("/api/admin/marks/{mark_id}")
+def admin_delete_mark_endpoint(mark_id: int, request: Request):
+    admin = _verify_admin(request)
+    if not admin:
+        return JSONResponse(status_code=401, content={"success": False, "message": "Unauthorized"})
+    success = admin_delete_mark(mark_id)
+    if success:
+        global REIGN_DATABASE
+        REIGN_DATABASE = _load_database()
+        return {"success": True, "message": "Đã xóa hiệu đề"}
+    return JSONResponse(status_code=500, content={"success": False, "message": "Lỗi xóa hiệu đề"})
+
+@app.get("/api/admin/settings")
+def admin_settings(request: Request):
+    admin = _verify_admin(request)
+    if not admin:
+        return JSONResponse(status_code=401, content={"success": False, "message": "Unauthorized"})
+    settings = get_system_settings()
+    return {"success": True, "settings": settings}
+
+@app.post("/api/admin/settings")
+def admin_update_settings(data: AdminSettingUpdate, request: Request):
+    admin = _verify_admin(request)
+    if not admin:
+        return JSONResponse(status_code=401, content={"success": False, "message": "Unauthorized"})
+    success = update_system_setting(data.key, data.value)
+    return {"success": success, "message": "Đã cập nhật cài đặt" if success else "Lỗi"}

@@ -1,9 +1,22 @@
-import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Alert, Image } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Alert, Image, ActivityIndicator } from 'react-native';
 import { Feather, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { BASE_URL } from '../config';
 
 export default function PricingScreen({ user, credits, setScreen, goCheckout }) {
   const [selected, setSelected] = useState('monthly');
+  const [packages, setPackages] = useState(null);
+
+  useEffect(() => {
+    fetch(`${BASE_URL}/api/v1/packages`)
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          setPackages(data.packages);
+        }
+      })
+      .catch(err => console.log('Fetch packages error:', err));
+  }, []);
 
   const handlePurchase = () => {
     if (!user) {
@@ -67,12 +80,12 @@ export default function PricingScreen({ user, credits, setScreen, goCheckout }) 
           activeOpacity={0.8}
         >
           <View style={{ flex: 1 }}>
-            <Text style={[s.planName, selected === 'monthly' && s.planNameOn]}>Hàng tháng</Text>
+            <Text style={[s.planName, selected === 'monthly' && s.planNameOn]}>Gói Cơ Bản (Hàng tháng)</Text>
           </View>
-          <View style={s.bestBadge}><Text style={s.bestText}>BEST OFFER</Text></View>
+          <View style={s.bestBadge}><Text style={s.bestText}>PHỔ BIẾN</Text></View>
           <View style={{ alignItems: 'flex-end', marginLeft: 12 }}>
-            <Text style={s.planPrice}>17$ /</Text>
-            <Text style={[s.planSub, selected === 'monthly' && s.planSubOn]}>7 Ngày Dùng Thử</Text>
+            <Text style={s.planPrice}>{packages ? (packages.pro.amount / 1000) + 'K /' : '... /'}</Text>
+            <Text style={[s.planSub, selected === 'monthly' && s.planSubOn]}>{packages ? packages.pro.credits + ' Lượt' : '...'}</Text>
           </View>
         </TouchableOpacity>
 
@@ -83,25 +96,25 @@ export default function PricingScreen({ user, credits, setScreen, goCheckout }) 
           activeOpacity={0.8}
         >
           <View style={{ flex: 1 }}>
-            <Text style={[s.planName, selected === 'yearly' && s.planNameOn]}>Hàng năm</Text>
-            <Text style={s.planYearSub}>1200$ / năm</Text>
+            <Text style={[s.planName, selected === 'yearly' && s.planNameOn]}>Gói Nâng Cao (Vô hạn)</Text>
+            <Text style={s.planYearSub}>Chuyên nghiệp nhất</Text>
           </View>
           <View style={{ alignItems: 'flex-end' }}>
-            <Text style={s.planPrice}>100$ /</Text>
-            <Text style={s.planBilled}>Thanh toán năm</Text>
+            <Text style={s.planPrice}>{packages ? (packages.enterprise.amount / 1e6).toFixed(1) + 'M /' : '... /'}</Text>
+            <Text style={s.planBilled}>{packages ? packages.enterprise.credits + ' Lượt' : '...'}</Text>
           </View>
         </TouchableOpacity>
 
         {/* CTA Button */}
         <TouchableOpacity style={s.ctaBtn} onPress={handlePurchase} activeOpacity={0.85}>
-          <Text style={s.ctaText}>Bắt Đầu Dùng Thử Miễn Phí</Text>
+          <Text style={s.ctaText}>Nâng Cấp Tài Khoản Ngay</Text>
         </TouchableOpacity>
 
         {/* Fine print */}
         <Text style={s.finePrint}>
-          7 ngày đầu miễn phí, sau đó {selected === 'monthly' ? '17$/tháng' : '100$/năm'}.
+          Thanh toán nhanh chóng bằng ví điện tử hoặc chuyển khoản ngân hàng.
         </Text>
-        <Text style={s.finePrint2}>Hủy bất cứ lúc nào trước khi hết thời gian dùng thử</Text>
+        <Text style={s.finePrint2}>Credits tự động cộng ngay sau khi thanh toán thành công.</Text>
 
         {/* Terms / Privacy */}
         <View style={s.legalRow}>

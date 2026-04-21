@@ -168,6 +168,10 @@ export default function LoginScreen({ handleLogin, setScreen }) {
     try {
       const data = await apiLogin(email, password);
       if (data.success) {
+        if (data.role === 'admin') {
+          showAlert('Thông báo', 'Vui lòng sử dụng tài khoản admin trên phiên bản Web Dashboard (PC).');
+          return;
+        }
         handleLogin({ name: data.username, email, token: data.token });
       } else {
         showAlert('Lỗi', data.message || 'Đăng nhập thất bại');
